@@ -4407,23 +4407,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 568239748}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 2.9754457
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.85472584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12
+      value: -0.21812057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4439,7 +4439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4495,6 +4495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
+--- !u!4 &178569956 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c11a386bc3716b41974ee29a780edfc, type: 3}
+  m_PrefabInstance: {fileID: 178569955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &218690409
 Mesh:
   m_ObjectHideFlags: 0
@@ -5658,8 +5663,9 @@ Transform:
   - {fileID: 1537563216}
   - {fileID: 1732691399}
   - {fileID: 103206458}
+  - {fileID: 178569956}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &598837903
 Mesh:
