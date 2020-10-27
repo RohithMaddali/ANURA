@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    public bool isclosed;
+    public bool isclosed = true;
     public bool moving = false;
     public Vector3 openPos;
     public Vector3 closePos;
     private Vector3 startPos;
     private Vector3 target;
-    public float speed;
+    public float speed = 6;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        closePos = transform.position;
+        openPos.x = transform.position.x;
+        openPos.y = transform.position.y + 5;
+        openPos.z = transform.position.z;
     }
 
     // Update is called once per frame

@@ -16,9 +16,9 @@ public class PlayerRaycasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(this.transform.position, this.transform.forward * distancetoTouch, Color.blue);
+        Debug.DrawRay(transform.position, transform.forward * distancetoTouch, Color.blue);
 
-        if(Physics.Raycast(this.transform.position, this.transform.forward, out (touchingObject), distancetoTouch))
+        if(Physics.Raycast(transform.position, transform.forward, out (touchingObject), distancetoTouch))
         {
             //Debug.Log("touching " + touchingObject.collider.gameObject.name);
             if (touchingObject.collider.gameObject.tag == "Switch" && Input.GetKeyDown("e"))
