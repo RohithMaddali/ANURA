@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class FOVDetection : MonoBehaviour
@@ -9,6 +11,7 @@ public class FOVDetection : MonoBehaviour
     public Transform player;
     public float maxAngle;
     public float maxRadius;
+    public float speed = 3f;
 
     private bool isInFov = false;
 
@@ -36,7 +39,7 @@ public class FOVDetection : MonoBehaviour
 
     }
 
-    public static bool inFOV(Transform checkingObject, Transform target, float maxAngle, float maxRadius, Transform enemy)
+    public static bool inFOV(Transform checkingObject, Transform target, float maxAngle, float maxRadius, Transform enemy, float speed)
     {
 
         Collider[] overlaps = new Collider[10];
@@ -67,7 +70,9 @@ public class FOVDetection : MonoBehaviour
 
                             if (hit.transform == target)
                             {
-                                enemy.transform.LookAt(target);
+                                //enemy.transform.LookAt(target);
+                                Quaternion rotTarget = Quaternion.LookRotation(target.position - enemy.position);
+                                enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotTarget, speed * Time.deltaTime);
                                 return true;
                             }
                                 
@@ -90,7 +95,7 @@ public class FOVDetection : MonoBehaviour
     private void Update()
     {
 
-        isInFov = inFOV(transform, player, maxAngle, maxRadius, enemy);
+        isInFov = inFOV(transform, player, maxAngle, maxRadius, enemy, speed);
 
     }
 
