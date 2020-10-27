@@ -5,6 +5,7 @@ using UnityEngine;
 public class FOVDetection : MonoBehaviour
 {
 
+    public Transform enemy;
     public Transform player;
     public float maxAngle;
     public float maxRadius;
@@ -35,7 +36,7 @@ public class FOVDetection : MonoBehaviour
 
     }
 
-    public static bool inFOV(Transform checkingObject, Transform target, float maxAngle, float maxRadius)
+    public static bool inFOV(Transform checkingObject, Transform target, float maxAngle, float maxRadius, Transform enemy)
     {
 
         Collider[] overlaps = new Collider[10];
@@ -65,8 +66,12 @@ public class FOVDetection : MonoBehaviour
                         {
 
                             if (hit.transform == target)
+                            {
+                                enemy.transform.LookAt(target);
                                 return true;
-
+                            }
+                                
+                            
                         }
 
 
@@ -85,7 +90,7 @@ public class FOVDetection : MonoBehaviour
     private void Update()
     {
 
-        isInFov = inFOV(transform, player, maxAngle, maxRadius);
+        isInFov = inFOV(transform, player, maxAngle, maxRadius, enemy);
 
     }
 
