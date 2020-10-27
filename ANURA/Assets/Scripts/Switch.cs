@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-
+    public GameObject[] gates;
 
 
     // Start is called before the first frame update
@@ -22,6 +22,15 @@ public class Switch : MonoBehaviour
     public void Activate()
     {
         Debug.Log("Switch switched");
-
+        foreach (GameObject gate in gates)
+        {
+            if(gate.GetComponent<Gate>().isclosed == true)
+            {
+                gate.GetComponent<Gate>().Open();
+            }else
+            {
+                gate.GetComponent<Gate>().Close();
+            }
+        }
     }
 }

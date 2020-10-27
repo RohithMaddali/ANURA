@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    public Vector3 currentPos;
-    public Vector3 target;
+    public bool isclosed;
+    public bool moving = false;
+    public Vector3 openPos;
+    public Vector3 closePos;
+    private Vector3 startPos;
+    private Vector3 target;
     public float speed;
     
     // Start is called before the first frame update
@@ -17,6 +21,39 @@ public class Gate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (moving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            Debug.Log("moving");
+        }
+        if (Vector3.Distance(transform.position, target) < 0.1f)
+        {
+            moving = false;
+            if(isclosed)
+            {
+                isclosed = false;
+            }else if (!isclosed)
+            {
+                isclosed = true;
+            }
+            target = new Vector3(0,0,0);
+            Debug.Log("stopped moving");
+        }
+    }
+
+    public void Open()
+    {
+        target = openPos;
+        startPos = closePos;
+        moving = true;
+        Debug.Log("opening");
+    }
+
+    public void Close()
+    {
+        target = closePos;
+        startPos = openPos;
+        moving = true;
+        Debug.Log("closing");
     }
 }
