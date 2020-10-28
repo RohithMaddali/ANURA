@@ -10,15 +10,26 @@ public class Gate : MonoBehaviour
     public Vector3 closePos;
     private Vector3 startPos;
     private Vector3 target;
-    public float speed = 6;
+    public float speed = 6f;
+    public float openHeight = 5f;
     
     // Start is called before the first frame update
     void Start()
     {
-        closePos = transform.position;
-        openPos.x = transform.position.x;
-        openPos.y = transform.position.y + 5;
-        openPos.z = transform.position.z;
+        if (isclosed)
+        {
+            closePos = transform.position;
+            openPos.x = transform.position.x;
+            openPos.y = transform.position.y + openHeight;
+            openPos.z = transform.position.z;
+        }else if (!isclosed)
+        {
+            openPos = transform.position;
+            closePos.x = transform.position.x;
+            closePos.y = transform.position.y - openHeight;
+            closePos.z = transform.position.z;
+        }
+        
     }
 
     // Update is called once per frame
