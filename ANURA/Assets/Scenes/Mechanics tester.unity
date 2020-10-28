@@ -218,24 +218,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52739357}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &73231969 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2354557681189838689, guid: eaeb98fbcb0d39644980811c1c945e83, type: 3}
-  m_PrefabInstance: {fileID: 2354557679779631561}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &73231975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73231969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e614e2c820cde943b67a2bf2eb1333e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distancetoTouch: 3
 --- !u!43 &143803588
 Mesh:
   m_ObjectHideFlags: 0
@@ -4390,10 +4372,6 @@ PrefabInstance:
     - target: {fileID: 2354557680469092397, guid: eaeb98fbcb0d39644980811c1c945e83, type: 3}
       propertyPath: m_Name
       value: First Person Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354557680469092397, guid: eaeb98fbcb0d39644980811c1c945e83, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2354557680469092398, guid: eaeb98fbcb0d39644980811c1c945e83, type: 3}
       propertyPath: m_LocalPosition.x
