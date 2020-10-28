@@ -13,12 +13,16 @@ public class PlayerMovement : MonoBehaviour
     //handle gravity
     public float gravity = -9.8f;
 
+    //give player weight
+    public float weight = 5f;
+
     //initialize ground check
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    Vector3 velocity;
+    //control player y speed
+    public Vector3 velocity;
     bool isGrounded;
 
     // Start is called before the first frame update
@@ -47,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
 
         //apply gravity
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime * weight;
         controller.Move(velocity * Time.deltaTime);
     }
 }
