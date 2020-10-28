@@ -26,7 +26,7 @@ public class ViewControl : MonoBehaviour
 
         //move player viewpoint
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -75f, 75f);
+        xRotation = Mathf.Clamp(xRotation, 65f, 75f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
