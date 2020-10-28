@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRaycasting : MonoBehaviour
 {
-    public float distancetoTouch;
+    public float distancetoTouch = 3;
     RaycastHit touchingObject;
     
     // Start is called before the first frame update
