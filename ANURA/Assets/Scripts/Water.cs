@@ -6,6 +6,8 @@ public class Water : MonoBehaviour
 {
     GameObject[] enemies;
     public float toadHearingDistance = 10f;
+    //assign appropriate particle effect
+    public ParticleSystem splash;
 
              // perform attack on target  
              // Start is called before the first frame update
@@ -25,6 +27,10 @@ public class Water : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("splash splash");
+            //play the particle effect at the players location
+            splash.Play();
+            splash.transform.position = new Vector3 (other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
+
             foreach (GameObject toad in enemies)
             {
                 float distance = Vector3.Distance(toad.transform.position, other.transform.position);
