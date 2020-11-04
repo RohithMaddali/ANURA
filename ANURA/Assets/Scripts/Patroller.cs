@@ -8,6 +8,7 @@ public class Patroller : MonoBehaviour
     // Start is called before the first frame update
     private int currentPoint;
     public Transform[] patrolPoints;
+
     public float moveSpeed;
     GameObject player;
     public Vector3 lastKnownPos;
@@ -19,6 +20,7 @@ public class Patroller : MonoBehaviour
     public float searchtimer = 10;
     public NavMeshAgent agent;
     
+
     void Start()
     {
         transform.position = patrolPoints[0].position;
@@ -31,12 +33,24 @@ public class Patroller : MonoBehaviour
         if (patrolling)
         {
             //transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
-            agent.SetDestination(patrolPoints[currentPoint].position);
-
-            if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) < 0.4f)
+            if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) < 0.6f)
             {
                 currentPoint = (currentPoint + 1) % patrolPoints.Length;
+                NavMeshPath navMeshPath = new NavMeshPath();
+                agent.CalculatePath(patrolPoints[currentPoint].position, navMeshPath);
+                if (navMeshPath.status == NavMeshPathStatus.PathComplete)
+                {
+                    agent.SetDestination(patrolPoints[currentPoint].position);
+                    Debug.Log("Toad moving to " + patrolPoints[currentPoint]);
+                }
+                else
+                {
+                    Debug.Log("Can't find route to " + patrolPoints[currentPoint] + " returning to start");
+                    currentPoint = 0;
+                    agent.SetDestination(patrolPoints[currentPoint].position);
+                }
             }
+            
         }
 
         if (investigating)
@@ -79,7 +93,9 @@ public class Patroller : MonoBehaviour
     {
         //stop moving
         //replace timer with roar animation
+        searching = false;
         investigating = false;
+        patrolling = false;
         yield return new WaitForSeconds(.75f);
         Debug.Log("RIBBIT");
         chasing = true;
