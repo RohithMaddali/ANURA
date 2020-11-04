@@ -36,16 +36,11 @@ public class Water : MonoBehaviour
                 float distance = Vector3.Distance(toad.transform.position, other.transform.position);
                 if (distance < toadHearingDistance)
                 {
+                    toad.GetComponent<Patroller>().patrolling = false;
                     //toad looks at and moves to player position
+                    toad.GetComponent<Patroller>().lastKnownPos = other.transform.position;
                     //coroutine to delay movment?
                     toad.GetComponent<Patroller>().investigating = true;
-
-                    Quaternion rotTarget = Quaternion.LookRotation(other.transform.position - toad.transform.position);
-                    toad.transform.rotation = Quaternion.RotateTowards(toad.transform.rotation, rotTarget, 40 * Time.deltaTime);
-                    Debug.Log("a toad heard that");
-                    //replace this with move code on toad
-                    toad.transform.position = Vector3.MoveTowards(toad.transform.position, other.transform.position, 2 * Time.deltaTime);
-
                 }
             }
         }

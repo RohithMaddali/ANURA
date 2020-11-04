@@ -87,6 +87,15 @@ public class FOVDetection : MonoBehaviour
                 }
 
             }
+            else if(overlaps[i] == null && checkingObject.GetComponent<Patroller>().chasing == true)
+            {
+                //target lost
+                Debug.Log("the toad lost the player");
+                //start timer
+                checkingObject.GetComponent<Patroller>().Search();
+                //look around
+                //return to patrolling or find target again
+            }
 
         }
 

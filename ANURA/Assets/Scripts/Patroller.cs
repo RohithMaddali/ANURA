@@ -9,9 +9,13 @@ public class Patroller : MonoBehaviour
     public Transform[] patrolPoints;
     public float moveSpeed;
     GameObject player;
+    public Vector3 lastKnownPos;
     public bool patrolling = true;
     public bool investigating;
     public bool chasing;
+    public bool searching;
+    public float time;
+    public float searchtimer = 10;
     
     void Start()
     {
@@ -32,17 +36,54 @@ public class Patroller : MonoBehaviour
             }
         }
 
+        if (investigating)
+        {
+            Quaternion rotTarget = Quaternion.LookRotation(lastKnownPos - transform.position);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, 40 * Time.deltaTime);
+
+            transform.position = Vector3.MoveTowards(transform.position, lastKnownPos, moveSpeed * Time.deltaTime);
+            
+            Debug.Log("a toad heard that");
+            if(transform.position == lastKnownPos)
+            {
+                investigating = false;
+                Search();
+            }
+        }
+
         if (chasing)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }
-        
+
+        if (searching)
+        {
+
+            time += Time.deltaTime;
+            if (time >= searchtimer)
+            {
+                searching = false;
+                chasing = false;
+                investigating = false;
+                patrolling = true;
+            }
+        }
     }
     IEnumerator RoarAndChase()
     {
         //stop moving
         //replace timer with roar animation
+        investigating = false;
         yield return new WaitForSeconds(2f);
+        Debug.Log("RIBBIT");
         chasing = true;
+    }
+    public void Search()
+    {
+        time = 0;
+        searching = true;
+        chasing = false;
+        //look left
+        //look right
     }
 }
