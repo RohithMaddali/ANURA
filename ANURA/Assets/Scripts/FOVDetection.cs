@@ -73,6 +73,7 @@ public class FOVDetection : MonoBehaviour
                                 //enemy.transform.LookAt(target);
                                 Quaternion rotTarget = Quaternion.LookRotation(target.position - enemy.position);
                                 enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotTarget, speed * Time.deltaTime);
+                                checkingObject.GetComponent<Patroller>().StartCoroutine("RoarAndChase");
                                 return true;
                             }
                                 

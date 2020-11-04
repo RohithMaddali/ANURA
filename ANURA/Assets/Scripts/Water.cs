@@ -38,6 +38,8 @@ public class Water : MonoBehaviour
                 {
                     //toad looks at and moves to player position
                     //coroutine to delay movment?
+                    toad.GetComponent<Patroller>().investigating = true;
+
                     Quaternion rotTarget = Quaternion.LookRotation(other.transform.position - toad.transform.position);
                     toad.transform.rotation = Quaternion.RotateTowards(toad.transform.rotation, rotTarget, 40 * Time.deltaTime);
                     Debug.Log("a toad heard that");
