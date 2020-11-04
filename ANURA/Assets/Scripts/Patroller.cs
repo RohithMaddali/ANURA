@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Patroller : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Patroller : MonoBehaviour
     public bool searching;
     public float time;
     public float searchtimer = 10;
+    public NavMeshAgent agent;
     
     void Start()
     {
@@ -28,9 +30,10 @@ public class Patroller : MonoBehaviour
     {
         if (patrolling)
         {
-            transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+            agent.SetDestination(patrolPoints[currentPoint].position);
 
-            if (transform.position == patrolPoints[currentPoint].position)
+            if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) < 0.4f)
             {
                 currentPoint = (currentPoint + 1) % patrolPoints.Length;
             }
@@ -38,10 +41,11 @@ public class Patroller : MonoBehaviour
 
         if (investigating)
         {
-            Quaternion rotTarget = Quaternion.LookRotation(lastKnownPos - transform.position);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, 40 * Time.deltaTime);
+            //Quaternion rotTarget = Quaternion.LookRotation(lastKnownPos - transform.position);
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, 40 * Time.deltaTime);
 
-            transform.position = Vector3.MoveTowards(transform.position, lastKnownPos, moveSpeed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, lastKnownPos, moveSpeed * Time.deltaTime);
+            agent.SetDestination(lastKnownPos);
             
             Debug.Log("a toad heard that");
             if(transform.position == lastKnownPos)
@@ -53,7 +57,8 @@ public class Patroller : MonoBehaviour
 
         if (chasing)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            agent.SetDestination(player.transform.position);
         }
 
         if (searching)
@@ -66,6 +71,7 @@ public class Patroller : MonoBehaviour
                 chasing = false;
                 investigating = false;
                 patrolling = true;
+                //walk around a bit
             }
         }
     }
@@ -74,7 +80,7 @@ public class Patroller : MonoBehaviour
         //stop moving
         //replace timer with roar animation
         investigating = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.75f);
         Debug.Log("RIBBIT");
         chasing = true;
     }
