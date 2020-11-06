@@ -24,34 +24,34 @@ public class PlayerMovement : MonoBehaviour
     //control player y speed
     public Vector3 velocity;
     bool isGrounded;
+    [HideInInspector]
+    public bool isMoving;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        //get movement input
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
         //check if grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-
-        //get movement input
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        if (z >= 0.01 || x >= 0.01 || z <= -0.01 || x <= -0.01) //Checks if player is moving. 
+        {
+            isMoving = true;
+        }
+        else if (z == 0  || x == 0)
+        {
+            isMoving = false;
+        }
         //apply input
         Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
+        controller.Move(move * (speed * Time.deltaTime));
+    
         //apply gravity
         velocity.y += gravity * Time.deltaTime * weight;
-        controller.Move(velocity * Time.deltaTime);
+        //controller.Move(velocity * Time.deltaTime);
     }
 }
