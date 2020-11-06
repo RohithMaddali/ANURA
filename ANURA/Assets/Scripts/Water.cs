@@ -36,11 +36,12 @@ public class Water : MonoBehaviour
                 float distance = Vector3.Distance(toad.transform.position, other.transform.position);
                 if (distance < toadHearingDistance)
                 {
-                    toad.GetComponent<Patroller>().patrolling = false;
+                    //toad.GetComponent<Patroller>().patrolling = false;
                     //toad looks at and moves to player position
                     toad.GetComponent<Patroller>().lastKnownPos = other.transform.position;
                     //coroutine to delay movment?
-                    toad.GetComponent<Patroller>().investigating = true;
+                    //toad.GetComponent<Patroller>().investigating = true;
+                    toad.GetComponent<Patroller>().action = Patroller.Behaviour.investigating;
                 }
             }
         }

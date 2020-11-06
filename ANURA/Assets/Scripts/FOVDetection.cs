@@ -87,12 +87,13 @@ public class FOVDetection : MonoBehaviour
                 }
 
             }
-            else if(overlaps[i] == null && checkingObject.GetComponent<Patroller>().chasing == true)
+            else if(overlaps[i] == null && checkingObject.GetComponent<Patroller>().action == Patroller.Behaviour.chasing)
             {
                 //target lost
                 Debug.Log("the toad lost the player");
+                checkingObject.GetComponent<Patroller>().lastKnownPos = GameObject.FindGameObjectWithTag("Player").transform.position;
                 //start timer
-                checkingObject.GetComponent<Patroller>().Search();
+                checkingObject.GetComponent<Patroller>().action = Patroller.Behaviour.investigating;
                 //look around
                 //return to patrolling or find target again
             }
