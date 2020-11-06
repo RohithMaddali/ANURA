@@ -19,7 +19,16 @@ public class Patroller : MonoBehaviour
     public float time;
     public float searchtimer = 10;
     public NavMeshAgent agent;
-    
+
+
+    public enum Behaviour
+    {
+        patrolling,
+        investigating,
+        chasing,
+        searching
+    }
+    public Behaviour action;
 
     void Start()
     {
@@ -30,7 +39,64 @@ public class Patroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (patrolling)
+        switch (action)
+        {
+            case Behaviour.patrolling:
+                if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) < 0.6f)
+                {
+                    currentPoint = (currentPoint + 1) % patrolPoints.Length;
+                    NavMeshPath navMeshPath = new NavMeshPath();
+                    agent.CalculatePath(patrolPoints[currentPoint].position, navMeshPath);
+                    if (navMeshPath.status == NavMeshPathStatus.PathComplete)
+                    {
+                        agent.SetDestination(patrolPoints[currentPoint].position);
+                        Debug.Log("Toad moving to " + patrolPoints[currentPoint]);
+                    }
+                    else
+                    {
+                        Debug.Log("Can't find route to " + patrolPoints[currentPoint] + " returning to start");
+                        currentPoint = 0;
+                        agent.SetDestination(patrolPoints[currentPoint].position);
+                    }
+                }
+                else agent.SetDestination(patrolPoints[currentPoint].position);
+                break;
+
+            case Behaviour.investigating:
+                agent.SetDestination(lastKnownPos);
+
+                Debug.Log("a toad heard that");
+                if (Vector3.Distance(transform.position, lastKnownPos) < 0.6f)
+                {
+                    RestartTime();
+                    action = Behaviour.searching;
+                }
+                break;
+
+            case Behaviour.searching:
+                time += Time.deltaTime;
+                //walk around a bit
+                if (time >= searchtimer)
+                {
+                    time = 0;
+                    action = Behaviour.patrolling;
+                    
+                }
+                break;
+
+            case Behaviour.chasing:
+                agent.SetDestination(player.transform.position);
+                break;
+
+
+
+        }
+
+
+
+
+
+        /*if (patrolling)
         {
             //transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) < 0.6f)
@@ -65,7 +131,7 @@ public class Patroller : MonoBehaviour
             if(transform.position == lastKnownPos)
             {
                 investigating = false;
-                Search();
+                RestartTime();
             }
         }
 
@@ -87,24 +153,25 @@ public class Patroller : MonoBehaviour
                 patrolling = true;
                 //walk around a bit
             }
-        }
+        }*/
     }
     IEnumerator RoarAndChase()
     {
         //stop moving
         //replace timer with roar animation
-        searching = false;
-        investigating = false;
-        patrolling = false;
-        yield return new WaitForSeconds(.75f);
+        //searching = false;
+        //investigating = false;
+        //patrolling = false;
         Debug.Log("RIBBIT");
-        chasing = true;
+        yield return new WaitForSeconds(.75f);
+        action = Behaviour.chasing;
     }
-    public void Search()
+    public void RestartTime()
     {
         time = 0;
-        searching = true;
-        chasing = false;
+        //searching = true;
+        //chasing = false;
+
         //look left
         //look right
     }
