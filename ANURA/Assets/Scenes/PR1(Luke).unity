@@ -779,6 +779,53 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &245363702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2354557680469092397, guid: eaeb98fbcb0d39644980811c1c945e83, type: 3}
+  m_PrefabInstance: {fileID: 1701284917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &245363703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245363702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e614e2c820cde943b67a2bf2eb1333e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distancetoTouch: 3
+--- !u!114 &245363704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245363702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51ae0e1856af4e47a5dd975133fe500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &245363705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245363702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4db4ee38135d234cb257a6f8e0788e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningWater: 0
+  wind: 0
+  stingers: 0
+  waterDrops: 0
+  onExitSetDefault: 0
 --- !u!43 &326172450
 Mesh:
   m_ObjectHideFlags: 0
@@ -943,6 +990,68 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &443120302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443120305}
+  - component: {fileID: 443120304}
+  - component: {fileID: 443120303}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &443120303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443120302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4db4ee38135d234cb257a6f8e0788e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningWater: 1
+  wind: 0
+  stingers: 1
+  waterDrops: 1
+  onExitSetDefault: 0
+--- !u!65 &443120304
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443120302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &443120305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443120302}
+  m_LocalRotation: {x: -0, y: -0.7078897, z: -0, w: 0.706323}
+  m_LocalPosition: {x: 13.91, y: 0, z: -24.67}
+  m_LocalScale: {x: 2.8446, y: -7.933834, z: 4.954067}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90.127, z: 0}
 --- !u!43 &521883472
 Mesh:
   m_ObjectHideFlags: 0
@@ -1107,6 +1216,68 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &594763115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594763118}
+  - component: {fileID: 594763117}
+  - component: {fileID: 594763116}
+  m_Layer: 0
+  m_Name: Trigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &594763116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594763115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4db4ee38135d234cb257a6f8e0788e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningWater: 0
+  wind: 1
+  stingers: 0
+  waterDrops: 0
+  onExitSetDefault: 0
+--- !u!65 &594763117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594763115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &594763118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594763115}
+  m_LocalRotation: {x: -0, y: -0.7078897, z: -0, w: 0.706323}
+  m_LocalPosition: {x: 5.69, y: 0, z: -9.35}
+  m_LocalScale: {x: 4.545955, y: -7.933834, z: 4.954067}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -90.127, z: 0}
 --- !u!43 &660318781
 Mesh:
   m_ObjectHideFlags: 0

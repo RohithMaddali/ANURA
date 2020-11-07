@@ -16,12 +16,12 @@ public class F_ParameterSwitcher : MonoBehaviour
     private float waterDrops;
     [SerializeField] 
     private bool onExitSetDefault;
-    
-    private float[] values = new float[4];
+
+    private float [] values = new float[4];
     //[SerializeField]
     //private bool lerpWind;
     //[SerializeField]
-    //private float lerpTime;
+    //private float lerpTime
     
     private void Start()
     {
@@ -38,8 +38,8 @@ public class F_ParameterSwitcher : MonoBehaviour
             Debug.Log("Switched");
             //if (lerpWind == true)
                 //wind = Mathf.Lerp(wind, 1, lerpTime * Time.deltaTime);
-            
-            F_Ambience.amb.setParametersByIDs(F_Ambience.parameterIds, values, 4, false);
+                
+                F_Ambience.amb.setParametersByIDs(F_Ambience.parameterIds, values, 4, false);
         }
     }
 }
