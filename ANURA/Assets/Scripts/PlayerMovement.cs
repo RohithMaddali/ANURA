@@ -38,7 +38,9 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
-        if (z >= 0.01 || x >= 0.01 || z <= -0.01 || x <= -0.01) //Checks if player is moving. 
+
+        //Checks if player is moving. 
+        if (z >= 0.01 || x >= 0.01 || z <= -0.01 || x <= -0.01) 
         {
             isMoving = true;
         }
@@ -46,12 +48,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
+
         //apply input
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * (speed * Time.deltaTime));
     
         //apply gravity
         velocity.y += gravity * Time.deltaTime * weight;
-        //controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 }
