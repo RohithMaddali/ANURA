@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2196156438365913090
 Transform:
   m_ObjectHideFlags: 0
@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8928324116886842211
 Transform:
   m_ObjectHideFlags: 0
@@ -136,9 +136,11 @@ GameObject:
   - component: {fileID: 1084464170923075372}
   - component: {fileID: 2246651750043326124}
   - component: {fileID: 3635169402267043073}
+  - component: {fileID: 8352284227858671936}
+  - component: {fileID: 2404576717290609181}
   m_Layer: 0
   m_Name: LR
-  m_TagString: Untagged
+  m_TagString: TempRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1945,7 +1947,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Size: {x: 29.5, y: 1.5, z: 29.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3635169402267043073
 MonoBehaviour:
@@ -1960,6 +1962,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fits: 0
+  mySpawner: {fileID: 0}
+  spawners:
+  - {fileID: 1947415160555078974}
+  - {fileID: 1460206876611559622}
+  - {fileID: 6165228237770698025}
+  - {fileID: 6165228238079075048}
+  - {fileID: 6165228236415717109}
+  - {fileID: 6165228236227053171}
+--- !u!54 &8352284227858671936
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003559112671659874}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2404576717290609181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003559112671659874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6165228236227053171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +2016,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6165228236227053170
 Transform:
   m_ObjectHideFlags: 0
@@ -2038,7 +2077,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6165228236415717108
 Transform:
   m_ObjectHideFlags: 0
@@ -2100,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6165228237770698024
 Transform:
   m_ObjectHideFlags: 0
@@ -2159,6 +2198,8 @@ MonoBehaviour:
   openingDir: 4
   iRoomPos: {fileID: 8928324116886842211}
   hRoomPos: {fileID: 6165228236415717108}
+  spawned: 0
+  canBuild: 0
 --- !u!1 &6165228238079075048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +2218,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6165228238079075047
 Transform:
   m_ObjectHideFlags: 0
@@ -2236,3 +2277,5 @@ MonoBehaviour:
   openingDir: 3
   iRoomPos: {fileID: 2196156438365913090}
   hRoomPos: {fileID: 6165228236227053170}
+  spawned: 0
+  canBuild: 0

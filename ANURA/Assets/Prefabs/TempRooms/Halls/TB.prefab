@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8192758803796431508
 Transform:
   m_ObjectHideFlags: 0
@@ -77,6 +77,8 @@ MonoBehaviour:
   openingDir: 1
   iRoomPos: {fileID: 6273860614965037846}
   hRoomPos: {fileID: 5674402169500397242}
+  spawned: 0
+  canBuild: 0
 --- !u!1 &1597337701602029068
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +96,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6273860614965037846
 Transform:
   m_ObjectHideFlags: 0
@@ -155,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1733138343955385850
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +217,7 @@ GameObject:
   - component: {fileID: 1521397341256453004}
   m_Layer: 0
   m_Name: TB
-  m_TagString: Untagged
+  m_TagString: TempRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1898,7 +1900,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2, z: 20.000198}
+  m_Size: {x: 9.5, y: 1.5, z: 19.5}
   m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!114 &1521397341256453004
 MonoBehaviour:
@@ -1913,6 +1915,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fits: 0
+  mySpawner: {fileID: 0}
+  spawners:
+  - {fileID: 1597337701602029068}
+  - {fileID: 1516077658696770736}
+  - {fileID: 9097846585421179780}
+  - {fileID: 7630407296627692973}
+  - {fileID: 7817738684394713119}
+  - {fileID: 1883538609411641074}
 --- !u!1 &7630407296627692973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1940,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5194500975553367505
 Transform:
   m_ObjectHideFlags: 0
@@ -1992,7 +2002,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &693998901498652729
 Transform:
   m_ObjectHideFlags: 0
@@ -2051,6 +2061,8 @@ MonoBehaviour:
   openingDir: 2
   iRoomPos: {fileID: 5194500975553367505}
   hRoomPos: {fileID: 1733138343955385850}
+  spawned: 0
+  canBuild: 0
 --- !u!1 &9097846585421179780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2080,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5674402169500397242
 Transform:
   m_ObjectHideFlags: 0

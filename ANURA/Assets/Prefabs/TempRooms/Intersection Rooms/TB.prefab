@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 3234800004587689810}
   - component: {fileID: 313743673956828256}
   - component: {fileID: 1220872612121355677}
+  - component: {fileID: 302805940185659471}
+  - component: {fileID: 2549090696161468416}
   m_Layer: 0
   m_Name: TB
-  m_TagString: Untagged
+  m_TagString: TempRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1881,7 +1883,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Size: {x: 29.5, y: 1.5, z: 29.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1220872612121355677
 MonoBehaviour:
@@ -1896,6 +1898,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fits: 0
+  mySpawner: {fileID: 0}
+  spawners:
+  - {fileID: 4102217240650921280}
+  - {fileID: 4011345485060141240}
+  - {fileID: 8532018328525610327}
+  - {fileID: 8532018329023058582}
+  - {fileID: 8532018329343753867}
+  - {fileID: 8532018329263945229}
+--- !u!54 &302805940185659471
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470395389045716764}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2549090696161468416
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470395389045716764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4011345485060141240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2134,8 @@ MonoBehaviour:
   openingDir: 1
   iRoomPos: {fileID: 6345391998076476189}
   hRoomPos: {fileID: 8532018329343753866}
+  spawned: 0
+  canBuild: 0
 --- !u!1 &8532018329023058582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2213,8 @@ MonoBehaviour:
   openingDir: 2
   iRoomPos: {fileID: 4436832577749217404}
   hRoomPos: {fileID: 8532018329263945228}
+  spawned: 0
+  canBuild: 0
 --- !u!1 &8532018329263945229
 GameObject:
   m_ObjectHideFlags: 0

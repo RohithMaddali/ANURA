@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6937821238658656898
 Transform:
   m_ObjectHideFlags: 0
@@ -75,9 +75,11 @@ GameObject:
   - component: {fileID: 5399508135564786069}
   - component: {fileID: 1429868107454210575}
   - component: {fileID: 4279409957742395152}
+  - component: {fileID: 8386702101264156233}
+  - component: {fileID: 3349816481686993721}
   m_Layer: 0
   m_Name: R
-  m_TagString: Untagged
+  m_TagString: TempRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2055,7 +2057,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50.0002, y: 2, z: 50}
+  m_Size: {x: 49.5, y: 1.5, z: 49.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4279409957742395152
 MonoBehaviour:
@@ -2070,6 +2072,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fits: 0
+  mySpawner: {fileID: 0}
+  spawners:
+  - {fileID: 3590295450042596680}
+  - {fileID: 7154344433312626460}
+  - {fileID: 290731040449326042}
+--- !u!65 &8386702101264156233
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699109668851019702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50.0002, y: 2, z: 50}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3349816481686993721
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699109668851019702}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3590295450042596680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,7 +2123,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7604585644022183619
 Transform:
   m_ObjectHideFlags: 0
@@ -2149,7 +2185,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &546637246679890221
 Transform:
   m_ObjectHideFlags: 0
@@ -2208,3 +2244,5 @@ MonoBehaviour:
   openingDir: 3
   iRoomPos: {fileID: 7604585644022183619}
   hRoomPos: {fileID: 6937821238658656898}
+  spawned: 0
+  canBuild: 0

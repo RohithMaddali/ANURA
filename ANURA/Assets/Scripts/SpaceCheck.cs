@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpaceCheck : MonoBehaviour
 {
     public bool fits;
-    
+    public GameObject mySpawner;
+    public GameObject[] spawners;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +20,47 @@ public class SpaceCheck : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("RoomSpawner"))
+        if (other.CompareTag("TempRoom"))
         {
+            Debug.Log("no space");
             fits = false;
+            Debug.Log(other.gameObject);
         }
-        else fits = true;
+        else
+        {
+            fits = true;
+            foreach (GameObject spawner in spawners)
+            {
+                spawner.SetActive(true);
+            }
+        }
+        /*if(other.CompareTag("RoomSpawn"))
+        {
+            if(other.GetComponent<RoomSpawner>().spawned == true)
+            {
+                Debug.Log("it fits");
+                fits = true;
+                foreach (GameObject spawner in spawners)
+                {
+                    spawner.SetActive(true);
+                }
+            }
+            
+        }
+        if (other.CompareTag("StartRoomSpawn"))
+        {
+            if (other.GetComponent<FirstRoom>().spawned == true)
+            {
+                Debug.Log("it fits");
+                fits = true;
+                foreach (GameObject spawner in spawners)
+                {
+                    spawner.SetActive(true);
+                }
+            }
+
+        }*/
     }
 }
