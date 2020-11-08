@@ -279,12 +279,13 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RoomSpawn"))
+        if (other.CompareTag("Interior") && GetComponentInParent<SpaceCheck>().fits)
         {
             spawned = true;
+            Debug.Log("spawner inside another room");
             //gameObject.SetActive(false);
         }
-        if (other.CompareTag("RoomSpawn"))
+        /*if (other.CompareTag("RoomSpawn"))
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
@@ -298,7 +299,7 @@ public class RoomSpawner : MonoBehaviour
             spawned = true;
             Debug.Log("spawner inside another room");
             //gameObject.SetActive(false);
-        }
+        }*/
     }
 
 }

@@ -78,7 +78,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 5568642860430394206}
   hRoomPos: {fileID: 482678882441446702}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &482678881837608565
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 2943767503065786431}
   hRoomPos: {fileID: 482678882663697832}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &482678882441446703
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +442,7 @@ Transform:
   - {fileID: 482678881139941819}
   - {fileID: 482678882663697832}
   - {fileID: 482678882441446702}
+  - {fileID: 2496231642983530556}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2277,5 +2278,49 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Size: {x: 30, y: 2, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7919112465969556498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2496231642983530556}
+  - component: {fileID: 8795568268359764689}
+  m_Layer: 0
+  m_Name: Interior
+  m_TagString: Interior
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2496231642983530556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919112465969556498}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4721756165953022029}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8795568268359764689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919112465969556498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28, y: 1, z: 28}
   m_Center: {x: 0, y: 0, z: 0}

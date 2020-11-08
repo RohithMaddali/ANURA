@@ -22,7 +22,7 @@ public class SpaceCheck : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("TempRoom"))
+        if (other.CompareTag("Interior"))
         {
             Debug.Log("no space");
             fits = false;

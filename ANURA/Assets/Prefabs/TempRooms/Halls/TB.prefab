@@ -78,7 +78,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 6273860614965037846}
   hRoomPos: {fileID: 5674402169500397242}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &1597337701602029068
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +201,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &3043414131430363006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242405858189728231}
+  - component: {fileID: 7907793391370790535}
+  m_Layer: 0
+  m_Name: Interior
+  m_TagString: Interior
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242405858189728231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043414131430363006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5293780677121905721}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7907793391370790535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043414131430363006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 1, z: 18}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5542347078686771313
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +259,7 @@ GameObject:
   - component: {fileID: 2546856267847101367}
   - component: {fileID: 8840252208596253484}
   - component: {fileID: 1521397341256453004}
+  - component: {fileID: 4667327531065461866}
   m_Layer: 0
   m_Name: TB
   m_TagString: TempRoom
@@ -239,6 +284,7 @@ Transform:
   - {fileID: 5194500975553367505}
   - {fileID: 693998901498652729}
   - {fileID: 1733138343955385850}
+  - {fileID: 1242405858189728231}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1923,6 +1969,19 @@ MonoBehaviour:
   - {fileID: 7630407296627692973}
   - {fileID: 7817738684394713119}
   - {fileID: 1883538609411641074}
+--- !u!65 &4667327531065461866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542347078686771313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7630407296627692973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,7 +2121,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 5194500975553367505}
   hRoomPos: {fileID: 1733138343955385850}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &9097846585421179780
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,7 +78,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 1333035170814836357}
   hRoomPos: {fileID: 672931361130617701}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &5197753885477107934
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +116,7 @@ Transform:
   - {fileID: 1333035170814836357}
   - {fileID: 885000064605857971}
   - {fileID: 672931361130617701}
+  - {fileID: 3817041435369841765}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2048,7 +2049,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50.0002, y: 2, z: 50}
+  m_Size: {x: 50, y: 2, z: 50}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4242422680702431513
 Rigidbody:
@@ -2066,6 +2067,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &5451202124492608330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3817041435369841765}
+  - component: {fileID: 4541992391805965420}
+  m_Layer: 0
+  m_Name: Interior
+  m_TagString: Interior
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3817041435369841765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451202124492608330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2030387463968433645}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4541992391805965420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451202124492608330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 48, y: 1, z: 48}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6915679585157309648
 GameObject:
   m_ObjectHideFlags: 0

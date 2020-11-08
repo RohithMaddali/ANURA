@@ -78,7 +78,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 2115000544808744025}
   hRoomPos: {fileID: 3688853652493472206}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &3688853652445593042
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 8702197021978533688}
   hRoomPos: {fileID: 3688853652673878344}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &3688853652493472207
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +280,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &5290937344214678505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2328840194934149033}
+  - component: {fileID: 3244139377309685033}
+  m_Layer: 0
+  m_Name: Interior
+  m_TagString: Interior
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2328840194934149033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290937344214678505}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8359997092120622123}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3244139377309685033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290937344214678505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28, y: 1, z: 28}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5850533797653665880
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +364,7 @@ Transform:
   - {fileID: 3688853652445593053}
   - {fileID: 3688853652493472206}
   - {fileID: 3688853652673878344}
+  - {fileID: 2328840194934149033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2155,7 +2200,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Size: {x: 30, y: 2, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8285929360330924028
 GameObject:

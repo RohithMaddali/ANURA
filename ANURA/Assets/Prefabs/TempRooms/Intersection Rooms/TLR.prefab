@@ -200,7 +200,51 @@ MonoBehaviour:
   iRoomPos: {fileID: 6989242242407684216}
   hRoomPos: {fileID: 3068643912827117451}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
+--- !u!1 &1301581700730086706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108603741268219837}
+  - component: {fileID: 7510975083306460107}
+  m_Layer: 0
+  m_Name: Interior
+  m_TagString: Interior
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &108603741268219837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301581700730086706}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6608478884290103658}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7510975083306460107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301581700730086706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28, y: 1, z: 28}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2812505935244701752
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +323,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 3669123413352958232}
   hRoomPos: {fileID: 2504814301394607208}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &3190305194018778305
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +646,7 @@ MonoBehaviour:
   iRoomPos: {fileID: 6302452954533454457}
   hRoomPos: {fileID: 84899979337242813}
   spawned: 0
-  canBuild: 0
+  spawnNext: 0
 --- !u!1 &9116377435200136473
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +690,7 @@ Transform:
   - {fileID: 3068643912827117451}
   - {fileID: 2504814301394607208}
   - {fileID: 84899979337242813}
+  - {fileID: 108603741268219837}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2484,5 +2529,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.000198, y: 2, z: 30}
+  m_Size: {x: 30, y: 2, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
