@@ -21,6 +21,7 @@ public class RoomSpawner : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
+    private int roomtype;
     private float randTimer;
     public bool spawned = false;
     public bool spawnNext;
@@ -204,58 +205,76 @@ public class RoomSpawner : MonoBehaviour
     {
         if(gm.roomCount < 4)
         {
-            rand = Random.Range(0, iRoomList.Length);
-            iRoom = Instantiate(iRoomList[rand], iPos.transform.position, iRoomList[rand].transform.rotation);
-            gm.roomCount++;
-        }
-        randTimer = Random.Range(0.1f, 2.9f);
-        rand = Random.Range(0, pRoomList.Length);
-        pRoom = Instantiate(pRoomList[rand], transform.position, pRoomList[rand].transform.rotation);
-        yield return new WaitForSeconds(1);
+            roomtype = Random.Range(1, 3);
+            if(roomtype == 1)
+            {
+                rand = Random.Range(0, iRoomList.Length);
+                iRoom = Instantiate(iRoomList[rand], iPos.transform.position, iRoomList[rand].transform.rotation);
+                spawned = true;
+                gm.roomCount++;
+            }
+            if(roomtype == 2)
+            {
+                rand = Random.Range(0, hRoomList.Length);
+                iRoom = Instantiate(hRoomList[rand], hPos.transform.position, hRoomList[rand].transform.rotation);
+                spawned = true;
+                gm.roomCount++;
+            }
 
-        if (pRoom.GetComponent<SpaceCheck>().fits == true && gm.roomCount > 4)
-        {
-            Debug.Log("Fill pRoom");
-            spawned = true;
-            gm.roomCount++;
-            //create room
+
         }
         else
         {
-            Destroy(pRoom);
-            rand = Random.Range(0, iRoomList.Length);
-            transform.position = iPos.transform.position;
-            iRoom = Instantiate(iRoomList[rand], transform.position, iRoomList[rand].transform.rotation);
+            randTimer = Random.Range(0.1f, 2.9f);
+            rand = Random.Range(0, pRoomList.Length);
+            pRoom = Instantiate(pRoomList[rand], transform.position, pRoomList[rand].transform.rotation);
             yield return new WaitForSeconds(1);
-            if (iRoom.GetComponent<SpaceCheck>().fits == true)
+
+            if (pRoom.GetComponent<SpaceCheck>().fits == true && gm.roomCount > 4)
             {
-                Debug.Log("Fill iRoom");
+                Debug.Log("Fill pRoom");
                 spawned = true;
                 gm.roomCount++;
                 //create room
             }
             else
             {
-                Destroy(iRoom);
-                rand = Random.Range(0, hRoomList.Length);
-                transform.position = hPos.transform.position;
-                hRoom = Instantiate(hRoomList[rand], transform.position, hRoomList[rand].transform.rotation);
+                Destroy(pRoom);
+                rand = Random.Range(0, iRoomList.Length);
+                transform.position = iPos.transform.position;
+                iRoom = Instantiate(iRoomList[rand], transform.position, iRoomList[rand].transform.rotation);
                 yield return new WaitForSeconds(1);
-                if (hRoom.GetComponent<SpaceCheck>().fits == true)
+                if (iRoom.GetComponent<SpaceCheck>().fits == true)
                 {
-                    Debug.Log("Fill hRoom");
+                    Debug.Log("Fill iRoom");
                     spawned = true;
                     gm.roomCount++;
+                    //create room
                 }
                 else
                 {
-                    Destroy(hRoom);
-                    Debug.Log("Insert broken hallway");
-                    spawned = true;
+                    Destroy(iRoom);
+                    rand = Random.Range(0, hRoomList.Length);
+                    transform.position = hPos.transform.position;
+                    hRoom = Instantiate(hRoomList[rand], transform.position, hRoomList[rand].transform.rotation);
+                    yield return new WaitForSeconds(1);
+                    if (hRoom.GetComponent<SpaceCheck>().fits == true)
+                    {
+                        Debug.Log("Fill hRoom");
+                        spawned = true;
+                        gm.roomCount++;
+                    }
+                    else
+                    {
+                        Destroy(hRoom);
+                        Debug.Log("Insert broken hallway");
+                        spawned = true;
+                    }
                 }
-            }
 
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
