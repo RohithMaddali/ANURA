@@ -12,6 +12,7 @@ public class SpaceCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fits = true;
         Invoke("IfFitsSits", .5f);
     }
 
@@ -23,29 +24,55 @@ public class SpaceCheck : MonoBehaviour
 
     void IfFitsSits()
     {
+        Debug.Log("check if fits");
         if (fits)
         {
             sits = true;
+            foreach (GameObject spawner in spawners)
+            {
+                spawner.SetActive(true);
+            }
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         
-        if (!other.CompareTag("RoomSpawn") && !sits)
+        if (other.CompareTag("Interior") && sits)
         {
             Debug.Log("no space");
-            fits = false;
-            Debug.Log(other.gameObject);
+            other.GetComponentInParent<SpaceCheck>().fits = false;
+            Debug.Log(other.gameObject + " in " + gameObject);
         }
-        else
+        if (other.CompareTag("Interior") && !sits)
+        {
+            fits = false;
+            Debug.Log(other.gameObject + " in " + gameObject);
+        }
+        if (other.CompareTag("TempRoom") && sits)
+        {
+            other.GetComponent<SpaceCheck>().fits = false;
+            Debug.Log(other.gameObject + " in " + gameObject);
+        }
+        if (other.CompareTag("TempRoom") && !sits)
+        {
+            fits = false;
+            Debug.Log(other.gameObject +  " in " + gameObject);
+        }
+        /*if (other.CompareTag("RoomSpawn") && mySpawner.spawned)
+        {
+            other.gameObject.SetActive(false);
+            Debug.Log(other.gameObject + " in " + gameObject);
+
+        }*/
+        /*else
         {
             fits = true;
             foreach (GameObject spawner in spawners)
             {
                 spawner.SetActive(true);
             }
-        }
+        }*/
         /*if(other.CompareTag("RoomSpawn"))
         {
             if(other.GetComponent<RoomSpawner>().spawned == true)
