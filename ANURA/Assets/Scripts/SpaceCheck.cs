@@ -65,20 +65,20 @@ public class SpaceCheck : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Interior"))
+        if (!other.CompareTag("RoomSpawn"))
         {
             Debug.Log("no space");
             fits = false;
             Debug.Log(other.gameObject);
         }
-        else
+        /*else
         {
             fits = true;
             foreach (GameObject spawner in spawners)
             {
                 spawner.SetActive(true);
             }
-        }
+        }*/
         /*if(other.CompareTag("RoomSpawn"))
         {
             if(other.GetComponent<RoomSpawner>().spawned == true)
