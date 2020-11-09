@@ -5,13 +5,56 @@ using UnityEngine;
 public class SpaceCheck : MonoBehaviour
 {
     public bool fits;
-    public GameObject mySpawner;
+    public RoomSpawner mySpawner;
     public GameObject[] spawners;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(mySpawner.openingDir == 1)
+        {
+            //turn off 2
+            foreach(GameObject spawner in spawners)
+            {
+                if(spawner.GetComponent<RoomSpawner>().openingDir == 2)
+                {
+                    spawner.SetActive(false);
+                }
+            }
+        }
+        if (mySpawner.openingDir == 2)
+        {
+            //turn off 1
+            foreach (GameObject spawner in spawners)
+            {
+                if (spawner.GetComponent<RoomSpawner>().openingDir == 1)
+                {
+                    spawner.SetActive(false);
+                }
+            }
+        }
+        if (mySpawner.openingDir == 3)
+        {
+            //turn off 4
+            foreach (GameObject spawner in spawners)
+            {
+                if (spawner.GetComponent<RoomSpawner>().openingDir == 4)
+                {
+                    spawner.SetActive(false);
+                }
+            }
+        }
+        if (mySpawner.openingDir == 4)
+        {
+            //turn off 3
+            foreach (GameObject spawner in spawners)
+            {
+                if (spawner.GetComponent<RoomSpawner>().openingDir == 3)
+                {
+                    spawner.SetActive(false);
+                }
+            }
+        }
     }
 
     // Update is called once per frame

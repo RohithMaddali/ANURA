@@ -193,6 +193,34 @@ public class RoomSpawner : MonoBehaviour
         
     }
 
+    /*IEnumerator PuzzleRoomTest(GameObject[] pRoomList)
+    {
+        rand = Random.Range(0, pRoomList.Length);
+        pRoomTest = Instantiate(pRoomList[rand], transform.position, pRoomList[rand].transform.rotation);
+        yield return new WaitForSeconds(1);
+        if (pRoomTest.GetComponent<SpaceCheck>().fits && gm.pRoomCount < 3)
+        {
+            spawned = true;
+            gm.roomCount++;
+            gm.pRoomCount++;
+            Debug.Log("The are " + gm.pRoomCount + " puzzle rooms");
+        }
+        else
+        {
+            pRoomTest.SetActive(false);
+            StartCoroutine("IntRoomTest");
+            StartCoroutine
+        }
+    }
+    IEnumerator IntRoomTest(GameObject[] iRoomList)
+    {
+
+    }
+    IEnumerator HallRoomTest()
+    {
+
+    }*/
+
     void BuildRoom(GameObject room, GameObject[] roomList, Transform pos)
     {
         rand = Random.Range(0, roomList.Length);
@@ -203,20 +231,22 @@ public class RoomSpawner : MonoBehaviour
 
     IEnumerator WallTest(GameObject pRoom, GameObject iRoom, GameObject hRoom, GameObject[] pRoomList, GameObject[] iRoomList, GameObject[] hRoomList, Transform iPos, Transform hPos)
     {
-        if(gm.roomCount < 4)
+        if(gm.roomCount < 6)
         {
             roomtype = Random.Range(1, 3);
             if(roomtype == 1)
             {
                 rand = Random.Range(0, iRoomList.Length);
                 iRoom = Instantiate(iRoomList[rand], iPos.transform.position, iRoomList[rand].transform.rotation);
+                iRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 spawned = true;
                 gm.roomCount++;
             }
             if(roomtype == 2)
             {
                 rand = Random.Range(0, hRoomList.Length);
-                iRoom = Instantiate(hRoomList[rand], hPos.transform.position, hRoomList[rand].transform.rotation);
+                hRoom = Instantiate(hRoomList[rand], hPos.transform.position, hRoomList[rand].transform.rotation);
+                hRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 spawned = true;
                 gm.roomCount++;
             }
@@ -228,21 +258,24 @@ public class RoomSpawner : MonoBehaviour
             randTimer = Random.Range(0.1f, 2.9f);
             rand = Random.Range(0, pRoomList.Length);
             pRoom = Instantiate(pRoomList[rand], transform.position, pRoomList[rand].transform.rotation);
+            pRoom.GetComponent<SpaceCheck>().mySpawner = this;
             yield return new WaitForSeconds(1);
 
-            if (pRoom.GetComponent<SpaceCheck>().fits == true && gm.roomCount > 4)
+            if (pRoom.GetComponent<SpaceCheck>().fits == true && gm.roomCount > 4 && gm.pRoomCount < 3)
             {
-                Debug.Log("Fill pRoom");
                 spawned = true;
                 gm.roomCount++;
+                gm.pRoomCount++;
+                Debug.Log("The are " + gm.pRoomCount + " puzzle rooms");
                 //create room
             }
             else
             {
-                Destroy(pRoom);
+                pRoom.SetActive(false);
                 rand = Random.Range(0, iRoomList.Length);
                 transform.position = iPos.transform.position;
                 iRoom = Instantiate(iRoomList[rand], transform.position, iRoomList[rand].transform.rotation);
+                iRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 yield return new WaitForSeconds(1);
                 if (iRoom.GetComponent<SpaceCheck>().fits == true)
                 {
@@ -253,10 +286,11 @@ public class RoomSpawner : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(iRoom);
+                    iRoom.SetActive(false); ;
                     rand = Random.Range(0, hRoomList.Length);
                     transform.position = hPos.transform.position;
                     hRoom = Instantiate(hRoomList[rand], transform.position, hRoomList[rand].transform.rotation);
+                    hRoom.GetComponent<SpaceCheck>().mySpawner = this;
                     yield return new WaitForSeconds(1);
                     if (hRoom.GetComponent<SpaceCheck>().fits == true)
                     {
@@ -266,7 +300,7 @@ public class RoomSpawner : MonoBehaviour
                     }
                     else
                     {
-                        Destroy(hRoom);
+                        hRoom.SetActive(false); ;
                         Debug.Log("Insert broken hallway");
                         spawned = true;
                     }
@@ -279,11 +313,11 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interior") && GetComponentInParent<SpaceCheck>().fits)
+        if (other.CompareTag("Interior") && other.GetComponentInParent<SpaceCheck>().fits)
         {
             spawned = true;
             Debug.Log("spawner inside another room");
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         /*if (other.CompareTag("RoomSpawn"))
         {

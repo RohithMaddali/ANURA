@@ -8,7 +8,7 @@ public class Destroyer : MonoBehaviour
     {
         if (!other.CompareTag("StartRoom"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false); ;
 
         }
     }
