@@ -8,9 +8,10 @@ public class Water : MonoBehaviour
     public float toadHearingDistance = 10f;
     //assign appropriate particle effect
     public ParticleSystem splash;
+    private PlayerMovement playerMovement;
 
-             // perform attack on target  
-             // Start is called before the first frame update
+    // perform attack on target  
+    // Start is called before the first frame update
     void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Toad");
@@ -28,9 +29,13 @@ public class Water : MonoBehaviour
         {
             Debug.Log("splash splash");
             //play the particle effect at the players location
-            splash.Play();
             splash.transform.position = new Vector3 (other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
-
+            playerMovement = other.gameObject.GetComponent<PlayerMovement>();
+            if (playerMovement.isMoving == true)
+            {
+                splash.Play();
+            }
+            
             foreach (GameObject toad in enemies)
             {
                 float distance = Vector3.Distance(toad.transform.position, other.transform.position);
