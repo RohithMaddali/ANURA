@@ -32,7 +32,7 @@ public class RoomSpawner : MonoBehaviour
         
         gm = FindObjectOfType<GameManager>();
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 2f);
+        Invoke("Spawn", .5f);
     }
 
     void Spawn()
@@ -259,7 +259,7 @@ public class RoomSpawner : MonoBehaviour
             rand = Random.Range(0, pRoomList.Length);
             pRoom = Instantiate(pRoomList[rand], transform.position, pRoomList[rand].transform.rotation);
             pRoom.GetComponent<SpaceCheck>().mySpawner = this;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(.5f);
 
             if (pRoom.GetComponent<SpaceCheck>().sits == true && gm.roomCount > 4 && gm.pRoomCount < 3)
             {
@@ -276,7 +276,7 @@ public class RoomSpawner : MonoBehaviour
                 transform.position = iPos.transform.position;
                 iRoom = Instantiate(iRoomList[rand], transform.position, iRoomList[rand].transform.rotation);
                 iRoom.GetComponent<SpaceCheck>().mySpawner = this;
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(.5f);
                 if (iRoom.GetComponent<SpaceCheck>().sits == true)
                 {
                     Debug.Log("Fill iRoom");
@@ -291,7 +291,7 @@ public class RoomSpawner : MonoBehaviour
                     transform.position = hPos.transform.position;
                     hRoom = Instantiate(hRoomList[rand], transform.position, hRoomList[rand].transform.rotation);
                     hRoom.GetComponent<SpaceCheck>().mySpawner = this;
-                    yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(.5f);
                     if (hRoom.GetComponent<SpaceCheck>().sits == true)
                     {
                         Debug.Log("Fill hRoom");

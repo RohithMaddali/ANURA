@@ -13,7 +13,7 @@ public class SpaceCheck : MonoBehaviour
     void Start()
     {
         fits = true;
-        Invoke("IfFitsSits", .5f);
+        Invoke("IfFitsSits", .2f);
     }
 
     // Update is called once per frame
