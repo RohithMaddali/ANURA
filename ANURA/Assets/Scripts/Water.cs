@@ -7,6 +7,7 @@ public class Water : MonoBehaviour
     GameObject[] enemies;
     public float toadHearingDistance = 10f;
     //assign appropriate particle effect
+    public GameObject splashLocation;
     public ParticleSystem splash;
     bool splashy = false;
     private PlayerMovement playerMovement;
@@ -31,7 +32,7 @@ public class Water : MonoBehaviour
         {
             Debug.Log("splash splash");
             //play the particle effect at the players location
-            splash.transform.position = new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
+            splashLocation.transform.position = new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
             playerMovement = other.gameObject.GetComponent<PlayerMovement>();
             if (playerMovement.isMoving)
             {
@@ -71,12 +72,11 @@ public class Water : MonoBehaviour
         while (enabled)
         {
             yield return new WaitForSeconds(0.1f);
-
             if (splashy == true)
-                splash.Play();
-
-            yield return new WaitForSeconds(0.2f);
-            splash.Stop();
+            {
+                
+                Instantiate(splash, splashLocation.transform.position, splashLocation.transform.rotation);
+            }
         }
     }
 }
