@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public int roomCount;
     public int pRoomCount;
-    public RoomSpawner[] activeSpawners;
-    public RoomSpawner[] activeSpawners2;
+    public SpaceCheck[] activeRooms;
     public bool levelComplete = true;
     public bool levelWorks;
     
@@ -40,12 +40,20 @@ public class GameManager : MonoBehaviour
         {
             levelWorks = true;
             Debug.Log("PERFECT");
+            //fill rooms
+            activeRooms = FindObjectsOfType<SpaceCheck>();
+            foreach(SpaceCheck tempRoom in activeRooms)
+            {
+                Instantiate(tempRoom.myRoom, tempRoom.transform.position, tempRoom.transform.rotation);
+                Destroy(tempRoom.gameObject);
+            }
         }
         else if (/*levelComplete &&*/ pRoomCount < 3)
         {
             //restart
             Debug.Log("RESTART");
-            
+            //reload level?
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         /*else if(!levelComplete)
         {
