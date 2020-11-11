@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("checkActiveSpawners", 3.5f);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void checkActiveSpawners()
     {
-        activeSpawners = FindObjectsOfType<RoomSpawner>();
+        /*activeSpawners = FindObjectsOfType<RoomSpawner>();
         Debug.Log("filling array");
         foreach (RoomSpawner spawner in activeSpawners)
         {
@@ -35,28 +35,19 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        Debug.Log("checked array");
-        if (levelComplete && pRoomCount == 3)
+        Debug.Log("checked array");*/
+        if (/*levelComplete &&*/ pRoomCount == 3)
         {
             levelWorks = true;
             Debug.Log("PERFECT");
         }
-        else if (levelComplete && pRoomCount < 3)
+        else if (/*levelComplete &&*/ pRoomCount < 3)
         {
-            activeSpawners2 = FindObjectsOfType<RoomSpawner>();
-            Debug.Log("double checking");
-            if (activeSpawners[0] != activeSpawners2[0])
-            {
-                Debug.Log("Missing some obejects");
-            }
-            else
-            {
-                //restart
-                Debug.Log("RESTART");
-            }
+            //restart
+            Debug.Log("RESTART");
             
         }
-        else if(!levelComplete)
+        /*else if(!levelComplete)
         {
             levelComplete = true;
             Debug.Log("RESET");
@@ -64,6 +55,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("DUNNO LOLOL");
-        }
+        }*/
     }
+    
 }
