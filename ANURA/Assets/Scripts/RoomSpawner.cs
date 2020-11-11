@@ -42,7 +42,7 @@ public class RoomSpawner : MonoBehaviour
             if (openingDir == 1)
             {
                 //spawn bottom door
-                Debug.Log("Spawn temp pRoom");
+                //Debug.Log("Spawn temp pRoom");
                 StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.bottomPRooms, templates.bottomIRooms, templates.bottomHRooms, iRoomPos, hRoomPos));
                 
                 /*
@@ -86,7 +86,7 @@ public class RoomSpawner : MonoBehaviour
             }
             else if (openingDir == 2)
             {
-                Debug.Log("Spawn temp pRoom");
+                //Debug.Log("Spawn temp pRoom");
                 StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.topPRooms, templates.topIRooms, templates.topHRooms, iRoomPos, hRoomPos));
                 /*
                 rand = Random.Range(0, templates.topPRooms.Length);
@@ -122,7 +122,7 @@ public class RoomSpawner : MonoBehaviour
 
             else if (openingDir == 3)
             {
-                Debug.Log("Spawn temp pRoom");
+                //Debug.Log("Spawn temp pRoom");
                 StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.leftPRooms, templates.leftIRooms, templates.leftHRooms, iRoomPos, hRoomPos));
                 /*
                 rand = Random.Range(0, templates.leftPRooms.Length);
@@ -155,7 +155,7 @@ public class RoomSpawner : MonoBehaviour
             }
             else if (openingDir == 4)
             {
-                Debug.Log("Spawn temp pRoom");
+                //Debug.Log("Spawn temp pRoom");
                 StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.rightPRooms, templates.rightIRooms, templates.rightHRooms, iRoomPos, hRoomPos));
                 /*
                 rand = Random.Range(0, templates.rightPRooms.Length);
@@ -241,6 +241,7 @@ public class RoomSpawner : MonoBehaviour
                 iRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 spawned = true;
                 gm.roomCount++;
+                //Instantiate(iRoom.GetComponent<SpaceCheck>().myRoom, iRoom.transform.position, iRoom.transform.rotation);
             }
             if(roomtype == 2)
             {
@@ -249,11 +250,12 @@ public class RoomSpawner : MonoBehaviour
                 hRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 spawned = true;
                 gm.roomCount++;
+                //Instantiate(hRoom.GetComponent<SpaceCheck>().myRoom, hRoom.transform.position, hRoom.transform.rotation);
             }
 
 
         }
-        else
+        else if(gm.roomCount > 3 && gm.pRoomCount < 3)
         {
             randTimer = Random.Range(0.1f, 2.9f);
             rand = Random.Range(0, pRoomList.Length);
@@ -267,7 +269,9 @@ public class RoomSpawner : MonoBehaviour
                 gm.roomCount++;
                 gm.pRoomCount++;
                 Debug.Log("The are " + gm.pRoomCount + " puzzle rooms");
+                gm.Invoke("checkActiveSpawners", .1f);
                 //create room
+                //Instantiate(pRoom.GetComponent<SpaceCheck>().myRoom, pRoom.transform.position, pRoom.transform.rotation);
             }
             else
             {
@@ -279,10 +283,11 @@ public class RoomSpawner : MonoBehaviour
                 yield return new WaitForSeconds(.5f);
                 if (iRoom.GetComponent<SpaceCheck>().sits == true)
                 {
-                    Debug.Log("Fill iRoom");
+                    //Debug.Log("Fill iRoom");
                     spawned = true;
                     gm.roomCount++;
                     //create room
+                    //Instantiate(iRoom.GetComponent<SpaceCheck>().myRoom, iRoom.transform.position, iRoom.transform.rotation);
                 }
                 else
                 {
@@ -294,19 +299,27 @@ public class RoomSpawner : MonoBehaviour
                     yield return new WaitForSeconds(.5f);
                     if (hRoom.GetComponent<SpaceCheck>().sits == true)
                     {
-                        Debug.Log("Fill hRoom");
+                        //Debug.Log("Fill hRoom");
                         spawned = true;
                         gm.roomCount++;
+                        //Instantiate(hRoom.GetComponent<SpaceCheck>().myRoom, hRoom.transform.position, hRoom.transform.rotation);
                     }
                     else
                     {
                         hRoom.SetActive(false);
                         Debug.Log("Insert broken hallway");
                         spawned = true;
+                        gm.Invoke("checkActiveSpawners", .1f);
                     }
                 }
 
             }
+        }else if(gm.roomCount > 10 && gm.pRoomCount >= 3)
+        {
+            Debug.Log("dead ends from here on out");
+            gm.levelComplete = true;
+            gm.levelWorks = true;
+            Debug.Log("WORKED NORMALLY");
         }
         
     }
@@ -316,7 +329,7 @@ public class RoomSpawner : MonoBehaviour
         if (other.CompareTag("Interior") && other.GetComponentInParent<SpaceCheck>().fits)
         {
             spawned = true;
-            Debug.Log("spawner inside another room");
+            //Debug.Log("spawner inside another room");
             //gameObject.SetActive(false);
         }
         /*if (other.CompareTag("RoomSpawn"))
