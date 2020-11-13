@@ -51,7 +51,6 @@ public class F_Player : MonoBehaviour
         }
         
     }
-
     IEnumerator BreathingIntencity()
     {
         yield return new WaitForSeconds(5);
