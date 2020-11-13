@@ -7,13 +7,14 @@ public class SpaceCheck : MonoBehaviour
     public bool fits;
     public bool sits;
     public RoomSpawner mySpawner;
+    public GameObject myRoom;
     public GameObject[] spawners;
 
     // Start is called before the first frame update
     void Start()
     {
         fits = true;
-        Invoke("IfFitsSits", .2f);
+        Invoke("IfFitsSits", .1f);
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class SpaceCheck : MonoBehaviour
 
     void IfFitsSits()
     {
-        Debug.Log("check if fits");
+        //Debug.Log("check if fits");
         if (fits)
         {
             sits = true;
@@ -40,24 +41,24 @@ public class SpaceCheck : MonoBehaviour
         
         if (other.CompareTag("Interior") && sits)
         {
-            Debug.Log("no space");
+            //Debug.Log("no space");
             other.GetComponentInParent<SpaceCheck>().fits = false;
-            Debug.Log(other.gameObject + " in " + gameObject);
+            //Debug.Log(other.gameObject + " in " + gameObject);
         }
         if (other.CompareTag("Interior") && !sits)
         {
             fits = false;
-            Debug.Log(other.gameObject + " in " + gameObject);
+            //Debug.Log(other.gameObject + " in " + gameObject);
         }
         if (other.CompareTag("TempRoom") && sits)
         {
             other.GetComponent<SpaceCheck>().fits = false;
-            Debug.Log(other.gameObject + " in " + gameObject);
+            //Debug.Log(other.gameObject + " in " + gameObject);
         }
         if (other.CompareTag("TempRoom") && !sits)
         {
             fits = false;
-            Debug.Log(other.gameObject +  " in " + gameObject);
+            //Debug.Log(other.gameObject +  " in " + gameObject);
         }
         /*if (other.CompareTag("RoomSpawn") && mySpawner.spawned)
         {
