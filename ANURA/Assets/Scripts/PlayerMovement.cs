@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     [HideInInspector]
     public bool isMoving;
+    [SerializeField]
+    private float mValue;
 
     void Update()
     {
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
-        if (z >= 0.01 || x >= 0.01 || z <= -0.01 || x <= -0.01) //Checks if player is moving. 
+        if (z >= mValue || x >= mValue || z <= -mValue || x <= -mValue) //Checks if player is moving. 
         {
             isMoving = true;
         }
@@ -46,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
+        
+        Debug.Log(isMoving);
         //apply input
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * (speed * Time.deltaTime));

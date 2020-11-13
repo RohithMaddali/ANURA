@@ -17,7 +17,7 @@ public class F_ParameterSwitcher : MonoBehaviour
     [SerializeField] 
     private bool onExitSetDefault;
 
-    private float [] values = new float[4];
+    private float [] values = new float[5];
     //[SerializeField]
     //private bool lerpWind;
     //[SerializeField]
