@@ -15,6 +15,10 @@ public class FOVDetection : MonoBehaviour
 
     private bool isInFov = false;
 
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
