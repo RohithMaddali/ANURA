@@ -16,20 +16,7 @@ public class Drawbridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*if (isclosed)
-        {
-            closeRot = transform.rotation;
-            openRot.x = transform.rotation.x;
-            openRot.y = transform.rotation.y;
-            openRot.z = transform.rotation.z;
-        }else if (!isclosed)
-        {
-            openRot = transform.rotation;
-            closeRot.x = transform.rotation.x;
-            closeRot.y = transform.rotation.y;
-            closeRot.z = transform.rotation.z;
-        }
-        */
+
     }
 
     // Update is called once per frame
