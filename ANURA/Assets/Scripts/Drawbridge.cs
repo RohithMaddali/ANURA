@@ -11,12 +11,12 @@ public class Drawbridge : MonoBehaviour
     private Quaternion startRot;
     private Quaternion target;
     public float speed = 6f;
-    public float openHeight = 5f;
+    //public float openHeight = 5f;
     
     // Start is called before the first frame update
     void Start()
     {
-        if (isclosed)
+        /*if (isclosed)
         {
             closeRot = transform.rotation;
             openRot.x = transform.rotation.x;
@@ -29,7 +29,7 @@ public class Drawbridge : MonoBehaviour
             closeRot.y = transform.rotation.y;
             closeRot.z = transform.rotation.z;
         }
-        
+        */
     }
 
     // Update is called once per frame

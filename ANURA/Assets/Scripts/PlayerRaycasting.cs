@@ -25,6 +25,10 @@ public class PlayerRaycasting : MonoBehaviour
             {
                 touchingObject.collider.gameObject.GetComponent<Switch>().Activate();
             }
+            else if (touchingObject.collider.gameObject.tag == "BridgeSwitch" && Input.GetKeyDown("e"))
+            {
+                touchingObject.collider.gameObject.GetComponent<BridgeSwitch>().Activate();
+            }
         }
     }
 }
