@@ -24,10 +24,8 @@ public class PlayerMovement : MonoBehaviour
     //control player y speed
     public Vector3 velocity;
     bool isGrounded;
-    [HideInInspector]
-    public bool isMoving;
-    [SerializeField]
-    private float mValue;
+    [HideInInspector] public bool isMoving;
+    [SerializeField] private float mValue;
 
     void Update()
     {
@@ -36,26 +34,28 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         //check if grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if(isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+
         if (z >= mValue || x >= mValue || z <= -mValue || x <= -mValue) //Checks if player is moving. 
         {
             isMoving = true;
         }
-        else if (z == 0  || x == 0)
+        else if (z == 0 || x == 0)
         {
             isMoving = false;
         }
-        
+
         Debug.Log(isMoving);
         //apply input
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * (speed * Time.deltaTime));
-    
+
         //apply gravity
         velocity.y += gravity * Time.deltaTime * weight;
         controller.Move(velocity * Time.deltaTime);
     }
+    
 }
