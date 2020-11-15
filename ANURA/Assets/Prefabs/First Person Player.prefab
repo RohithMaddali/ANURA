@@ -138,9 +138,13 @@ GameObject:
   - component: {fileID: 2354557680469092399}
   - component: {fileID: 2354557680469092396}
   - component: {fileID: 2159800742374830968}
+  - component: {fileID: 245363703}
+  - component: {fileID: 245363704}
+  - component: {fileID: 245363705}
+  - component: {fileID: 245363710}
   m_Layer: 0
   m_Name: First Person Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +207,7 @@ MonoBehaviour:
     m_Bits: 256
   velocity: {x: 0, y: 0, z: 0}
   isMoving: 0
+  mValue: 1
 --- !u!114 &2159800742374830968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +220,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d92c104a7f6e1d44b5a86b5f896a38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 1
-  walkingBackwardsSpeed: 1
+  walkingSpeed: 0.6
+  walkingBackwardsSpeed: 0.7
+  lm:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &245363703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e614e2c820cde943b67a2bf2eb1333e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distancetoTouch: 3
+--- !u!114 &245363704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51ae0e1856af4e47a5dd975133fe500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &245363705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4db4ee38135d234cb257a6f8e0788e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningWater: 0
+  wind: 0
+  stingers: 0
+  waterDrops: 0
+  onExitSetDefault: 0
+--- !u!114 &245363710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c8bd2ec7d635b4d89bd90429137878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 10.73
+  enemyIsNear: 0
+  toad: {fileID: 0}
+  parameterValues:
+  - title: Default
+    info: 
+    number:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - title: 1st verse
+    info: 
+    number:
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+  - title: 2nd verse
+    info: 
+    number:
+    - 0
+    - 1
+    - 0
+    - 1
+    - 0
+  - title: 3rd verse
+    info: 
+    number:
+    - 0
+    - 1
+    - 0
+    - 1
+    - 1
 --- !u!1 &2354557681189838689
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2354557681189838689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: 1.08, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2354557680469092398}
