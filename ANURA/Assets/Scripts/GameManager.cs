@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor.AI;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
                 Instantiate(tempRoom.myRoom, tempRoom.transform.position, tempRoom.transform.rotation);
                 Destroy(tempRoom.gameObject);
             }
+            NavMeshBuilder.BuildNavMesh();
+            Debug.Log("NAVMESH BUILT");
         }
         else if (/*levelComplete &&*/ pRoomCount < 3)
         {
