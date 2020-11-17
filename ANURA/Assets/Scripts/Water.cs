@@ -32,7 +32,7 @@ public class Water : MonoBehaviour
         {
             Debug.Log("splash splash");
             //play the particle effect at the players location
-            splashLocation.transform.position = new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
+            splashLocation.transform.position = new Vector3(other.gameObject.transform.position.x, this.gameObject.transform.position.y, other.gameObject.transform.position.z);
             playerMovement = other.gameObject.GetComponent<PlayerMovement>();
             if (playerMovement.isMoving)
             {
