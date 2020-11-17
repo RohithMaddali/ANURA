@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2449405178270620850}
+  - component: {fileID: 5242604629884681940}
   m_Layer: 0
   m_Name: Luke L Hall TR
   m_TagString: Untagged
@@ -34,6 +35,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5242604629884681940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9312196435101743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e9b0e5dde30c040a425716ce9e7a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toads:
+  - {fileID: 141621751106969462}
 --- !u!1 &1008546013009874161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,6 +4101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8441534
@@ -4140,6 +4159,11 @@ PrefabInstance:
       objectReference: {fileID: 2607191445474182729}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+--- !u!1 &141621751106969462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+  m_PrefabInstance: {fileID: 9220783112444854447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &141621751106969457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
