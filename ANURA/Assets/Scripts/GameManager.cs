@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int roomCount;
     public int pRoomCount;
     public SpaceCheck[] activeRooms;
+    public List<GameObject> spawnedRooms = new List<GameObject>();
+    public GameObject builtRoom;
     public bool levelComplete = true;
     public bool levelWorks;
     
@@ -45,11 +47,19 @@ public class GameManager : MonoBehaviour
             activeRooms = FindObjectsOfType<SpaceCheck>();
             foreach(SpaceCheck tempRoom in activeRooms)
             {
-                Instantiate(tempRoom.myRoom, tempRoom.transform.position, tempRoom.transform.rotation);
+                builtRoom = Instantiate(tempRoom.myRoom, tempRoom.transform.position, tempRoom.transform.rotation);
+                spawnedRooms.Add(builtRoom);
+                //add built room to spawned rooms array
                 Destroy(tempRoom.gameObject);
             }
             NavMeshBuilder.BuildNavMesh();
             Debug.Log("NAVMESH BUILT");
+            //have each room in spawned rooms array activate their AI
+            foreach(GameObject room in spawnedRooms)
+            {
+                room.GetComponent<BuiltRoom>().ActivateAI();
+            }
+
         }
         else if (/*levelComplete &&*/ pRoomCount < 3)
         {

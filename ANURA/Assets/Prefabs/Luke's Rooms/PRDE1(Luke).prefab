@@ -20099,6 +20099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3027856184949467926}
+  - component: {fileID: 6303652834757478740}
   m_Layer: 0
   m_Name: PRDE1(Luke)
   m_TagString: Untagged
@@ -20128,6 +20129,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6303652834757478740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027856184949467927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e9b0e5dde30c040a425716ce9e7a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toads:
+  - {fileID: 9168953501124740035}
+  - {fileID: 5427851090116323996}
 --- !u!1 &3027856184968472308
 GameObject:
   m_ObjectHideFlags: 0
@@ -26033,6 +26049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.020089
@@ -26087,6 +26107,11 @@ PrefabInstance:
       objectReference: {fileID: 6398973369912095931}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+--- !u!1 &9168953501124740035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+  m_PrefabInstance: {fileID: 89865255028268058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9168953501124740036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
@@ -26177,6 +26202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.729912
@@ -26231,6 +26260,11 @@ PrefabInstance:
       objectReference: {fileID: 4430452134942732765}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+--- !u!1 &5427851090116323996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+  m_PrefabInstance: {fileID: 3842257224317072709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5427851090116323995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
