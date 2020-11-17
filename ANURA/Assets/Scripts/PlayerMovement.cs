@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             isMoving = false;
         }
 
-        Debug.Log(isMoving);
+        //Debug.Log(isMoving);
         //apply input
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * (speed * Time.deltaTime));

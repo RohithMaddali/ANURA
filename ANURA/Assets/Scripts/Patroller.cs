@@ -50,7 +50,7 @@ public class Patroller : MonoBehaviour
                     if (navMeshPath.status == NavMeshPathStatus.PathComplete)
                     {
                         agent.SetDestination(patrolPoints[currentPoint].position);
-                        Debug.Log("Toad moving to " + patrolPoints[currentPoint]);
+                        //Debug.Log("Toad moving to " + patrolPoints[currentPoint]);
                     }
                     else
                     {
@@ -65,7 +65,7 @@ public class Patroller : MonoBehaviour
             case Behaviour.investigating:
                 agent.SetDestination(lastKnownPos);
 
-                Debug.Log("a toad heard that");
+                //Debug.Log("a toad heard that");
                 if (Vector3.Distance(transform.position, lastKnownPos) < 0.6f)
                 {
                     RestartTime();

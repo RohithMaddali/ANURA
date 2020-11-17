@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (/*levelComplete &&*/ pRoomCount == 3)
         {
             levelWorks = true;
-            Debug.Log("PERFECT");
+            //Debug.Log("PERFECT");
             //fill rooms
             activeRooms = FindObjectsOfType<SpaceCheck>();
             foreach(SpaceCheck tempRoom in activeRooms)
@@ -51,20 +51,28 @@ public class GameManager : MonoBehaviour
                 spawnedRooms.Add(builtRoom);
                 //add built room to spawned rooms array
                 Destroy(tempRoom.gameObject);
+                Debug.Log("Generated Room");
             }
             NavMeshBuilder.BuildNavMesh();
             Debug.Log("NAVMESH BUILT");
             //have each room in spawned rooms array activate their AI
             foreach(GameObject room in spawnedRooms)
             {
-                room.GetComponent<BuiltRoom>().ActivateAI();
+                if (room.GetComponent<BuiltRoom>() != null)
+                {
+                    room.GetComponent<BuiltRoom>().ActivateAI();
+                    Debug.Log("Activated AI");
+                }
+                else
+                    Debug.Log("No builtroom script");
+                
             }
 
         }
         else if (/*levelComplete &&*/ pRoomCount < 3)
         {
             //restart
-            Debug.Log("RESTART");
+            //Debug.Log("RESTART");
             //reload level?
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

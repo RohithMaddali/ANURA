@@ -15,7 +15,7 @@ public class FOVDetection : MonoBehaviour
 
     private bool isInFov = false;
 
-    private void Awake()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
@@ -76,6 +76,7 @@ public class FOVDetection : MonoBehaviour
                             if (hit.transform == target)
                             {
                                 //enemy.transform.LookAt(target);
+                                Debug.Log("The Toad Sees You!");
                                 Quaternion rotTarget = Quaternion.LookRotation(target.position - enemy.position);
                                 enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotTarget, speed * Time.deltaTime);
                                 checkingObject.GetComponent<Patroller>().StartCoroutine("RoarAndChase");
