@@ -138,10 +138,10 @@ GameObject:
   - component: {fileID: 2354557680469092399}
   - component: {fileID: 2354557680469092396}
   - component: {fileID: 2159800742374830968}
-  - component: {fileID: 245363703}
   - component: {fileID: 245363704}
   - component: {fileID: 245363705}
   - component: {fileID: 245363710}
+  - component: {fileID: 5426451856171014539}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Player1
@@ -225,19 +225,6 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &245363703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354557680469092397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e614e2c820cde943b67a2bf2eb1333e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distancetoTouch: 3
 --- !u!114 &245363704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +302,19 @@ MonoBehaviour:
     - 0
     - 1
     - 1
+--- !u!114 &5426451856171014539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e614e2c820cde943b67a2bf2eb1333e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distancetoTouch: 3
 --- !u!1 &2354557681189838689
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 2354557681189838688}
   - component: {fileID: 2354557681189838693}
   - component: {fileID: 2354557681189838692}
-  - component: {fileID: 73231975}
   m_Layer: 0
   m_Name: First Person View
   m_TagString: MainCamera
@@ -446,16 +445,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 300
   playerBody: {fileID: 2354557680469092398}
---- !u!114 &73231975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354557681189838689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e614e2c820cde943b67a2bf2eb1333e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distancetoTouch: 3
