@@ -28,7 +28,7 @@ public class Water : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player1")
         {
             Debug.Log("splash splash");
             //play the particle effect at the players location
@@ -61,7 +61,7 @@ public class Water : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player1")
         {
             splashy = false;
         }
