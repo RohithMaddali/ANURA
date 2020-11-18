@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 
 public class F_Player : MonoBehaviour
@@ -41,35 +42,6 @@ public class F_Player : MonoBehaviour
             footsteps.release();
         }
     }
-    
-    void HeavyBreathing()
-    {
-        if (playerMovement.isMoving == false && music.enemyIsNear == false && played == false)
-        {
-            Debug.Log("heavy breathing");
-            StartCoroutine(BreathingIntencity());
-            played = true;
-        }
-        if (playerMovement.isMoving == true)
-        {
-            stressed.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            played = false;
-        }
-    }
-    IEnumerator BreathingIntencity()
-    {
-        yield return new WaitForSeconds(5);
-        if (playerMovement.isMoving == false && music.enemyIsNear == false)
-        {
-            stressed.start();
-            stressed.release();
-            yield return new WaitForSeconds(5);
-            stressed.setParameterByName("StressLevel", 1, false);
-            yield return new WaitForSeconds(6);
-            stressed.setParameterByName("StressLevel", 2, false);
-        }
-    }
-
     void MaterialCheck()
     {
         float dist = 3f;

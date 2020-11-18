@@ -19,8 +19,9 @@ public class Patroller : MonoBehaviour
     public float time;
     public float searchtimer = 10;
     public NavMeshAgent agent;
-
-
+    
+    
+    
     public enum Behaviour
     {
         patrolling,
@@ -87,9 +88,6 @@ public class Patroller : MonoBehaviour
             case Behaviour.chasing:
                 agent.SetDestination(player.transform.position);
                 break;
-
-
-
         }
 
 

@@ -5,6 +5,7 @@ using FMOD.Studio;
 using FMODUnity;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.ProBuilder.MeshOperations;
 
 
@@ -18,7 +19,8 @@ public class F_Music : MonoBehaviour
     float[] values02 = new float[5];
     [SerializeField] private float radius;
     private PlayerMovement pMovement;
-    private bool played;
+    [HideInInspector] 
+    public bool playedMusic;
     [HideInInspector]
     public bool enemyIsNear = false;
     [SerializeField]
@@ -68,15 +70,15 @@ public class F_Music : MonoBehaviour
         GetToadDistance();
         
         Debug.Log("enemy near is " + enemyIsNear);
-        if (pMovement.isMoving == false && played == false && enemyIsNear == true)
+        if (pMovement.isMoving == false && playedMusic == false && enemyIsNear == true)
         {
             StartCoroutine(MusicTimeToTrigger());
-            played = true;
+            playedMusic = true;
         }
 
         if (pMovement.isMoving == true && enemyIsNear == false)
         {
-            played = false;
+            playedMusic = false;
             music.setParametersByIDs(pIDS, parameterValues[0].number, 5, false);
         }
     }

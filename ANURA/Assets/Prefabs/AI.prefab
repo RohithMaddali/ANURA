@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 9079794889650167770}
   - component: {fileID: 9079794889650167775}
   - component: {fileID: 9079794889650167760}
+  - component: {fileID: -1657727365914268250}
   m_Layer: 0
   m_Name: AI
   m_TagString: Toad
@@ -236,6 +237,7 @@ MonoBehaviour:
   time: 0
   searchtimer: 10
   agent: {fileID: 9079794889650167760}
+  action: 0
 --- !u!195 &9079794889650167760
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -258,3 +260,15 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1657727365914268250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079794889650167769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8ff0f528662df409e603a91324d130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
