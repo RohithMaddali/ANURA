@@ -11,12 +11,14 @@ public class RoomSpawner : MonoBehaviour
     //4 need right door
     public Transform iRoomPos;
     public Transform hRoomPos;
+    public Transform dEndPos;
 
     
 
     private GameObject pRoomTest;
     private GameObject iRoomTest;
     private GameObject hRoomTest;
+    public GameObject deadEnd;
     GameManager gm;
 
     private RoomTemplates templates;
@@ -44,7 +46,7 @@ public class RoomSpawner : MonoBehaviour
             {
                 //spawn bottom door
                 //Debug.Log("Spawn temp pRoom");
-                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.bottomPRooms, templates.bottomIRooms, templates.bottomHRooms, iRoomPos, hRoomPos));
+                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.bottomPRooms, templates.bottomIRooms, templates.bottomHRooms, templates.DEBTs, iRoomPos, hRoomPos));
                 
                 /*
                 //rand = Random.Range(0, templates.bottomPRooms.Length);
@@ -88,7 +90,7 @@ public class RoomSpawner : MonoBehaviour
             else if (openingDir == 2)
             {
                 //Debug.Log("Spawn temp pRoom");
-                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.topPRooms, templates.topIRooms, templates.topHRooms, iRoomPos, hRoomPos));
+                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.topPRooms, templates.topIRooms, templates.topHRooms, templates.DEBTs, iRoomPos, hRoomPos));
                 /*
                 rand = Random.Range(0, templates.topPRooms.Length);
                 pRoomTest = Instantiate(templates.topPRooms[rand], transform.position, templates.topPRooms[rand].transform.rotation);
@@ -124,7 +126,7 @@ public class RoomSpawner : MonoBehaviour
             else if (openingDir == 3)
             {
                 //Debug.Log("Spawn temp pRoom");
-                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.leftPRooms, templates.leftIRooms, templates.leftHRooms, iRoomPos, hRoomPos));
+                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.leftPRooms, templates.leftIRooms, templates.leftHRooms, templates.DELRs, iRoomPos, hRoomPos));
                 /*
                 rand = Random.Range(0, templates.leftPRooms.Length);
                 pRoomTest = Instantiate(templates.leftPRooms[rand], transform.position, templates.leftPRooms[rand].transform.rotation);
@@ -157,7 +159,7 @@ public class RoomSpawner : MonoBehaviour
             else if (openingDir == 4)
             {
                 //Debug.Log("Spawn temp pRoom");
-                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.rightPRooms, templates.rightIRooms, templates.rightHRooms, iRoomPos, hRoomPos));
+                StartCoroutine(WallTest(pRoomTest, iRoomTest, hRoomTest, templates.rightPRooms, templates.rightIRooms, templates.rightHRooms, templates.DELRs, iRoomPos, hRoomPos));
                 /*
                 rand = Random.Range(0, templates.rightPRooms.Length);
                 pRoomTest = Instantiate(templates.rightPRooms[rand], transform.position, templates.rightPRooms[rand].transform.rotation);
@@ -230,7 +232,7 @@ public class RoomSpawner : MonoBehaviour
         //StartCoroutine(WallTest(room, roomList, pos));
     }
 
-    IEnumerator WallTest(GameObject pRoom, GameObject iRoom, GameObject hRoom, GameObject[] pRoomList, GameObject[] iRoomList, GameObject[] hRoomList, Transform iPos, Transform hPos)
+    IEnumerator WallTest(GameObject pRoom, GameObject iRoom, GameObject hRoom, GameObject[] pRoomList, GameObject[] iRoomList, GameObject[] hRoomList, GameObject[] DEList, Transform iPos, Transform hPos)
     {
         if(gm.roomCount < 4)
         {
@@ -309,6 +311,8 @@ public class RoomSpawner : MonoBehaviour
                     {
                         hRoom.SetActive(false);
                         Debug.Log("Insert broken hallway");
+                        transform.position = dEndPos.transform.position;
+                        Instantiate(DEList[0], transform.position, DEList[0].transform.rotation);
                         spawned = true;
                         //gm.Invoke("checkActiveSpawners", .1f);
                     }
@@ -318,6 +322,8 @@ public class RoomSpawner : MonoBehaviour
         }else if(gm.roomCount > 10 && gm.pRoomCount >= 3)
         {
             Debug.Log("dead ends from here on out");
+            transform.position = dEndPos.transform.position;
+            Instantiate(DEList[0], transform.position, DEList[0].transform.rotation);
             //gm.levelComplete = true;
             //gm.levelWorks = true;
             //Debug.Log("WORKED NORMALLY");

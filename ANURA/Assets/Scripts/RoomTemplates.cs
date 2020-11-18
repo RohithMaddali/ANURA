@@ -17,7 +17,9 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] leftHRooms;
     public GameObject[] rightHRooms;
 
-    
+    public GameObject[] DEBTs;
+    public GameObject[] DELRs;
+
 
     // Update is called once per frame
     void Update()

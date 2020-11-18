@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3674149415116909501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7596233052464303656}
+  m_Layer: 0
+  m_Name: DE Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7596233052464303656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674149415116909501}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -15.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8312035014298819672}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3778408055369325152
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +107,8 @@ MonoBehaviour:
   openingDir: 2
   iRoomPos: {fileID: 1875493108952800298}
   hRoomPos: {fileID: 3778408056723913149}
+  dEndPos: {fileID: 7596233052464303656}
+  deadEnd: {fileID: 6183962820078209182, guid: 643a74105c6e0ca4e8e4722a34b4ed28, type: 3}
   spawned: 0
   spawnNext: 0
 --- !u!1 &3778408056723913148
@@ -222,6 +254,7 @@ Transform:
   - {fileID: 3778408055369325153}
   - {fileID: 3778408056723913149}
   - {fileID: 989611772701487135}
+  - {fileID: 7596233052464303656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2132,6 +2165,7 @@ MonoBehaviour:
   - {fileID: 8855848954011349623}
   - {fileID: 3778408055369325152}
   - {fileID: 3778408056723913148}
+  - {fileID: 3674149415116909501}
 --- !u!65 &6868015405381862531
 BoxCollider:
   m_ObjectHideFlags: 0
