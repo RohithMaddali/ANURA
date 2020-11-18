@@ -267,23 +267,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10.73
+  playedMusic: 0
   enemyIsNear: 0
   toad: {fileID: 0}
-  toadNear:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2159800742374830968}
-        m_TargetAssemblyTypeName: F_Player, Assembly-CSharp
-        m_MethodName: HeavyBreathing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   parameterValues:
   - title: Default
     info: 
@@ -437,7 +423,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
