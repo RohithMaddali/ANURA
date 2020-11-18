@@ -335,8 +335,8 @@ public class RoomSpawner : MonoBehaviour
     {
         if (other.CompareTag("Interior") && other.GetComponentInParent<SpaceCheck>().fits)
         {
-            spawned = true;
-            //Debug.Log("spawner inside another room");
+            //spawned = true;
+            Debug.Log("spawner inside another room but we dont need to check for that anymore right?");
             //gameObject.SetActive(false);
         }
         /*if (other.CompareTag("RoomSpawn"))
