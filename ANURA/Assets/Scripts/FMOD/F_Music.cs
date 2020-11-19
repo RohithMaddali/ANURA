@@ -23,8 +23,7 @@ public class F_Music : MonoBehaviour
     public bool playedMusic;
     [HideInInspector]
     public bool enemyIsNear = false;
-    [SerializeField]
-    private GameObject toad;
+
 
     public MyStruct[] parameterValues;
     [System.Serializable]
@@ -33,55 +32,49 @@ public class F_Music : MonoBehaviour
         public string info;
         public float[] number;
     }
-
+    
     private void Start()
     {
         pMovement = GetComponent<PlayerMovement>();
         GetParameterIDS();
-        music = RuntimeManager.CreateInstance("event:/Music/AttackMusic");
+        music = RuntimeManager.CreateInstance("event:/Music/AttackMusic 2");
         music.start();
         music.release();
-
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,radius);
-    }
-
-    void GetToadDistance()
-    {
-        float dist = Vector3.Distance(transform.position, toad.transform.position);
-
-        if (dist <= radius)
-        {
-            Debug.Log("Toad is Coming!");
-            enemyIsNear = true;
-        }
-        else
-        {
-            enemyIsNear = false;
-        }
     }
 
     private void Update()
     {
-        GetToadDistance();
-        
-        Debug.Log("enemy near is " + enemyIsNear);
-        if (pMovement.isMoving == false && playedMusic == false && enemyIsNear == true)
+        PlayStationaryMusic();
+    }
+
+    void PlayStationaryMusic()
+    {
+        if (pMovement.isMoving == false && playedMusic == false && F_Parameters.musicState == 1)
         {
+            Debug.Log("playmusic");
             StartCoroutine(MusicTimeToTrigger());
             playedMusic = true;
         }
-
-        if (pMovement.isMoving == true && enemyIsNear == false)
+        if (F_Parameters.musicState == 0)
         {
-            playedMusic = false;
             music.setParametersByIDs(pIDS, parameterValues[0].number, 5, false);
+            playedMusic = false;
         }
     }
+
+    IEnumerator MusicTimeToTrigger()
+    {
+        yield return new WaitForSeconds(5);
+        if (pMovement.isMoving == false)
+        {
+            music.setParametersByIDs(pIDS, parameterValues[1].number, 5, false);
+            yield return new WaitForSeconds(7);
+            music.setParametersByIDs(pIDS, parameterValues[2].number, 5, false);
+            yield return new WaitForSeconds(7);
+            music.setParametersByIDs(pIDS, parameterValues[3].number, 5, false);
+        }
+    }
+    
     void GetParameterIDS()
     {
         eDS = RuntimeManager.GetEventDescription("event:/Music/AttackMusic");
@@ -97,16 +90,4 @@ public class F_Music : MonoBehaviour
         }
     }
 
-    IEnumerator MusicTimeToTrigger()
-    {
-        yield return new WaitForSeconds(5);
-        if (pMovement.isMoving == false && enemyIsNear == true)
-        {
-            music.setParametersByIDs(pIDS, parameterValues[1].number, 5, false);
-            yield return new WaitForSeconds(7);
-            music.setParametersByIDs(pIDS, parameterValues[2].number, 5, false);
-            yield return new WaitForSeconds(7);
-            music.setParametersByIDs(pIDS, parameterValues[3].number, 5, false);
-        }
-    }
 }

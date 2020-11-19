@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 9079794889650167775}
   - component: {fileID: 9079794889650167760}
   - component: {fileID: -1657727365914268250}
+  - component: {fileID: 110769155}
   m_Layer: 0
   m_Name: AI
   m_TagString: Toad
@@ -272,3 +273,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8ff0f528662df409e603a91324d130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 15
+--- !u!135 &110769155
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079794889650167769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 12.428662
+  m_Center: {x: 0.069849014, y: 0, z: -0.77808857}

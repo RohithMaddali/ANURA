@@ -4,39 +4,52 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using UnityEngine.ProBuilder.MeshOperations;
+
 public class F_Enemies : MonoBehaviour
 {
     private EventInstance playerBreathing;
+    private EventInstance frogGrowl;
+    private EventInstance playerStressSound;
     private Patroller enemies;
+    private Transform player;
     private bool playedBreathing;
-    
+    [SerializeField] private float radius;
+    private bool eventCalled;
+
+    public delegate void enemyIsNear();
+    public static event enemyIsNear musicPlay; 
+    public delegate void enemyIsNearStop();
+    public static event enemyIsNearStop musicstop;
+
     void Start()
     {
         playerBreathing = RuntimeManager.CreateInstance("event:/Player/Breathing");
         enemies = GetComponent<Patroller>();
+        player = GameObject.Find("First Person Player").GetComponent<Transform>();
+        frogGrowl = RuntimeManager.CreateInstance("event:/Enemy/EnemySounds");
+        RuntimeManager.AttachInstanceToGameObject(frogGrowl, transform, GetComponent<Rigidbody>());
+        frogGrowl.start();
+        frogGrowl.release();
+        playerStressSound = RuntimeManager.CreateInstance("event:/Player/Breathing");
+        RuntimeManager.AttachInstanceToGameObject(playerStressSound,transform, GetComponent<Rigidbody>());
+        playerStressSound.start();
     }
 
-    private void Update()
+    private void OnTriggerStay(Collider other)
     {
-        CheckEnemyState(); 
-    }
-
-    void CheckEnemyState()
-    {
-        if (enemies.action == Patroller.Behaviour.chasing)
+        if (other.gameObject.CompareTag("Player1"))
         {
-            StartCoroutine(BreathingIntencity());
-            Debug.Log("BREATHING");
-            playedBreathing = true;
+            F_Parameters.musicState = 1;
         }
     }
 
-    IEnumerator BreathingIntencity()
+    private void OnTriggerExit(Collider other)
     {
-            playerBreathing.start();
-            yield return new WaitForSeconds(5);
-            playerBreathing.setParameterByName("StressLevel", 1, false);
-            yield return new WaitForSeconds(5);
-            playerBreathing.setParameterByName("StressLevel", 2, false);
+        if (other.gameObject.CompareTag("Player1"))
+        {
+            F_Parameters.musicState = 0;
         }
     }
+}
+

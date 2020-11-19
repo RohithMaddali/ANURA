@@ -139,9 +139,10 @@ GameObject:
   - component: {fileID: 2354557680469092396}
   - component: {fileID: 2159800742374830968}
   - component: {fileID: 245363704}
-  - component: {fileID: 245363705}
   - component: {fileID: 245363710}
   - component: {fileID: 5426451856171014539}
+  - component: {fileID: 1842347895605751069}
+  - component: {fileID: 1254232270}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Player1
@@ -237,23 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51ae0e1856af4e47a5dd975133fe500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &245363705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354557680469092397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4db4ee38135d234cb257a6f8e0788e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runningWater: 0
-  wind: 0
-  stingers: 0
-  waterDrops: 0
-  onExitSetDefault: 0
 --- !u!114 &245363710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,10 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c8bd2ec7d635b4d89bd90429137878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10.73
+  radius: 10
   playedMusic: 0
   enemyIsNear: 0
-  toad: {fileID: 0}
   parameterValues:
   - title: Default
     info: 
@@ -316,6 +299,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distancetoTouch: 3
+--- !u!114 &1842347895605751069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
+--- !u!114 &1254232270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278c42c0f14b49f4e800a6c2c699dd64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMin: -10
+  xMax: 30
+  zMin: -10
+  zMax: 30
+  source01: {fileID: 3511556419598781226, guid: d60fb25419dee074b9ab76e7e7b701fd, type: 3}
 --- !u!1 &2354557681189838689
 GameObject:
   m_ObjectHideFlags: 0

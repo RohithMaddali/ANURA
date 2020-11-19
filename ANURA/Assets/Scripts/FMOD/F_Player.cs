@@ -19,6 +19,7 @@ public class F_Player : MonoBehaviour
     public LayerMask lm;
     float[] values = new float[1];
     private float material;
+    
     private void Start()
     {
         InvokeRepeating("WalkingFootsteps",0,walkingSpeed);
