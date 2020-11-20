@@ -250,20 +250,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c8bd2ec7d635b4d89bd90429137878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicEvent: event:/Music/AttackMusic 2
+  p1: Percussion
+  p2: Percussion2
+  p3: Choir
+  p4: String1
+  p5: String2
   radius: 10
   playedMusic: 0
   enemyIsNear: 0
   parameterValues:
   - title: Default
-    info: 
+    info: Element 0 is Track 1 in FMOD
     number:
     - 0
     - 0
     - 0
     - 0
     - 0
-  - title: 1st verse
-    info: 
+  - title: 1st Verse
+    info: Element 0 is Track 1 in FMOD
     number:
     - 0
     - 1
@@ -271,7 +277,7 @@ MonoBehaviour:
     - 0
     - 0
   - title: 2nd verse
-    info: 
+    info: Element 0 is Track 1 in FMOD
     number:
     - 0
     - 1
@@ -279,7 +285,7 @@ MonoBehaviour:
     - 1
     - 0
   - title: 3rd verse
-    info: 
+    info: Element 0 is Track 1 in FMOD
     number:
     - 0
     - 1

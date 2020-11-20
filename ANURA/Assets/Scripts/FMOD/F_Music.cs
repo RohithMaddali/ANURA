@@ -11,20 +11,20 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 public class F_Music : MonoBehaviour
 {
+    [EventRef]
+    public string musicEvent;
+    [SerializeField] private string p1;
+    [SerializeField] private string p2;
+    [SerializeField] private string p3;
+    [SerializeField] private string p4;
+    [SerializeField] private string p5;
     private EventDescription eDS;
     private PARAMETER_DESCRIPTION[] pDS = new PARAMETER_DESCRIPTION[5];
     public static PARAMETER_ID[] pIDS = new PARAMETER_ID[5];
     public static EventInstance music;
-    float[] values01 = new float[5];
-    float[] values02 = new float[5];
-    [SerializeField] private float radius;
     private PlayerMovement pMovement;
-    [HideInInspector] 
-    public bool playedMusic;
-    [HideInInspector]
-    public bool enemyIsNear = false;
-
-
+    [HideInInspector] public bool playedMusic;
+    
     public MyStruct[] parameterValues;
     [System.Serializable]
     public struct MyStruct {
@@ -37,7 +37,7 @@ public class F_Music : MonoBehaviour
     {
         pMovement = GetComponent<PlayerMovement>();
         GetParameterIDS();
-        music = RuntimeManager.CreateInstance("event:/Music/AttackMusic 2");
+        music = RuntimeManager.CreateInstance(musicEvent);
         music.start();
         music.release();
     }
@@ -77,12 +77,12 @@ public class F_Music : MonoBehaviour
     
     void GetParameterIDS()
     {
-        eDS = RuntimeManager.GetEventDescription("event:/Music/AttackMusic");
-        eDS.getParameterDescriptionByName("Percussion", out pDS[0]);
-        eDS.getParameterDescriptionByName("Percussion2", out pDS[1]);
-        eDS.getParameterDescriptionByName("Choir", out pDS[2]);
-        eDS.getParameterDescriptionByName("String1", out pDS[3]);
-        eDS.getParameterDescriptionByName("String2", out pDS[4]);
+        eDS = RuntimeManager.GetEventDescription(musicEvent);
+        eDS.getParameterDescriptionByName(p1, out pDS[0]);
+        eDS.getParameterDescriptionByName(p2, out pDS[1]);
+        eDS.getParameterDescriptionByName(p3, out pDS[2]);
+        eDS.getParameterDescriptionByName(p4, out pDS[3]);
+        eDS.getParameterDescriptionByName(p5, out pDS[4]);
 
         for (int i = 0; i < pDS.Length; i++)
         {

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
-using TMPro;
-using UnityEditor.Experimental.GraphView;
 
 public class F_Player : MonoBehaviour
 {
