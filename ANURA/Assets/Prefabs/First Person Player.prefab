@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 2354557681189838688}
   - component: {fileID: 2354557681189838693}
   - component: {fileID: 2354557681189838692}
+  - component: {fileID: 1492592274537870460}
   m_Layer: 0
   m_Name: First Person View
   m_TagString: MainCamera
@@ -459,3 +460,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 300
   playerBody: {fileID: 2354557680469092398}
+--- !u!114 &1492592274537870460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557681189838689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24f569e04553a844a7d32ce41ff6146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  bobbingSpeed: 0.07
+  bobbingAmount: 0.1
+  midpoint: 1
+  bobIsOn: 1
+  waveslice: 0
