@@ -6,13 +6,13 @@ public class HeadBobber : MonoBehaviour
 {
  
     public float timer = 0.0f;
-    public float bobbingSpeed = 0.07f;
-    public float bobbingAmount = 0.1f;
-    public float midpoint = 1f; 
+    public float bobbingSpeed = 0.07f; //Adjusts the speed that the camera moves up and down
+    public float bobbingAmount = 0.1f; //Adjusts the amount that the camera moves 
+    public float midpoint = 1f; //Adjusts where the mid point of the camera wobble is 
     
    // TODO:Find where the memory leak is
    // public bool bobIsOn = true;
-   // unused until I can figure out where the memory leak is. this will be used to toggle on/off the head bob.
+   // unused until I can figure out where the memory leak is. this will be used to toggle the head bob.
    
 
    public float waveslice = 0.0f;
