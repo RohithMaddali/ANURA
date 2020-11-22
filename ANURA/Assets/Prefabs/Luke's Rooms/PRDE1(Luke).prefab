@@ -25987,7 +25987,7 @@ GameObject:
   - component: {fileID: 5992505592213379431}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: AudioTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26007,6 +26007,19 @@ Transform:
   m_Father: {fileID: 3027856184949467926}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4272441602201516208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793155910007809075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4004836979974255855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26022,19 +26035,6 @@ MonoBehaviour:
   toadHearingDistance: 10
   splashLocation: {fileID: 6016368417404964352}
   splash: {fileID: 4321045136807562785, guid: 6e352784f334484479ae9c2cddab1a68, type: 3}
---- !u!65 &4272441602201516208
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7793155910007809075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8057373560327037172
 GameObject:
   m_ObjectHideFlags: 0
@@ -26048,7 +26048,7 @@ GameObject:
   - component: {fileID: 1426163122877493957}
   m_Layer: 0
   m_Name: AmbienceTrigger
-  m_TagString: Untagged
+  m_TagString: AudioTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26097,6 +26097,9 @@ MonoBehaviour:
   stingers: 0.9
   waterDrops: 0
   onExitSetDefault: 0
+  reverbSmall: 0
+  reverbMedium: 0.5
+  reverbBig: 0
 --- !u!1001 &89865255028268058
 PrefabInstance:
   m_ObjectHideFlags: 0

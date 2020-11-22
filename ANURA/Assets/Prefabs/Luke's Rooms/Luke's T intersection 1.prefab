@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4462301567965057179}
   m_Layer: 0
   m_Name: AmbienceTrigger
-  m_TagString: Untagged
+  m_TagString: AudioTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,9 @@ MonoBehaviour:
   stingers: 0
   waterDrops: 0.5
   onExitSetDefault: 0
+  reverbSmall: 0.5
+  reverbMedium: 0
+  reverbBig: 0
 --- !u!1 &969298694879238305
 GameObject:
   m_ObjectHideFlags: 0
@@ -30533,7 +30536,7 @@ GameObject:
   - component: {fileID: 3496442730692755251}
   m_Layer: 0
   m_Name: AmbienceTrigger (1)
-  m_TagString: Untagged
+  m_TagString: AudioTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30582,6 +30585,9 @@ MonoBehaviour:
   stingers: 0
   waterDrops: 0.5
   onExitSetDefault: 0
+  reverbSmall: 0.5
+  reverbMedium: 0
+  reverbBig: 0
 --- !u!1 &2670007753525421973
 GameObject:
   m_ObjectHideFlags: 0
@@ -30687,7 +30693,7 @@ GameObject:
   - component: {fileID: 2178215463963946026}
   m_Layer: 0
   m_Name: AmbienceTrigger (2)
-  m_TagString: Untagged
+  m_TagString: AudioTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30736,6 +30742,9 @@ MonoBehaviour:
   stingers: 0
   waterDrops: 0.5
   onExitSetDefault: 0
+  reverbSmall: 0.5
+  reverbMedium: 0
+  reverbBig: 0
 --- !u!65 &3904255658896341585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31438,7 +31447,7 @@ GameObject:
   - component: {fileID: 3400756437297675465}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: AudioTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

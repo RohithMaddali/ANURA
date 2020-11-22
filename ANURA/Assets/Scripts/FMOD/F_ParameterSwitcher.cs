@@ -17,7 +17,17 @@ public class F_ParameterSwitcher : MonoBehaviour
     [SerializeField] 
     private bool onExitSetDefault;
 
+    [SerializeField]
+    private float reverbSmall;
+    [SerializeField]
+    private float reverbMedium;
+    [SerializeField]
+    private float reverbBig;
+    
+    private F_Player playerAudio;
+
     private float [] values = new float[5];
+    public static float [] reverbValues = new float[3];
     //[SerializeField]
     //private bool lerpWind;
     //[SerializeField]
@@ -33,13 +43,16 @@ public class F_ParameterSwitcher : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player1"))
         {
             Debug.Log("Switched");
             //if (lerpWind == true)
                 //wind = Mathf.Lerp(wind, 1, lerpTime * Time.deltaTime);
                 
                 F_Ambience.amb.setParametersByIDs(F_Ambience.parameterIds, values, 4, false);
+                reverbValues[0] = reverbSmall;
+                reverbValues[1] = reverbMedium;
+                reverbValues[2] = reverbBig;
         }
     }
 }

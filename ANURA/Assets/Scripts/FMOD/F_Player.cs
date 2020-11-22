@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
 
@@ -13,50 +14,75 @@ public class F_Player : MonoBehaviour
     private bool played;
     private EventInstance stressed;
     public LayerMask lm;
-    float[] values = new float[1];
+    public float[] values = new float[3];
     private float material;
-    
+    public EventInstance footsteps;
+    private EventDescription ambDescription;
+    private PARAMETER_DESCRIPTION[] pDS = new PARAMETER_DESCRIPTION[3];
+    public static PARAMETER_ID[] pIDS = new PARAMETER_ID[3];
+
     private void Start()
     {
+        GetParameters();
         InvokeRepeating("WalkingFootsteps",0,walkingSpeed);
         playerMovement = GetComponent<PlayerMovement>();
         music = GetComponent<F_Music>();
         stressed = RuntimeManager.CreateInstance("event:/Player/Breathing");
     }
-
+    
+    
     private void Update()
     {
         MaterialCheck();
     }
 
+    void GetParameters()
+    {
+        ambDescription = RuntimeManager.GetEventDescription("event:/Player/P_Footsteps");
+        ambDescription.getParameterDescriptionByName("ReverbSmall", out pDS[0]);
+        ambDescription.getParameterDescriptionByName("ReverbMedium", out pDS[1]);
+        ambDescription.getParameterDescriptionByName("ReverbBig", out pDS[2]);
+
+        for (int i = 0; i < pDS.Length; i++)
+        {
+           pIDS[i] = pDS[i].id;
+        }
+    }
+
+
     void WalkingFootsteps()
     {
         if (playerMovement.isMoving == true)
         {
-            EventInstance footsteps = RuntimeManager.CreateInstance("event:/Player/P_Footsteps");
+            footsteps = RuntimeManager.CreateInstance("event:/Player/P_Footsteps");
             footsteps.setParameterByName("Material", material, false);
+            footsteps.setParametersByIDs(pIDS, F_ParameterSwitcher.reverbValues, 3, false);
             footsteps.start();
             footsteps.release();
         }
     }
     void MaterialCheck()
     {
-        float dist = 3f;
+        float dist = 4f;
         RaycastHit hit;
         Physics.Raycast(transform.position, Vector3.down, out hit, dist, lm);
+        Debug.DrawRay(transform.position, Vector3.down * dist, Color.red);
 
-        switch (hit.collider.tag)
+        if (hit.collider != null)
         {
-            case "Concrete":
-                material = 0;
-                Debug.Log("Concrete");
-                break;
-            case "Water":
-                material = 1;
-                break;
-            default:
-                material = 0;
-                break;
+            switch (hit.collider.tag)
+            {
+                case "Concrete":
+                    material = 0;
+                    Debug.Log("Concrete");
+                    break;
+                case "Water":
+                    material = 1;
+                    break;
+                default:
+                    material = 0;
+                    break;
+            }
         }
     }
     
