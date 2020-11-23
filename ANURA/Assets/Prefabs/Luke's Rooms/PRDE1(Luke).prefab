@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3027856183091719722}
   - component: {fileID: 3027856183091719723}
   - component: {fileID: 3027856183091719720}
-  - component: {fileID: 3027856183091719721}
   - component: {fileID: 3027856183091719726}
+  - component: {fileID: 2242313640253245334}
   m_Layer: 0
   m_Name: Switch 2
   m_TagString: Switch
@@ -304,20 +304,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027856183091719727}
   m_Mesh: {fileID: 0}
---- !u!64 &3027856183091719721
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027856183091719727}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3027856183091719726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +319,19 @@ MonoBehaviour:
   gates:
   - {fileID: 3027856183402248468}
   - {fileID: 3027856184098209640}
+--- !u!65 &2242313640253245334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027856183091719727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5000001, y: 1.9393382, z: 0.5000001}
+  m_Center: {x: 0.25000006, y: -0.4696691, z: -0.25000006}
 --- !u!1 &3027856183123449917
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,8 +6183,8 @@ GameObject:
   - component: {fileID: 3027856183677614666}
   - component: {fileID: 3027856183677614667}
   - component: {fileID: 3027856183677614664}
-  - component: {fileID: 3027856183677614665}
   - component: {fileID: 3027856183677614670}
+  - component: {fileID: 3542038904598958549}
   m_Layer: 0
   m_Name: Switch 1
   m_TagString: Switch
@@ -6476,20 +6475,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027856183677614671}
   m_Mesh: {fileID: 0}
---- !u!64 &3027856183677614665
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027856183677614671}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3027856183677614670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6505,6 +6490,19 @@ MonoBehaviour:
   gates:
   - {fileID: 3027856183402248468}
   - {fileID: 3027856184680481958}
+--- !u!65 &3542038904598958549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027856183677614671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.7167792, z: 0.5}
+  m_Center: {x: 0.25, y: -0.35838962, z: -0.25}
 --- !u!1 &3027856183687648602
 GameObject:
   m_ObjectHideFlags: 0
@@ -6582,8 +6580,8 @@ GameObject:
   - component: {fileID: 3027856183688591856}
   - component: {fileID: 3027856183688591857}
   - component: {fileID: 3027856183688591862}
-  - component: {fileID: 3027856183688591863}
   - component: {fileID: 3027856183688591860}
+  - component: {fileID: 2443527166492620510}
   m_Layer: 0
   m_Name: Switch 4
   m_TagString: Switch
@@ -6874,20 +6872,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027856183688591861}
   m_Mesh: {fileID: 0}
---- !u!64 &3027856183688591863
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027856183688591861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3027856183688591860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6903,6 +6887,19 @@ MonoBehaviour:
   gates:
   - {fileID: 3027856183402248468}
   - {fileID: 3027856183629462386}
+--- !u!65 &2443527166492620510
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027856183688591861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.7220578, z: 0.5}
+  m_Center: {x: 0.25, y: -0.3610289, z: -0.25}
 --- !u!1 &3027856183699960444
 GameObject:
   m_ObjectHideFlags: 0
@@ -9466,8 +9463,8 @@ GameObject:
   - component: {fileID: 3027856184162314199}
   - component: {fileID: 3027856184162314196}
   - component: {fileID: 3027856184162314197}
-  - component: {fileID: 3027856184162314186}
   - component: {fileID: 3027856184162314187}
+  - component: {fileID: 3290444027374669745}
   m_Layer: 0
   m_Name: Switch 3
   m_TagString: Switch
@@ -9758,20 +9755,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3027856184162314184}
   m_Mesh: {fileID: 0}
---- !u!64 &3027856184162314186
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027856184162314184}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3027856184162314187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9787,6 +9770,19 @@ MonoBehaviour:
   gates:
   - {fileID: 3027856183629462386}
   - {fileID: 3027856184098209640}
+--- !u!65 &3290444027374669745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027856184162314184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.7766833, z: 0.5}
+  m_Center: {x: 0.25, y: -0.38834167, z: -0.24999999}
 --- !u!1 &3027856184191084776
 GameObject:
   m_ObjectHideFlags: 0

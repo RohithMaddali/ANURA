@@ -18,7 +18,22 @@ public class PlayerRaycasting : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward * distancetoTouch, Color.blue);
 
-        if(Physics.Raycast(transform.position, transform.forward, out (touchingObject), distancetoTouch))
+        if (Input.GetKeyDown("e"))
+        {
+            Physics.Raycast(transform.position, transform.forward, out (touchingObject), distancetoTouch, 9);
+            Debug.Log(touchingObject.collider.gameObject);
+            if(touchingObject.collider.gameObject.tag == "Switch")
+            {
+                touchingObject.collider.gameObject.GetComponent<Switch>().Activate();
+            }
+            else if (touchingObject.collider.gameObject.tag == "BridgeSwitch")
+            {
+                touchingObject.collider.gameObject.GetComponent<BridgeSwitch>().Activate();
+            }
+
+        }
+
+        if (Physics.Raycast(transform.position, transform.forward, out (touchingObject), distancetoTouch))
         {
             //Debug.Log("touching " + touchingObject.collider.gameObject.name);
             if (touchingObject.collider.gameObject.tag == "Switch" && Input.GetKeyDown("e"))

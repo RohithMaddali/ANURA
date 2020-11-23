@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2354557679834978806}
   - component: {fileID: 2354557679834978807}
   - component: {fileID: 2354557679834978804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -226,6 +226,10 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 4294967295
+  values:
+  - 0
+  - 0
+  - 0
 --- !u!114 &245363704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,9 +260,7 @@ MonoBehaviour:
   p3: Choir
   p4: String1
   p5: String2
-  radius: 10
   playedMusic: 0
-  enemyIsNear: 0
   parameterValues:
   - title: Default
     info: Element 0 is Track 1 in FMOD
@@ -364,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2354557681189838689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.08, z: -0.09}
+  m_LocalPosition: {x: 0, y: 0.58000004, z: 0.216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2354557680469092398}
@@ -482,5 +484,4 @@ MonoBehaviour:
   bobbingSpeed: 0.07
   bobbingAmount: 0.1
   midpoint: 1
-  bobIsOn: 1
   waveslice: 0

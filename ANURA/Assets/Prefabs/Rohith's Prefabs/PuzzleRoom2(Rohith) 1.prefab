@@ -111,8 +111,8 @@ GameObject:
   - component: {fileID: 2736570309259584872}
   - component: {fileID: 2736570309259584873}
   - component: {fileID: 2736570309259584878}
-  - component: {fileID: 2736570309259584879}
   - component: {fileID: 2736570309259584876}
+  - component: {fileID: 4771269320464310634}
   m_Layer: 0
   m_Name: Switch2
   m_TagString: Switch
@@ -399,20 +399,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2736570309259584877}
   m_Mesh: {fileID: 0}
---- !u!64 &2736570309259584879
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2736570309259584877}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &2736570309259584876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +413,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gates:
   - {fileID: 2736570310306421291}
+--- !u!65 &4771269320464310634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736570309259584877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.195529, z: 0.5}
+  m_Center: {x: 0.24999999, y: -0.09776449, z: -0.25}
 --- !u!1 &2736570309404924688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6372,8 +6371,8 @@ GameObject:
   - component: {fileID: 2736570309945511425}
   - component: {fileID: 2736570309945511430}
   - component: {fileID: 2736570309945511431}
-  - component: {fileID: 2736570309945511428}
   - component: {fileID: 2736570309945511429}
+  - component: {fileID: 7330827794876855959}
   m_Layer: 0
   m_Name: Switch4
   m_TagString: Switch
@@ -6660,20 +6659,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2736570309945511546}
   m_Mesh: {fileID: 0}
---- !u!64 &2736570309945511428
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2736570309945511546}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &2736570309945511429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6688,6 +6673,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gates:
   - {fileID: 2736570309539047066}
+--- !u!65 &7330827794876855959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736570309945511546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.939117, z: 0.5}
+  m_Center: {x: 0.24999999, y: -0.46955848, z: -0.25}
 --- !u!1 &2736570309961435383
 GameObject:
   m_ObjectHideFlags: 0
@@ -17647,8 +17645,8 @@ GameObject:
   - component: {fileID: 2736570310341715898}
   - component: {fileID: 2736570310341715899}
   - component: {fileID: 2736570310341715896}
-  - component: {fileID: 2736570310341715897}
   - component: {fileID: 2736570310341715902}
+  - component: {fileID: 1963298224819709161}
   m_Layer: 0
   m_Name: Switch1
   m_TagString: Switch
@@ -17935,20 +17933,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2736570310341715903}
   m_Mesh: {fileID: 0}
---- !u!64 &2736570310341715897
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2736570310341715903}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &2736570310341715902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17963,6 +17947,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gates:
   - {fileID: 2736570310632745092}
+--- !u!65 &1963298224819709161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736570310341715903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.49897, z: 0.5}
+  m_Center: {x: 0.24999999, y: -0.24948502, z: -0.25}
 --- !u!1 &2736570310379210128
 GameObject:
   m_ObjectHideFlags: 0
@@ -17975,8 +17972,8 @@ GameObject:
   - component: {fileID: 2736570310379210143}
   - component: {fileID: 2736570310379210140}
   - component: {fileID: 2736570310379210141}
-  - component: {fileID: 2736570310379210130}
   - component: {fileID: 2736570310379210131}
+  - component: {fileID: 4633701088283895075}
   m_Layer: 0
   m_Name: Switch5
   m_TagString: Switch
@@ -18263,20 +18260,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2736570310379210128}
   m_Mesh: {fileID: 0}
---- !u!64 &2736570310379210130
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2736570310379210128}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &2736570310379210131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18291,6 +18274,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gates:
   - {fileID: 2736570310315539520}
+--- !u!65 &4633701088283895075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736570310379210128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.4463413, z: 0.5}
+  m_Center: {x: 0.24999999, y: -0.22317064, z: -0.25}
 --- !u!1 &2736570310382449857
 GameObject:
   m_ObjectHideFlags: 0
@@ -21842,8 +21838,8 @@ GameObject:
   - component: {fileID: 2736570311161557262}
   - component: {fileID: 2736570311161557263}
   - component: {fileID: 2736570311161557260}
-  - component: {fileID: 2736570311161557261}
   - component: {fileID: 2736570311161557250}
+  - component: {fileID: 4701722792630333259}
   m_Layer: 0
   m_Name: Switch3
   m_TagString: Switch
@@ -22130,20 +22126,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2736570311161557251}
   m_Mesh: {fileID: 0}
---- !u!64 &2736570311161557261
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2736570311161557251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &2736570311161557250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22158,6 +22140,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gates:
   - {fileID: 2736570309971486111}
+--- !u!65 &4701722792630333259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736570311161557251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.7915826, z: 0.5}
+  m_Center: {x: 0.24999999, y: -0.3957913, z: -0.25}
 --- !u!1 &2736570311186122184
 GameObject:
   m_ObjectHideFlags: 0
