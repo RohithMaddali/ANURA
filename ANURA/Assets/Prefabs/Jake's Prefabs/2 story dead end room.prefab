@@ -73,7 +73,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 25.3
+  m_Intensity: 5.5
   m_Range: 37.54
   m_SpotAngle: 150.55885
   m_InnerSpotAngle: 109.8699
@@ -112,7 +112,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -165,7 +165,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 25.3
+  m_Intensity: 5.5
   m_Range: 52.6
   m_SpotAngle: 150.55885
   m_InnerSpotAngle: 109.8699
@@ -204,7 +204,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -322,7 +322,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 25.3
+  m_Intensity: 10
   m_Range: 37.54
   m_SpotAngle: 171.93454
   m_InnerSpotAngle: 126.115425
@@ -361,7 +361,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -8630,6 +8630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9046329973586536455}
+  - component: {fileID: 1688721689880601216}
   m_Layer: 0
   m_Name: 2 story dead end room
   m_TagString: Untagged
@@ -8662,6 +8663,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1688721689880601216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9046329973586536448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fb403cafa58b843aa07da4f6f5b07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RendererInfo: []
+  m_Lightmaps:
+  - {fileID: 2800000, guid: d29e037439ed0cf469d0d7a0f431b653, type: 3}
+  - {fileID: 2800000, guid: 30c1c8b1831c04447922ce1ba324ae2a, type: 3}
+  - {fileID: 2800000, guid: 01aec86ca55d30545a21457818a3d3c9, type: 3}
+  - {fileID: 2800000, guid: 6bc0b6a51a3c3be44b28db9aeae83f01, type: 3}
+  m_LightmapsDir:
+  - {fileID: 2800000, guid: 55602f2a6de443a4ea0adbde0ad21264, type: 3}
+  - {fileID: 2800000, guid: dd4eb1b21ae98e04a9fb1914a7be0e79, type: 3}
+  - {fileID: 2800000, guid: 3c9d23bb2bb082e4185e92127978c904, type: 3}
+  - {fileID: 2800000, guid: ac4ea021d3b38fd4fb34f282a1eb0a02, type: 3}
+  m_ShadowMasks: []
+  m_LightInfo: []
 --- !u!1 &9046329973665859846
 GameObject:
   m_ObjectHideFlags: 0
