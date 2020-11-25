@@ -5779,13 +5779,14 @@ GameObject:
   - component: {fileID: 2098991549}
   - component: {fileID: 2098991551}
   - component: {fileID: 2098991550}
+  - component: {fileID: 2098991552}
   m_Layer: 5
   m_Name: White text boarder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2098991549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5843,6 +5844,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098991548}
   m_CullTransparentMesh: 0
+--- !u!225 &2098991552
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098991548}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!43 &2130152538
 Mesh:
   m_ObjectHideFlags: 0
