@@ -19,6 +19,7 @@ public class Patroller : MonoBehaviour
     public float time;
     public float searchtimer = 10;
     public NavMeshAgent agent;
+    GameManager gm;
     
     
     
@@ -35,6 +36,7 @@ public class Patroller : MonoBehaviour
     {
         transform.position = patrolPoints[0].position;
         player = GameObject.FindGameObjectWithTag("Player");
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -161,6 +163,7 @@ public class Patroller : MonoBehaviour
         //investigating = false;
         //patrolling = false;
         Debug.Log("RIBBIT");
+        gm.ToadSawPlayer(gameObject);
         yield return new WaitForSeconds(.75f);
         action = Behaviour.chasing;
     }

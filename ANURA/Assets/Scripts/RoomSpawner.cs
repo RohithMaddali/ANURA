@@ -19,7 +19,7 @@ public class RoomSpawner : MonoBehaviour
     private GameObject iRoomTest;
     private GameObject hRoomTest;
     public GameObject deadEnd;
-    GameManager gm;
+    LevelManager lm;
 
     private RoomTemplates templates;
     private int rand;
@@ -32,9 +32,9 @@ public class RoomSpawner : MonoBehaviour
     void Start()
     {
         
-        gm = FindObjectOfType<GameManager>();
+        lm = FindObjectOfType<LevelManager>();
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        gm.levelComplete = false;
+        lm.levelComplete = false;
         Invoke("Spawn", .1f);
     }
 
@@ -234,7 +234,7 @@ public class RoomSpawner : MonoBehaviour
 
     IEnumerator WallTest(GameObject pRoom, GameObject iRoom, GameObject hRoom, GameObject[] pRoomList, GameObject[] iRoomList, GameObject[] hRoomList, GameObject[] DEList, Transform iPos, Transform hPos)
     {
-        if(gm.roomCount < 4)
+        if(lm.roomCount < 4)
         {
             roomtype = Random.Range(1, 3);
             if(roomtype == 1)
@@ -243,7 +243,7 @@ public class RoomSpawner : MonoBehaviour
                 iRoom = Instantiate(iRoomList[rand], iPos.transform.position, iRoomList[rand].transform.rotation);
                 iRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 spawned = true;
-                gm.roomCount++;
+                lm.roomCount++;
                 //Instantiate(iRoom.GetComponent<SpaceCheck>().myRoom, iRoom.transform.position, iRoom.transform.rotation);
             }
             if(roomtype == 2)
@@ -252,13 +252,13 @@ public class RoomSpawner : MonoBehaviour
                 hRoom = Instantiate(hRoomList[rand], hPos.transform.position, hRoomList[rand].transform.rotation);
                 hRoom.GetComponent<SpaceCheck>().mySpawner = this;
                 spawned = true;
-                gm.roomCount++;
+                lm.roomCount++;
                 //Instantiate(hRoom.GetComponent<SpaceCheck>().myRoom, hRoom.transform.position, hRoom.transform.rotation);
             }
 
 
         }
-        else if(gm.roomCount > 3 && gm.pRoomCount < 3)
+        else if(lm.roomCount > 3 && lm.pRoomCount < 3)
         {
             randTimer = Random.Range(0.1f, 2.9f);
             rand = Random.Range(0, pRoomList.Length);
@@ -266,12 +266,12 @@ public class RoomSpawner : MonoBehaviour
             pRoom.GetComponent<SpaceCheck>().mySpawner = this;
             yield return new WaitForSeconds(.1f);
 
-            if (pRoom.GetComponent<SpaceCheck>().sits == true && gm.roomCount > 4 && gm.pRoomCount < 3)
+            if (pRoom.GetComponent<SpaceCheck>().sits == true && lm.roomCount > 4 && lm.pRoomCount < 3)
             {
                 spawned = true;
-                gm.roomCount++;
-                gm.pRoomCount++;
-                Debug.Log("The are " + gm.pRoomCount + " puzzle rooms");
+                lm.roomCount++;
+                lm.pRoomCount++;
+                Debug.Log("The are " + lm.pRoomCount + " puzzle rooms");
                 //gm.Invoke("checkActiveSpawners", .1f);
                 //create room
                 //Instantiate(pRoom.GetComponent<SpaceCheck>().myRoom, pRoom.transform.position, pRoom.transform.rotation);
@@ -288,7 +288,7 @@ public class RoomSpawner : MonoBehaviour
                 {
                     //Debug.Log("Fill iRoom");
                     spawned = true;
-                    gm.roomCount++;
+                    lm.roomCount++;
                     //create room
                     //Instantiate(iRoom.GetComponent<SpaceCheck>().myRoom, iRoom.transform.position, iRoom.transform.rotation);
                 }
@@ -304,7 +304,7 @@ public class RoomSpawner : MonoBehaviour
                     {
                         //Debug.Log("Fill hRoom");
                         spawned = true;
-                        gm.roomCount++;
+                        lm.roomCount++;
                         //Instantiate(hRoom.GetComponent<SpaceCheck>().myRoom, hRoom.transform.position, hRoom.transform.rotation);
                     }
                     else
@@ -319,7 +319,7 @@ public class RoomSpawner : MonoBehaviour
                 }
 
             }
-        }else if(gm.roomCount > 10 && gm.pRoomCount >= 3)
+        }else if(lm.roomCount > 10 && lm.pRoomCount >= 3)
         {
             Debug.Log("dead ends from here on out");
             transform.position = dEndPos.transform.position;

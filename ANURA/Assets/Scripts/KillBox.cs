@@ -5,6 +5,7 @@ using UnityEngine;
 public class KillBox : MonoBehaviour
 {
     public GameManager gm;
+
     
     // Start is called before the first frame update
     void Start()

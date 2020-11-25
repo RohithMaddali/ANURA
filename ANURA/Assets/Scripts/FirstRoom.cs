@@ -10,12 +10,12 @@ public class FirstRoom : MonoBehaviour
     private int rand;
     public bool spawned = false;
     private GameObject room;
-    GameManager gm;
+    LevelManager lm;
 
     // Start is called before the first frame update
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        lm = FindObjectOfType<LevelManager>();
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", 0.1f);
     }
@@ -29,25 +29,25 @@ public class FirstRoom : MonoBehaviour
             {
                 rand = Random.Range(0, templates.bottomIRooms.Length);
                 room = Instantiate(templates.bottomIRooms[rand], transform.position, templates.bottomIRooms[rand].transform.rotation);
-                gm.roomCount++;
+                lm.roomCount++;
             }
             if (openingDir == 2)
             {
                 rand = Random.Range(0, templates.topIRooms.Length);
                 room = Instantiate(templates.topIRooms[rand], transform.position, templates.topIRooms[rand].transform.rotation);
-                gm.roomCount++;
+                lm.roomCount++;
             }
             if (openingDir == 3)
             {
                 rand = Random.Range(0, templates.leftIRooms.Length);
                 room = Instantiate(templates.leftIRooms[rand], transform.position, templates.leftIRooms[rand].transform.rotation);
-                gm.roomCount++;
+                lm.roomCount++;
             }
             if (openingDir == 4)
             {
                 rand = Random.Range(0, templates.rightIRooms.Length);
                 room = Instantiate(templates.rightIRooms[rand], transform.position, templates.rightIRooms[rand].transform.rotation);
-                gm.roomCount++;
+                lm.roomCount++;
             }
             spawned = true;
         }
