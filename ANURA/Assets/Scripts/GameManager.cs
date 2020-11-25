@@ -31,13 +31,13 @@ public class GameManager : MonoBehaviour
 
     public void Caught(GameObject toad, GameObject room)
     {
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(1);
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
         {
             { "toad", toad },
             { "room", room }
         });
-        Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(1);
     }
 
     public void checkActiveSpawners()
