@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void Caught()
     {
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(1);
     }
 
