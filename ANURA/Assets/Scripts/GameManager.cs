@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void Caught()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void checkActiveSpawners()
     {
         /*activeSpawners = FindObjectsOfType<RoomSpawner>();
