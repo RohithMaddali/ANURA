@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Analytics;
 
 public class Patroller : MonoBehaviour
 {
@@ -12,10 +13,10 @@ public class Patroller : MonoBehaviour
     public float moveSpeed;
     GameObject player;
     public Vector3 lastKnownPos;
-    public bool patrolling = true;
+    /*public bool patrolling = true;
     public bool investigating;
     public bool chasing;
-    public bool searching;
+    public bool searching;*/
     public float time;
     public float searchtimer = 10;
     public NavMeshAgent agent;
@@ -163,7 +164,7 @@ public class Patroller : MonoBehaviour
         //investigating = false;
         //patrolling = false;
         Debug.Log("RIBBIT");
-        gm.ToadSawPlayer(gameObject);
+        ToadSawPlayer();
         yield return new WaitForSeconds(.75f);
         action = Behaviour.chasing;
     }
@@ -175,5 +176,15 @@ public class Patroller : MonoBehaviour
 
         //look left
         //look right
+    }
+
+    public void ToadSawPlayer()
+    {
+
+        Analytics.CustomEvent("PlayerSpotted", new Dictionary<string, object>
+        {
+            {"toad", gameObject.name },
+            {"room", gameObject.transform.parent.gameObject.name }
+        });
     }
 }

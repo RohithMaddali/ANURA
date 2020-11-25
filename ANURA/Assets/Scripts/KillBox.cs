@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class KillBox : MonoBehaviour
 {
@@ -26,5 +27,14 @@ public class KillBox : MonoBehaviour
             Debug.Log("caught player");
             gm.Caught(gameObject.transform.parent.gameObject, gameObject.transform.parent.gameObject.transform.parent.gameObject);
         }
+    }
+
+    public void ToadCaughtPlayer()
+    {
+        Analytics.CustomEvent("gameOver", new Dictionary<string, object>
+        {
+            { "toad that caught", gameObject.transform.parent.gameObject.name },
+            { "room toad is from", gameObject.transform.parent.gameObject.transform.parent.gameObject.name }
+        });
     }
 }
