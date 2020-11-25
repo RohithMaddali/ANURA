@@ -245,8 +245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 9079794889650167774}
   player: {fileID: 0}
-  maxAngle: 45
-  maxRadius: 5.4
+  maxAngle: 35
+  maxRadius: 7
   speed: 80
 --- !u!114 &9079794889650167775
 MonoBehaviour:
@@ -263,14 +263,10 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 3.99
+  moveSpeed: 4.5
   lastKnownPos: {x: 0, y: 0, z: 0}
-  patrolling: 1
-  investigating: 0
-  chasing: 0
-  searching: 0
   time: 0
-  searchtimer: 10
+  searchtimer: 4
   agent: {fileID: 9079794889650167760}
   action: 0
 --- !u!195 &9079794889650167760

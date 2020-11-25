@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -52,7 +51,7 @@ public class FOVDetection : MonoBehaviour
         Collider[] overlaps = new Collider[10];
         int count = Physics.OverlapSphereNonAlloc(checkingObject.position, maxRadius, overlaps);
 
-        for (int i = 0; i < count + 1; i++)
+        for (int i = 0; i < count - 1; i++)
         {
 
             if (overlaps[i] != null)
