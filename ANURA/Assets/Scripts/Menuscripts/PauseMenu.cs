@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -56,5 +57,12 @@ public class PauseMenu : MonoBehaviour
     {
         //Add "Are you sure you want to quit? progress will be lost. Y/N later
         Application.Quit();
+    }
+
+    public void GiveHint()
+    {
+        //find the text component of the hovered UI
+        //put UI in the loaction of player's cursor
+
     }
 }
