@@ -51,4 +51,10 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         isPaused = false;
     }
+
+    public void QuitGame()
+    {
+        //Add "Are you sure you want to quit? progress will be lost. Y/N later
+        Application.Quit();
+    }
 }
