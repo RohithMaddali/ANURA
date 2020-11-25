@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor.AI;
 using UnityEngine.Analytics;
+using System.Security.Cryptography;
 
 public class GameManager : MonoBehaviour
 {
+    public int KeyCount;
+    
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -19,8 +22,8 @@ public class GameManager : MonoBehaviour
     }
 
     
-    
 
-    
-    
+
+
+
 }
