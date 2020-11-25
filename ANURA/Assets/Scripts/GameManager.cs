@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject builtRoom;
     public bool levelComplete = true;
     public bool levelWorks;
+    public Animator loadingScreen;
+    public Animator loadingLogo;
     
     // Start is called before the first frame update
     void Start()
@@ -72,6 +74,8 @@ public class GameManager : MonoBehaviour
                     Debug.Log("No builtroom script");
                 
             }
+            loadingScreen.SetTrigger("Load1");
+            loadingLogo.SetTrigger("Load2");
 
         }
         else if (/*levelComplete &&*/ pRoomCount < 3)

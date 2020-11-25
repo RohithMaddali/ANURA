@@ -22,28 +22,33 @@ public class PauseMenu : MonoBehaviour
 
         if (isPaused)
         {
-            Time.timeScale = 0;
-            cammie = GameObject.FindGameObjectWithTag("MainCamera");
-            cammie.GetComponent<HeadBobber>().bobbingSpeed = 0;
             ActivateMenu();
         }
 
         else
         {
-            Time.timeScale = 1;
-            cammie = GameObject.FindGameObjectWithTag("MainCamera");
-            cammie.GetComponent<HeadBobber>().bobbingSpeed = 0.07f;
             DeactivateMenu();
         }
     }
 
     void ActivateMenu()
     {
+        Time.timeScale = 0;
+        cammie = GameObject.FindGameObjectWithTag("MainCamera");
+        cammie.GetComponent<HeadBobber>().bobbingSpeed = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
     }
 
-    void DeactivateMenu()
+    public void DeactivateMenu()
     {
+        Time.timeScale = 1;
+        cammie = GameObject.FindGameObjectWithTag("MainCamera");
+        cammie.GetComponent<HeadBobber>().bobbingSpeed = 0.07f;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
+        isPaused = false;
     }
 }
