@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor.AI;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,8 +29,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Caught()
+    public void Caught(GameObject toad, GameObject room)
     {
+        Analytics.CustomEvent("gameOver", new Dictionary<string, object>
+        {
+            { "toad", toad },
+            { "room", room }
+        });
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(1);
     }

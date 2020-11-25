@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Analytics;
+
 
 public class FOVDetection : MonoBehaviour
 {
@@ -76,6 +78,12 @@ public class FOVDetection : MonoBehaviour
                             if (hit.transform == target)
                             {
                                 //enemy.transform.LookAt(target);
+                                Analytics.CustomEvent("PlayerSpotted", new Dictionary<string, object>
+                                {
+                                    {"toad", enemy.gameObject },
+                                    {"room", enemy.parent.gameObject }
+                                });
+
                                 Debug.Log("The Toad Sees You!");
                                 Quaternion rotTarget = Quaternion.LookRotation(target.position - enemy.position);
                                 enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotTarget, speed * Time.deltaTime);

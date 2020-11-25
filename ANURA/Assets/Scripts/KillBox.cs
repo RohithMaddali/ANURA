@@ -23,7 +23,7 @@ public class KillBox : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
             Debug.Log("caught player");
-            gm.Caught();
+            gm.Caught(gameObject.transform.parent.gameObject, gameObject.transform.parent.gameObject.transform.parent.gameObject);
         }
     }
 }
