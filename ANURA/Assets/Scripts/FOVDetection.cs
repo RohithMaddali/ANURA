@@ -85,8 +85,18 @@ public class FOVDetection : MonoBehaviour
                                 checkingObject.GetComponent<Patroller>().StartCoroutine("RoarAndChase");
                                 return true;
                             }
-                                
-                            
+                            else if(hit.transform != target)
+                            {
+                                //target lost
+                                Debug.Log("the toad lost the player");
+                                checkingObject.GetComponent<Patroller>().lastKnownPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+                                //start timer
+                                checkingObject.GetComponent<Patroller>().action = Patroller.Behaviour.investigating;
+                                //look around
+                                //return to patrolling or find target again
+                            }
+
+
                         }
 
 
@@ -96,7 +106,7 @@ public class FOVDetection : MonoBehaviour
                 }
 
             }
-            else if(overlaps[i] == null && checkingObject.GetComponent<Patroller>().action == Patroller.Behaviour.chasing)
+            /*else if(overlaps[i] == null && checkingObject.GetComponent<Patroller>().action == Patroller.Behaviour.chasing)
             {
                 //target lost
                 Debug.Log("the toad lost the player");
@@ -105,7 +115,7 @@ public class FOVDetection : MonoBehaviour
                 checkingObject.GetComponent<Patroller>().action = Patroller.Behaviour.investigating;
                 //look around
                 //return to patrolling or find target again
-            }
+            }*/
 
         }
 
