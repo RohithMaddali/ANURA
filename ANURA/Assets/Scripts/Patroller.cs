@@ -70,7 +70,7 @@ public class Patroller : MonoBehaviour
                 agent.SetDestination(lastKnownPos);
 
                 //Debug.Log("a toad heard that");
-                if (Vector3.Distance(transform.position, lastKnownPos) < 0.6f)
+                if (Vector3.Distance(transform.position, lastKnownPos) < 1f)
                 {
                     RestartTime();
                     action = Behaviour.searching;
@@ -167,6 +167,9 @@ public class Patroller : MonoBehaviour
         ToadSawPlayer();
         yield return new WaitForSeconds(.75f);
         action = Behaviour.chasing;
+        yield return new WaitForSeconds(3f);
+        lastKnownPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        action = Behaviour.investigating;
     }
     public void RestartTime()
     {

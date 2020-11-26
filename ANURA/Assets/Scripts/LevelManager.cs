@@ -15,10 +15,12 @@ public class LevelManager : MonoBehaviour
     public bool levelWorks;
     public Animator loadingScreen;
     public Animator loadingLogo;
+    public GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         Invoke("checkActiveSpawners", 3.5f);
     }
     
@@ -73,6 +75,7 @@ public class LevelManager : MonoBehaviour
             //restart
             //Debug.Log("RESTART");
             //reload level?
+            gm.KeyCount = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         /*else if(!levelComplete)
