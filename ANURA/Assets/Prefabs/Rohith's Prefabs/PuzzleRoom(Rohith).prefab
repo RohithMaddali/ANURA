@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 3557863523904956695}
   - component: {fileID: 4508153257048862953}
   - component: {fileID: 3903268615585513955}
+  - component: {fileID: 1451890272554704494}
   m_Layer: 0
   m_Name: AmbienceTrigger (1)
   m_TagString: AudioTrigger
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4db4ee38135d234cb257a6f8e0788e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningWater: 0.4
+  runningWater: 0.6
   wind: 0
   stingers: 0.8
   waterDrops: 0.5
@@ -433,6 +434,18 @@ MonoBehaviour:
   reverbSmall: 0
   reverbMedium: 0
   reverbBig: 0.5
+--- !u!114 &1451890272554704494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844036553266071842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221672feefb78c499456315ff71ae0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3952392597749351540
 GameObject:
   m_ObjectHideFlags: 0
