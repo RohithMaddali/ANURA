@@ -17,6 +17,7 @@ public class KeyPickup : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Music/PuzzleRoomSuccess");
                 gm.KeyCount += 1;
                 Destroy(gameObject);
             }
