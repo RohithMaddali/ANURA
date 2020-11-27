@@ -24,6 +24,7 @@ public class KillBox : MonoBehaviour
         Debug.Log(other.tag);
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
+            ToadCaughtPlayer();
             Debug.Log("caught player");
             gm.Caught(gameObject.transform.parent.gameObject, gameObject.transform.parent.gameObject.transform.parent.gameObject);
         }
