@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor.AI;
+using UnityEngine.AI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public Animator loadingScreen;
     public Animator loadingLogo;
     public GameManager gm;
+    public NavMeshSurface surface;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,7 @@ public class LevelManager : MonoBehaviour
                 Destroy(tempRoom.gameObject);
                 Debug.Log("Generated Room");
             }
-            NavMeshBuilder.BuildNavMesh();
+            surface.BuildNavMesh();
             Debug.Log("NAVMESH BUILT");
             //have each room in spawned rooms array activate their AI
             foreach (GameObject room in spawnedRooms)
