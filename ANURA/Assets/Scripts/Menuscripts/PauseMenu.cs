@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -64,5 +65,9 @@ public class PauseMenu : MonoBehaviour
         //find the text component of the hovered UI
         //put UI in the loaction of player's cursor
 
+    }
+    public void restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }
