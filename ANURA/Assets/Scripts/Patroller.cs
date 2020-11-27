@@ -9,6 +9,7 @@ public class Patroller : MonoBehaviour
     // Start is called before the first frame update
     private int currentPoint;
     public Transform[] patrolPoints;
+    private Transform temp;
 
     public float moveSpeed;
     GameObject player;
@@ -35,6 +36,13 @@ public class Patroller : MonoBehaviour
 
     void Start()
     {
+        for(int i = 0; i < patrolPoints.Length; i++)
+        {
+            int rnd = Random.Range(0, patrolPoints.Length);
+            temp = patrolPoints[rnd];
+            patrolPoints[rnd] = patrolPoints[i];
+            patrolPoints[i] = temp;
+        }
         transform.position = patrolPoints[0].position;
         player = GameObject.FindGameObjectWithTag("Player");
         gm = FindObjectOfType<GameManager>();
