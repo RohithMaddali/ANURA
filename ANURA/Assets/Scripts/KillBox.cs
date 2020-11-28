@@ -6,6 +6,7 @@ using UnityEngine.Analytics;
 public class KillBox : MonoBehaviour
 {
     public GameManager gm;
+    public Animator anim;
 
     
     // Start is called before the first frame update
@@ -24,8 +25,8 @@ public class KillBox : MonoBehaviour
         Debug.Log(other.tag);
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
-            Debug.Log("caught player");
-            gm.Caught(gameObject.transform.parent.gameObject, gameObject.transform.parent.gameObject.transform.parent.gameObject);
+            ToadCaughtPlayer();
+            StartCoroutine(killing());
         }
     }
 
@@ -36,5 +37,13 @@ public class KillBox : MonoBehaviour
             { "toad that caught", gameObject.transform.parent.gameObject.name },
             { "room toad is from", gameObject.transform.parent.gameObject.transform.parent.gameObject.name }
         });
+    }
+
+    IEnumerator killing()
+    {
+        anim.SetTrigger("Kill");
+        yield return new WaitForSeconds(1f);
+        Debug.Log("caught player");
+        gm.Caught(gameObject.transform.parent.gameObject, gameObject.transform.parent.gameObject.transform.parent.gameObject);
     }
 }
