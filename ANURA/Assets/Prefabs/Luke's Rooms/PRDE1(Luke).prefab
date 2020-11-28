@@ -23277,6 +23277,7 @@ GameObject:
   - component: {fileID: 3106805652740342754}
   - component: {fileID: 3937578464506985888}
   - component: {fileID: 1426163122877493957}
+  - component: {fileID: 953519103389925607}
   m_Layer: 0
   m_Name: AmbienceTrigger
   m_TagString: AudioTrigger
@@ -23292,8 +23293,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8057373560327037172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.7, y: 0, z: 1.82}
-  m_LocalScale: {x: 1, y: 1, z: 1.3976}
+  m_LocalPosition: {x: 10.2, y: 0, z: 17.9}
+  m_LocalScale: {x: 70.37654, y: 1, z: 14.527673}
   m_Children: []
   m_Father: {fileID: 5992505592213379431}
   m_RootOrder: 0
@@ -23331,6 +23332,18 @@ MonoBehaviour:
   reverbSmall: 0
   reverbMedium: 0.5
   reverbBig: 0
+--- !u!114 &953519103389925607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057373560327037172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221672feefb78c499456315ff71ae0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &89865255028268058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23558,14 +23571,14 @@ PrefabInstance:
       objectReference: {fileID: 4430452134942732765}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
---- !u!4 &5427851090116323995 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
-  m_PrefabInstance: {fileID: 3842257224317072709}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5427851090116323996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+  m_PrefabInstance: {fileID: 3842257224317072709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5427851090116323995 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
   m_PrefabInstance: {fileID: 3842257224317072709}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8922158042999659162

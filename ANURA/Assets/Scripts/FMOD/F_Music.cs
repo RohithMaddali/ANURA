@@ -49,7 +49,7 @@ public class F_Music : MonoBehaviour
 
     void PlayStationaryMusic()
     {
-        if (pMovement.isMoving == false && playedMusic == false && F_Parameters.musicState == 1)
+        if (pMovement.isMoving == false && playedMusic == false && F_Parameters.musicState == 1 && F_PuzzleMusic.puzzleRoom == false)
         {
             Debug.Log("playmusic");
             StartCoroutine(MusicTimeToTrigger());
@@ -64,7 +64,7 @@ public class F_Music : MonoBehaviour
 
     IEnumerator MusicTimeToTrigger()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         if (pMovement.isMoving == false)
         {
             music.setParametersByIDs(pIDS, parameterValues[1].number, 5, false);

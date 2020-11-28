@@ -5,20 +5,6 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     public GameObject[] gates;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Activate()
     {
         Debug.Log("Switch switched");
@@ -26,9 +12,12 @@ public class Switch : MonoBehaviour
         {
             if(gate.GetComponent<Gate>().isclosed == true)
             {
+        
                 gate.GetComponent<Gate>().Open();
-            }else
+            }
+            else
             {
+                
                 gate.GetComponent<Gate>().Close();
             }
         }

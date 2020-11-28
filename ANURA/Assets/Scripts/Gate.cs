@@ -37,6 +37,7 @@ public class Gate : MonoBehaviour
     {
         if (moving)
         {
+         
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
             Debug.Log("moving");
         }
@@ -57,6 +58,7 @@ public class Gate : MonoBehaviour
 
     public void Open()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/PuzzleDoors/Doors", this.gameObject);
         target = openPos;
         startPos = closePos;
         moving = true;
@@ -65,6 +67,7 @@ public class Gate : MonoBehaviour
 
     public void Close()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/PuzzleDoors/DoorsClose", this.gameObject);
         target = closePos;
         startPos = openPos;
         moving = true;
