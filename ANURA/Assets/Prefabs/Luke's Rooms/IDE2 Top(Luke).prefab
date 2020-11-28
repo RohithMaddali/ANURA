@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 4678348369770593167}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 4678348369817766108}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 4678348370369712157}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -954,33 +954,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 030000000200000001000000
-  m_SelectedEdges:
-  - a: 13
-    b: 12
-  - a: 12
-    b: 14
-  - a: 14
-    b: 15
-  - a: 15
-    b: 13
-  - a: 9
-    b: 8
-  - a: 8
-    b: 10
-  - a: 10
-    b: 11
-  - a: 11
-    b: 9
-  - a: 4
-    b: 5
-  - a: 6
-    b: 4
-  - a: 5
-    b: 7
-  - a: 7
-    b: 6
-  m_SelectedVertices: 0e0000000d0000000c0000000f0000000a00000009000000080000000b00000004000000050000000600000007000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &4678348370369712155
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1283,7 +1259,7 @@ GameObject:
   - component: {fileID: 4678348370890436088}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1318,7 +1294,7 @@ GameObject:
   - component: {fileID: 4678348370907195017}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -1908,7 +1884,7 @@ GameObject:
   - component: {fileID: 4678348370934554391}
   m_Layer: 0
   m_Name: Cube (2)(Clone)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295

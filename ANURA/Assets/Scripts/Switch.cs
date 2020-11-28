@@ -12,7 +12,6 @@ public class Switch : MonoBehaviour
         {
             if(gate.GetComponent<Gate>().isclosed == true)
             {
-        
                 gate.GetComponent<Gate>().Open();
             }
             else

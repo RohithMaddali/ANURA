@@ -32,20 +32,13 @@ public class F_Music : MonoBehaviour
         public string info;
         public float[] number;
     }
-    
     private void Start()
     {
         pMovement = GetComponent<PlayerMovement>();
         GetParameterIDS();
-        music = RuntimeManager.CreateInstance(musicEvent);
-        music.start();
-        music.release();
     }
+    
 
-    private void Update()
-    {
-        PlayStationaryMusic();
-    }
 
     void PlayStationaryMusic()
     {
@@ -61,10 +54,9 @@ public class F_Music : MonoBehaviour
             playedMusic = false;
         }
     }
-
     IEnumerator MusicTimeToTrigger()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(10);
         if (pMovement.isMoving == false)
         {
             music.setParametersByIDs(pIDS, parameterValues[1].number, 5, false);
@@ -74,7 +66,6 @@ public class F_Music : MonoBehaviour
             music.setParametersByIDs(pIDS, parameterValues[3].number, 5, false);
         }
     }
-    
     void GetParameterIDS()
     {
         eDS = RuntimeManager.GetEventDescription(musicEvent);

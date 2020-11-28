@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 343483775358181097}
   m_Layer: 0
   m_Name: walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 343483775594123350}
   m_Layer: 8
   m_Name: floor3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 343483775794163082}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 343483775864452781}
   m_Layer: 0
   m_Name: wallhalf (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1039,7 +1039,7 @@ GameObject:
   - component: {fileID: 343483775872863893}
   m_Layer: 8
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 343483775983774671}
   m_Layer: 8
   m_Name: divit
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 343483776146790602}
   m_Layer: 0
   m_Name: wallhalf (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1558,7 +1558,7 @@ GameObject:
   - component: {fileID: 343483776277777863}
   m_Layer: 8
   m_Name: floor1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1703,17 +1703,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 02000000
-  m_SelectedEdges:
-  - a: 8
-    b: 9
-  - a: 10
-    b: 8
-  - a: 9
-    b: 11
-  - a: 11
-    b: 10
-  m_SelectedVertices: 08000000090000000a0000000b000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &343483776277777857
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1792,7 +1784,7 @@ GameObject:
   - component: {fileID: 343483776475200347}
   m_Layer: 0
   m_Name: backwall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1986,7 +1978,7 @@ GameObject:
   - component: {fileID: 343483776596424695}
   m_Layer: 8
   m_Name: grate2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2299,7 +2291,7 @@ GameObject:
   - component: {fileID: 343483776635865549}
   m_Layer: 0
   m_Name: wallhalf (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2525,7 +2517,7 @@ GameObject:
   - component: {fileID: 343483776782982424}
   m_Layer: 8
   m_Name: divit (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2689,7 +2681,7 @@ GameObject:
   - component: {fileID: 343483776895486139}
   m_Layer: 8
   m_Name: grate1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2921,17 +2913,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  m_SelectedVertices: 00000000000000000000000000000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &343483776895486133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3010,7 +2994,7 @@ GameObject:
   - component: {fileID: 343483776928766781}
   m_Layer: 0
   m_Name: backwall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3174,7 +3158,7 @@ GameObject:
   - component: {fileID: 343483777058134571}
   m_Layer: 0
   m_Name: backwall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3370,7 +3354,7 @@ GameObject:
   - component: {fileID: 343483777193650363}
   m_Layer: 8
   m_Name: floor2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3654,7 +3638,7 @@ GameObject:
   - component: {fileID: 343483777210857059}
   m_Layer: 0
   m_Name: backwall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

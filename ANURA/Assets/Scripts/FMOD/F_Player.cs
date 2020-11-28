@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
 
@@ -12,7 +11,6 @@ public class F_Player : MonoBehaviour
     private float walkingBackwardsSpeed = 1;
     private F_Music music;
     private bool played;
-    private EventInstance stressed;
     public LayerMask lm;
     public float[] values = new float[3];
     private float material;
@@ -20,22 +18,18 @@ public class F_Player : MonoBehaviour
     private EventDescription ambDescription;
     private PARAMETER_DESCRIPTION[] pDS = new PARAMETER_DESCRIPTION[3];
     public static PARAMETER_ID[] pIDS = new PARAMETER_ID[3];
-
     private void Start()
     {
         GetParameters();
         InvokeRepeating("WalkingFootsteps",0,walkingSpeed);
         playerMovement = GetComponent<PlayerMovement>();
         music = GetComponent<F_Music>();
-        stressed = RuntimeManager.CreateInstance("event:/Player/Breathing");
+        F_AmbientMusic.ambientMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
-    
-    
     private void Update()
     {
         MaterialCheck();
     }
-
     void GetParameters()
     {
         ambDescription = RuntimeManager.GetEventDescription("event:/Player/P_Footsteps");
@@ -48,8 +42,6 @@ public class F_Player : MonoBehaviour
            pIDS[i] = pDS[i].id;
         }
     }
-
-
     void WalkingFootsteps()
     {
         if (playerMovement.isMoving == true)
@@ -85,5 +77,4 @@ public class F_Player : MonoBehaviour
             }
         }
     }
-    
 }

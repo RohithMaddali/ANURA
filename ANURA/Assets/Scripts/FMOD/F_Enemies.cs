@@ -27,10 +27,6 @@ public class F_Enemies : MonoBehaviour
         playerBreathing = RuntimeManager.CreateInstance("event:/Player/Breathing");
         enemies = GetComponent<Patroller>();
         player = GameObject.Find("First Person Player").GetComponent<Transform>();
-        frogGrowl = RuntimeManager.CreateInstance("event:/Enemy/EnemySounds");
-        RuntimeManager.AttachInstanceToGameObject(frogGrowl, transform, GetComponent<Rigidbody>());
-        frogGrowl.start();
-        frogGrowl.release();
         playerStressSound = RuntimeManager.CreateInstance("event:/Player/Breathing");
         RuntimeManager.AttachInstanceToGameObject(playerStressSound,transform, GetComponent<Rigidbody>());
         playerStressSound.start();
@@ -50,6 +46,11 @@ public class F_Enemies : MonoBehaviour
         {
             F_Parameters.musicState = 0;
         }
+    }
+
+    private void OnDestroy()
+    {
+        playerStressSound.release();
     }
 }
 

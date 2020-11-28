@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1614318134}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 5241850500642211553}
   m_Layer: 0
   m_Name: east wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 5241850500721193755}
   m_Layer: 0
   m_Name: hiding place
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1606,7 +1606,7 @@ GameObject:
   - component: {fileID: 5241850500758927192}
   m_Layer: 8
   m_Name: mesh bridge
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1919,7 +1919,7 @@ GameObject:
   - component: {fileID: 5241850500834154456}
   m_Layer: 0
   m_Name: hiding place (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2203,7 +2203,7 @@ GameObject:
   - component: {fileID: 5241850500873564843}
   m_Layer: 8
   m_Name: stair block
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2580,7 +2580,7 @@ GameObject:
   - component: {fileID: 5241850500966354428}
   m_Layer: 8
   m_Name: mesh bridge 2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2893,7 +2893,7 @@ GameObject:
   - component: {fileID: 5241850501037815159}
   m_Layer: 8
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5094,7 +5094,7 @@ GameObject:
   - component: {fileID: 5241850501088916971}
   m_Layer: 8
   m_Name: key block
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5378,7 +5378,7 @@ GameObject:
   - component: {fileID: 5241850501198378461}
   m_Layer: 0
   m_Name: west wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5461,17 +5461,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  m_SelectedVertices: 00000000000000000000000000000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &5241850501198378463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5638,7 +5630,7 @@ GameObject:
   - component: {fileID: 5241850501523191631}
   m_Layer: 0
   m_Name: south wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5924,7 +5916,7 @@ GameObject:
   - component: {fileID: 5241850501761318633}
   m_Layer: 0
   m_Name: walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5967,7 +5959,7 @@ GameObject:
   - component: {fileID: 5241850501844295181}
   m_Layer: 0
   m_Name: south wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6193,7 +6185,7 @@ GameObject:
   - component: {fileID: 5241850501863187490}
   m_Layer: 8
   m_Name: floor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7660,7 +7652,7 @@ GameObject:
   - component: {fileID: 5241850501951799398}
   m_Layer: 8
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7703,7 +7695,7 @@ GameObject:
   - component: {fileID: 5241850502001275668}
   m_Layer: 8
   m_Name: second floor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7742,7 +7734,7 @@ GameObject:
   - component: {fileID: 5241850502076134105}
   m_Layer: 0
   m_Name: north wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7966,7 +7958,7 @@ GameObject:
   - component: {fileID: 5241850502173102777}
   m_Layer: 0
   m_Name: hiding place (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8250,7 +8242,7 @@ GameObject:
   - component: {fileID: 5241850502319339453}
   m_Layer: 8
   m_Name: final block
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8475,7 +8467,7 @@ GameObject:
   - component: {fileID: 5241850502342854195}
   m_Layer: 0
   m_Name: hiding place (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8823,7 +8815,7 @@ GameObject:
   - component: {fileID: 5241850502627003926}
   m_Layer: 0
   m_Name: Ceiling
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
