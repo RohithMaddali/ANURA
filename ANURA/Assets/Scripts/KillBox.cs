@@ -8,25 +8,21 @@ public class KillBox : MonoBehaviour
     public GameManager gm;
     public Animator anim;
     public Animator death;
-
+    public static bool playerIsDead;
     
     // Start is called before the first frame update
     void Start()
     {
+        playerIsDead = false;
         gm = FindObjectOfType<GameManager>();
         death = GameObject.FindGameObjectWithTag("Death").GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.tag);
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
+            playerIsDead = true;
             ToadCaughtPlayer();
             StartCoroutine(killing());
         }

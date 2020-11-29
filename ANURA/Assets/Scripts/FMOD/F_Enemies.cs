@@ -11,25 +11,34 @@ public class F_Enemies : MonoBehaviour
     private EventInstance playerBreathing;
     private EventInstance frogGrowl;
     private EventInstance playerStressSound;
+    private EventInstance deathmusic;
     private Patroller enemies;
     private Transform player;
     private bool playedBreathing;
     [SerializeField] private float radius;
     private bool eventCalled;
-
-    public delegate void enemyIsNear();
-    public static event enemyIsNear musicPlay; 
-    public delegate void enemyIsNearStop();
-    public static event enemyIsNearStop musicstop;
-
+    private bool played;
+    
     void Start()
     {
+        played = false;
         playerBreathing = RuntimeManager.CreateInstance("event:/Player/Breathing");
         enemies = GetComponent<Patroller>();
         player = GameObject.Find("First Person Player").GetComponent<Transform>();
         playerStressSound = RuntimeManager.CreateInstance("event:/Player/Breathing");
         RuntimeManager.AttachInstanceToGameObject(playerStressSound,transform, GetComponent<Rigidbody>());
         playerStressSound.start();
+    }
+
+    private void Update()
+    {
+        if (KillBox.playerIsDead == true && played == false)
+        {
+                RuntimeManager.PlayOneShot("event:/Music/DeathMusic",default);
+                playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                played = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)

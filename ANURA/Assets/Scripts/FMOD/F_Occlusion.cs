@@ -1,4 +1,5 @@
 ﻿
+using System;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -24,6 +25,15 @@ public class F_Occlusion : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, OcclusionRadius);
     }
+
+    private void Update()
+    {
+        if (KillBox.playerIsDead == true)
+        {
+            frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
     private void FixedUpdate()
     {
         if (!(player is null))
