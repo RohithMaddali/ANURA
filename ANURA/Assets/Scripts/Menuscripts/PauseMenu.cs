@@ -37,6 +37,16 @@ public class PauseMenu : MonoBehaviour
         {
             DeactivateMenu();
         }
+
+        if (gameManager.GetComponent<GameManager>().KeyCount == 0)
+        {
+            locktip.SetActive(true);
+        }
+        else if (gameManager.GetComponent<GameManager>().KeyCount == 1)
+        {
+            locktip.SetActive(false);
+            keytip1.SetActive(true);
+        }
     }
 
     void ActivateMenu()
