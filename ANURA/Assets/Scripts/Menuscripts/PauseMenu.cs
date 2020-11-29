@@ -12,6 +12,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private bool isPaused;
 
     private GameObject cammie;
+    public GameManager gameManager;
+
+    public GameObject locktip;
+    public GameObject keytip1;
+    public GameObject keytip2;
+    public GameObject keytip3;
 
     // Update is called once per frame
     private void Update()
