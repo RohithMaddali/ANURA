@@ -28,6 +28,7 @@ public class F_Ui : MonoBehaviour
 
     public void StopWinMusic()
     {
+        FinalKey.winMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         F_AmbientMusic.played = false;
     }
 }
