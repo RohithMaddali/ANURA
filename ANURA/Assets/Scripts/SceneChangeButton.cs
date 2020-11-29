@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneChangeButton : MonoBehaviour
 {
     public int sceneNum;
+    public GameManager gm;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class SceneChangeButton : MonoBehaviour
 
     public void ChangeScene()
     {
+        gm.KeyCount = 0;
         SceneManager.LoadScene(sceneNum);
     }
 }
