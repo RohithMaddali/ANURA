@@ -26,9 +26,9 @@ public class KillBox : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
             F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            deathMusic = RuntimeManager.CreateInstance("event:/Music/DeathMusic");
-            deathMusic.start();
-            deathMusic.release();
+            //deathMusic = RuntimeManager.CreateInstance("event:/Music/DeathMusic");
+            //deathMusic.start();
+            //deathMusic.release();
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death",default);
             ToadCaughtPlayer();
             StartCoroutine(killing());
