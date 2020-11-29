@@ -34,9 +34,7 @@ public class F_Enemies : MonoBehaviour
     {
         if (KillBox.playerIsDead == true && played == false)
         {
-                RuntimeManager.PlayOneShot("event:/Music/DeathMusic",default);
                 playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 played = true;
         }
     }

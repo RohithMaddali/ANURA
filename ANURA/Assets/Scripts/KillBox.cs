@@ -22,7 +22,9 @@ public class KillBox : MonoBehaviour
         Debug.Log(other.tag);
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
-            playerIsDead = true;
+            F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Music/DeathMusic",default);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death",default);
             ToadCaughtPlayer();
             StartCoroutine(killing());
         }
@@ -30,6 +32,7 @@ public class KillBox : MonoBehaviour
 
     public void ToadCaughtPlayer()
     {
+        playerIsDead = true;
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
         {
             { "toad that caught", gameObject.transform.parent.gameObject.name },
