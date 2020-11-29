@@ -32,10 +32,14 @@ public class F_Enemies : MonoBehaviour
 
     private void Update()
     {
-        if (KillBox.playerIsDead == true && played == false)
+        if (KillBox.playerIsDead == true)
         {
-                playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                played = true;
+            playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+
+        if (FinalKey.playerWins == true)
+        {
+            playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 

@@ -7,9 +7,9 @@ using FMOD.Studio;
 public class F_AmbientMusic : MonoBehaviour
 {
     public static EventInstance ambientMusic;
-    static bool played;
+    public static bool played;
 
-    void Awake()
+    void Start()
     {
         if (played == false)
         {   

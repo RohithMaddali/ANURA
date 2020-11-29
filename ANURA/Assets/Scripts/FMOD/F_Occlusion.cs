@@ -32,6 +32,11 @@ public class F_Occlusion : MonoBehaviour
         {
             frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+
+        if (FinalKey.playerWins == true)
+        {
+            frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
     private void FixedUpdate()

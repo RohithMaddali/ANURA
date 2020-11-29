@@ -19,4 +19,15 @@ public class F_Ui : MonoBehaviour
     {
         RuntimeManager.PlayOneShot("event:/Ui/LockHover",default);
     }
+
+    public void StopDeathMusic()
+    {
+        KillBox.deathMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        F_AmbientMusic.played = false;
+    }
+
+    public void StopWinMusic()
+    {
+        F_AmbientMusic.played = false;
+    }
 }

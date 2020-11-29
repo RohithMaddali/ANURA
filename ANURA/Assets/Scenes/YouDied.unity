@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 223796266}
   - component: {fileID: 223796265}
   - component: {fileID: 223796264}
+  - component: {fileID: 223796268}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -231,6 +232,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1386745880}
+        m_TargetAssemblyTypeName: F_Ui, Assembly-CSharp
+        m_MethodName: StopDeathMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1386745880}
+        m_TargetAssemblyTypeName: F_Ui, Assembly-CSharp
+        m_MethodName: UIPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &223796266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +294,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223796262}
   m_CullTransparentMesh: 0
+--- !u!114 &223796268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223796262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1386745880}
+          m_TargetAssemblyTypeName: F_Ui, Assembly-CSharp
+          m_MethodName: UIHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1012943192
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +379,7 @@ GameObject:
   - component: {fileID: 1059573582}
   - component: {fileID: 1059573581}
   - component: {fileID: 1059573580}
+  - component: {fileID: 1059573584}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -420,6 +475,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1386745880}
+        m_TargetAssemblyTypeName: F_Ui, Assembly-CSharp
+        m_MethodName: StopDeathMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1386745880}
+        m_TargetAssemblyTypeName: F_Ui, Assembly-CSharp
+        m_MethodName: UIPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1059573582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +537,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059573578}
   m_CullTransparentMesh: 0
+--- !u!114 &1059573584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059573578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1386745880}
+          m_TargetAssemblyTypeName: F_Ui, Assembly-CSharp
+          m_MethodName: UIHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1202992157
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +723,7 @@ GameObject:
   - component: {fileID: 1386745878}
   - component: {fileID: 1386745877}
   - component: {fileID: 1386745876}
+  - component: {fileID: 1386745880}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -704,6 +813,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1386745880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386745875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1510bef0ea063864a831aaee39ba8370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1530756191
 GameObject:
   m_ObjectHideFlags: 0

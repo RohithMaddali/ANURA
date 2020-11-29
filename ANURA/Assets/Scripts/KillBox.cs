@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -9,6 +11,7 @@ public class KillBox : MonoBehaviour
     public Animator anim;
     public Animator death;
     public static bool playerIsDead;
+    public static EventInstance deathMusic;
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,9 @@ public class KillBox : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
             F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Music/DeathMusic",default);
+            deathMusic = RuntimeManager.CreateInstance("event:/Music/DeathMusic");
+            deathMusic.start();
+            deathMusic.release();
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death",default);
             ToadCaughtPlayer();
             StartCoroutine(killing());
