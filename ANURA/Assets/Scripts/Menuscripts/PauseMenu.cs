@@ -19,6 +19,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject keytip2;
     public GameObject keytip3;
 
+    void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
     // Update is called once per frame
     private void Update()
     {
