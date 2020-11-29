@@ -7,12 +7,14 @@ public class KillBox : MonoBehaviour
 {
     public GameManager gm;
     public Animator anim;
+    public Animator death;
 
     
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        death = GameObject.FindGameObjectWithTag("Death").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class KillBox : MonoBehaviour
     IEnumerator killing()
     {
         anim.SetTrigger("Kill");
+        death.SetTrigger("Death");
         yield return new WaitForSeconds(1f);
         Debug.Log("caught player");
         gm.Caught(gameObject.transform.parent.gameObject, gameObject.transform.parent.gameObject.transform.parent.gameObject);
