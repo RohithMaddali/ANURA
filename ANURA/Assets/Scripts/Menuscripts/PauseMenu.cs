@@ -58,6 +58,11 @@ public class PauseMenu : MonoBehaviour
             keytip1.SetActive(false);
             keytip2.SetActive(true);
         }
+        else if (gameManager.GetComponent<GameManager>().KeyCount == 3)
+        {
+            keytip2.SetActive(false);
+            keytip3.SetActive(true);
+        }
     }
 
     void ActivateMenu()
