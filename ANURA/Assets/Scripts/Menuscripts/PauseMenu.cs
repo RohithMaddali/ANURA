@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
             DeactivateMenu();
         }
 
+        //this else if chain will be kind of long but due to time constraints I'll do it this way for now
         if (gameManager.GetComponent<GameManager>().KeyCount == 0)
         {
             locktip.SetActive(true);
@@ -51,6 +52,11 @@ public class PauseMenu : MonoBehaviour
         {
             locktip.SetActive(false);
             keytip1.SetActive(true);
+        }
+        else if (gameManager.GetComponent<GameManager>().KeyCount == 2)
+        {
+            keytip1.SetActive(false);
+            keytip2.SetActive(true);
         }
     }
 
