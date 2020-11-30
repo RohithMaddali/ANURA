@@ -11,11 +11,14 @@ public class FinalKey : MonoBehaviour
     public static bool playerWins;
     public static EventInstance winMusic;
     public Animator anim;
+    public Animator wAnim;
     public bool firstEncounter;
+    public int w;
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         firstEncounter = false;
+        wAnim = GameObject.FindGameObjectWithTag("Win").GetComponent<Animator>();
     }
     public void OnTriggerStay(Collider other) 
     {
@@ -23,6 +26,7 @@ public class FinalKey : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
+                w = 1;
                 StartCoroutine(finalKeys());
             }
         }
@@ -41,6 +45,8 @@ public class FinalKey : MonoBehaviour
         winMusic.start();
         winMusic.release();
         F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        wAnim.SetTrigger("Win");
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);
     }
 }
