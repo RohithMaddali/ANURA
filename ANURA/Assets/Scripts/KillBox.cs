@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class KillBox : MonoBehaviour
     public Animator death;
     public static bool playerIsDead;
     public static EventInstance deathMusic;
+    public Patroller P;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,19 @@ public class KillBox : MonoBehaviour
         playerIsDead = false;
         gm = FindObjectOfType<GameManager>();
         death = GameObject.FindGameObjectWithTag("Death").GetComponent<Animator>();
+        P = GetComponentInParent<Patroller>();
+    }
+
+    void Update()
+    {
+        if(P.walk == 0)
+        {
+            anim.SetBool("Hop", false);
+        }
+        else if(P.walk == 1)
+        {
+            anim.SetBool("Hop", true);
+        }
     }
     void OnTriggerEnter(Collider other)
     {

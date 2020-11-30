@@ -20,6 +20,7 @@ public class Patroller : MonoBehaviour
     public bool searching;*/
     public float time;
     public float searchtimer = 10;
+    public int walk;
     public NavMeshAgent agent;
     GameManager gm;
     
@@ -54,6 +55,7 @@ public class Patroller : MonoBehaviour
         switch (action)
         {
             case Behaviour.patrolling:
+                walk = 1;
                 if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) < 0.6f)
                 {
                     currentPoint = (currentPoint + 1) % patrolPoints.Length;
@@ -75,6 +77,7 @@ public class Patroller : MonoBehaviour
                 break;
 
             case Behaviour.investigating:
+                walk = 1;
                 agent.SetDestination(lastKnownPos);
 
                 //Debug.Log("a toad heard that");
@@ -86,6 +89,7 @@ public class Patroller : MonoBehaviour
                 break;
 
             case Behaviour.searching:
+                walk = 0;
                 time += Time.deltaTime;
                 //walk around a bit
                 if (time >= searchtimer)
@@ -97,6 +101,7 @@ public class Patroller : MonoBehaviour
                 break;
 
             case Behaviour.chasing:
+                walk = 1;
                 agent.SetDestination(player.transform.position);
                 break;
         }
