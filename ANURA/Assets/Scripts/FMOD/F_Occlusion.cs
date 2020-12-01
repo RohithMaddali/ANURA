@@ -25,20 +25,7 @@ public class F_Occlusion : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, OcclusionRadius);
     }
-
-    private void Update()
-    {
-        if (KillBox.playerIsDead == true)
-        {
-            frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
-
-        if (FinalKey.playerWins == true)
-        {
-            frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
-    }
-
+    
     private void FixedUpdate()
     {
         if (!(player is null))
@@ -77,5 +64,11 @@ public class F_Occlusion : MonoBehaviour
                 frogGrowl.setParameterByName("LowPass", 0, true);
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        frogGrowl.release();
     }
 }

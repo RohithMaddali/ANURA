@@ -10,7 +10,24 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="F_PuzzleMusic.cs" t="Include" />
+        <e p="NavMeshComponents" t="Include">
+          <e p="Editor" t="Include">
+            <e p="NavMeshAssetManager.cs" t="Include" />
+            <e p="NavMeshComponentsEditor.asmdef" t="Include" />
+            <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
+            <e p="NavMeshLinkEditor.cs" t="Include" />
+            <e p="NavMeshModifierEditor.cs" t="Include" />
+            <e p="NavMeshModifierVolumeEditor.cs" t="Include" />
+            <e p="NavMeshSurfaceEditor.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="NavMeshComponents.asmdef" t="Include" />
+            <e p="NavMeshLink.cs" t="Include" />
+            <e p="NavMeshModifier.cs" t="Include" />
+            <e p="NavMeshModifierVolume.cs" t="Include" />
+            <e p="NavMeshSurface.cs" t="Include" />
+          </e>
+        </e>
         <e p="Packages" t="Include">
           <e p="Rocks and Boulders 2" t="Include">
             <e p="Shaders" t="Include">
@@ -125,13 +142,18 @@
           <e p="FMOD" t="Include">
             <e p="F_3DSounds.cs" t="Include" />
             <e p="F_Ambience.cs" t="Include" />
+            <e p="F_AmbientMusic.cs" t="Include" />
             <e p="F_Enemies.cs" t="Include" />
             <e p="F_InspectorTest.cs" t="Include" />
+            <e p="F_KeyPickup.cs" t="Include" />
             <e p="F_Music.cs" t="Include" />
+            <e p="F_Occlusion.cs" t="Include" />
             <e p="F_Parameters.cs" t="Include" />
             <e p="F_ParameterSwitcher.cs" t="Include" />
             <e p="F_Player.cs" t="Include" />
+            <e p="F_PuzzleMusic.cs" t="Include" />
             <e p="F_Test.cs" t="Include" />
+            <e p="F_Ui.cs" t="Include" />
             <e p="SpawnSounds.cs" t="Include" />
           </e>
           <e p="FOVDetection.cs" t="Include" />
@@ -176,6 +198,8 @@
           </e>
         </e>
       </e>
+      <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
+      <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />

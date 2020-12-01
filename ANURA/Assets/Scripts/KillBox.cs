@@ -15,7 +15,6 @@ public class KillBox : MonoBehaviour
     public static EventInstance deathMusic;
     public Patroller P;
     
-    // Start is called before the first frame update
     void Start()
     {
         playerIsDead = false;
@@ -40,16 +39,15 @@ public class KillBox : MonoBehaviour
         Debug.Log(other.tag);
         if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
-            F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            //deathMusic = RuntimeManager.CreateInstance("event:/Music/DeathMusic");
-            //deathMusic.start();
-            //deathMusic.release();
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death",default);
+            //F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            deathMusic = RuntimeManager.CreateInstance("event:/Music/DeathMusic");
+            deathMusic.start();
+            deathMusic.release();
+            RuntimeManager.PlayOneShot("event:/Player/Death",default);
             ToadCaughtPlayer();
             StartCoroutine(killing());
         }
     }
-
     public void ToadCaughtPlayer()
     {
         playerIsDead = true;
@@ -59,7 +57,6 @@ public class KillBox : MonoBehaviour
             { "room toad is from", gameObject.transform.parent.gameObject.transform.parent.gameObject.name }
         });
     }
-
     IEnumerator killing()
     {
         anim.SetTrigger("Kill");

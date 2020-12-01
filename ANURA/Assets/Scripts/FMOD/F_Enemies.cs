@@ -30,19 +30,6 @@ public class F_Enemies : MonoBehaviour
         playerStressSound.start();
     }
 
-    private void Update()
-    {
-        if (KillBox.playerIsDead == true)
-        {
-            playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
-
-        if (FinalKey.playerWins == true)
-        {
-            playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player1"))
@@ -62,6 +49,7 @@ public class F_Enemies : MonoBehaviour
     private void OnDestroy()
     {
         playerStressSound.release();
+        playerStressSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
 

@@ -32,4 +32,9 @@ public class F_Ambience : MonoBehaviour
             parameterIds[i] = pDs[i].id;
         }
     }
+
+    private void OnDestroy()
+    {
+        amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 }
