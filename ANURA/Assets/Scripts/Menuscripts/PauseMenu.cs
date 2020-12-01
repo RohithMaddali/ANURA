@@ -14,10 +14,12 @@ public class PauseMenu : MonoBehaviour
     private GameObject cammie;
     public GameManager gameManager;
 
+    //keep track of active icons
     public GameObject locktip;
     public GameObject keytip1;
     public GameObject keytip2;
     public GameObject keytip3;
+    public GameObject toadtip;
 
     void Start()
     {
@@ -62,6 +64,11 @@ public class PauseMenu : MonoBehaviour
         {
             keytip2.SetActive(false);
             keytip3.SetActive(true);
+        }
+        //keep track of if the player has seen the toad
+        if (gameManager.GetComponent<GameManager>().toadSeen == true)
+        {
+            toadtip.SetActive(true);
         }
     }
 

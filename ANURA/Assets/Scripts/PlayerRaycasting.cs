@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerRaycasting : MonoBehaviour
 {
     public float distancetoTouch = 3;
+    public float distancetoSee = 21;
+    public GameObject gameManager;
     RaycastHit touchingObject;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     // Update is called once per frame
@@ -43,6 +45,15 @@ public class PlayerRaycasting : MonoBehaviour
             else if (touchingObject.collider.gameObject.tag == "BridgeSwitch" && Input.GetKeyDown("e"))
             {
                 touchingObject.collider.gameObject.GetComponent<BridgeSwitch>().Activate();
+            }
+        }
+
+        if (Physics.Raycast(transform.position, transform.forward, out (touchingObject), distancetoSee))
+        {
+            if (touchingObject.collider.gameObject.tag == "Toad")
+            {
+                print("player has spotted a toad");
+                gameManager.GetComponent<GameManager>().toadSeen = true;
             }
         }
     }

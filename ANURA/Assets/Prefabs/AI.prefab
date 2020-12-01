@@ -34,7 +34,7 @@ GameObject:
   - component: {fileID: 4622037880709708600}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Toad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   anim: {fileID: 7393688235864148837}
   death: {fileID: 0}
+  P: {fileID: 0}
 --- !u!1 &9079794889650167769
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +270,7 @@ MonoBehaviour:
   lastKnownPos: {x: 0, y: 0, z: 0}
   time: 0
   searchtimer: 4
+  walk: 0
   agent: {fileID: 9079794889650167760}
   action: 0
 --- !u!195 &9079794889650167760
