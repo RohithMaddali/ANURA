@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8349619845112205283}
   - component: {fileID: 9203821329878069434}
   - component: {fileID: 3661869307042410398}
+  - component: {fileID: 7476837436141905144}
   m_Layer: 0
   m_Name: Drain
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7476837436141905144
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026714755938509617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0042736065
+  m_Height: 0.020205917
+  m_Direction: 0
+  m_Center: {x: -0.0065100477, y: 0.000013607741, z: 1.2298366e-20}
 --- !u!1 &7832518735884743769
 GameObject:
   m_ObjectHideFlags: 0
