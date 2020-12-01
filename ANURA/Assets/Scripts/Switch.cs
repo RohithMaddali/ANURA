@@ -5,6 +5,12 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     public GameObject[] gates;
+    public Animator anim;
+
+    void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
     public void Activate()
     {
         Debug.Log("Switch switched");
@@ -12,11 +18,12 @@ public class Switch : MonoBehaviour
         {
             if(gate.GetComponent<Gate>().isclosed == true)
             {
+                anim.SetTrigger("on");
                 gate.GetComponent<Gate>().Open();
             }
             else
             {
-                
+                anim.SetTrigger("off");
                 gate.GetComponent<Gate>().Close();
             }
         }
