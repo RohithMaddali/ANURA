@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 public class GameManager : MonoBehaviour
 {
     public int KeyCount;
+    public bool toadSeen = false;
     
     private void Awake()
     {
