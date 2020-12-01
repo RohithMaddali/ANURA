@@ -11,7 +11,7 @@ public class BridgeSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -27,11 +27,11 @@ public class BridgeSwitch : MonoBehaviour
         {
             if(gate.GetComponent<Drawbridge>().isclosed == true)
             {
-                anim.SetTrigger("on");
+                //anim.SetTrigger("on");
                 gate.GetComponent<Drawbridge>().Open();
             }else
             {
-                anim.SetTrigger("off");
+                //anim.SetTrigger("off");
                 gate.GetComponent<Drawbridge>().Close();
             }
         }
