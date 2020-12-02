@@ -43,8 +43,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 5
-  m_Range: 15
+  m_Intensity: 80
+  m_Range: 30
   m_SpotAngle: 88.99689
   m_InnerSpotAngle: 51.72804
   m_CookieSize: 10
@@ -399,6 +399,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distancetoTouch: 3
+  distancetoSee: 21
+  gameManager: {fileID: 0}
 --- !u!114 &1842347895605751069
 MonoBehaviour:
   m_ObjectHideFlags: 0

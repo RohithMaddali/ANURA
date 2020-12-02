@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 5677573621400060246}
   - component: {fileID: 2924572429511648510}
   - component: {fileID: 3781398110372817187}
+  - component: {fileID: 8498642366137258970}
   m_Layer: 0
   m_Name: AmbienceTrigger
   m_TagString: Untagged
@@ -439,7 +440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3951624482617563508}
   m_LocalRotation: {x: -0, y: -0.7071057, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -16, y: 0, z: 19.4}
+  m_LocalPosition: {x: -16, y: 1.7, z: 19.4}
   m_LocalScale: {x: 1, y: 1, z: 1.3976}
   m_Children: []
   m_Father: {fileID: 6033480392069735212}
@@ -478,6 +479,18 @@ MonoBehaviour:
   reverbSmall: 0
   reverbMedium: 0
   reverbBig: 0.7
+--- !u!114 &8498642366137258970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951624482617563508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221672feefb78c499456315ff71ae0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4222824629011887722
 GameObject:
   m_ObjectHideFlags: 0
