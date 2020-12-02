@@ -380,8 +380,11 @@ MonoBehaviour:
   isPaused: 0
   gameManager: {fileID: 1459709234}
   locktip: {fileID: 642521174}
+  locktext: {fileID: 2133505055}
   keytip1: {fileID: 1078209654}
+  keytext1: {fileID: 461278703}
   keytip2: {fileID: 644990083}
+  keytext2: {fileID: 1167397826}
   keytip3: {fileID: 678644568}
   toadtip: {fileID: 1504057325}
 --- !u!4 &146632347
@@ -1140,7 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myText: depreciated string
-  parentCanvas: {fileID: 0}
+  parentCanvas: {fileID: 2089207521}
   textBox: {fileID: 1315761334}
 --- !u!114 &244866446
 MonoBehaviour:
@@ -1322,7 +1325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myText: I found a exit near where I fell in the sewers, but it's locked. I'll need
     to find three keys to unlock the door.
-  parentCanvas: {fileID: 0}
+  parentCanvas: {fileID: 2089207521}
   textBox: {fileID: 514918380}
 --- !u!114 &247523895
 MonoBehaviour:
@@ -1450,6 +1453,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247523892}
   m_CullTransparentMesh: 0
+--- !u!1 &257132976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257132977}
+  - component: {fileID: 257132979}
+  - component: {fileID: 257132978}
+  m_Layer: 5
+  m_Name: Esc popup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &257132977
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257132976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 923713773}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -105}
+  m_SizeDelta: {x: 250, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &257132978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257132976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b8f1f71595276a24e8ac931813ed279c, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press Esc to open the pause menu.
+--- !u!222 &257132979
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257132976}
+  m_CullTransparentMesh: 0
 --- !u!1 &314228146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1563,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2089207522}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1599,7 +1681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myText: I found a exit near where I fell in the sewers, but it's locked. I'll need
     to find three keys to unlock the door.
-  parentCanvas: {fileID: 0}
+  parentCanvas: {fileID: 2089207521}
   textBox: {fileID: 1547528348}
 --- !u!114 &381583514
 MonoBehaviour:
@@ -1832,8 +1914,8 @@ RectTransform:
   - {fileID: 1601254538}
   - {fileID: 1417076223}
   - {fileID: 2069036230}
-  m_Father: {fileID: 1078209655}
-  m_RootOrder: 2
+  m_Father: {fileID: 1710294880}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2019,7 +2101,7 @@ GameObject:
   - component: {fileID: 514918383}
   - component: {fileID: 514918382}
   m_Layer: 5
-  m_Name: White text boarder (Lock)
+  m_Name: White text boarder (splash)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2034,17 +2116,17 @@ RectTransform:
   m_GameObject: {fileID: 514918380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1775, y: 1.1775, z: 1.1775}
   m_Children:
   - {fileID: 1382264170}
   - {fileID: 655658359}
   - {fileID: 530271494}
-  m_Father: {fileID: 2126211360}
-  m_RootOrder: 2
+  m_Father: {fileID: 1710294880}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 30.000004}
+  m_AnchoredPosition: {x: -15.307518, y: 35.325005}
   m_SizeDelta: {x: 220, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!225 &514918382
@@ -2468,7 +2550,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2089207522}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2561,7 +2643,6 @@ RectTransform:
   m_Children:
   - {fileID: 1689502575}
   - {fileID: 213007409}
-  - {fileID: 2133505056}
   m_Father: {fileID: 1710294880}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2599,7 +2680,6 @@ RectTransform:
   m_Children:
   - {fileID: 857784902}
   - {fileID: 470451149}
-  - {fileID: 1167397827}
   m_Father: {fileID: 1710294880}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2709,7 +2789,6 @@ RectTransform:
   m_Children:
   - {fileID: 244866444}
   - {fileID: 528911722}
-  - {fileID: 1315761335}
   m_Father: {fileID: 1710294880}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3170,6 +3249,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884649973}
   m_CullTransparentMesh: 0
+--- !u!1 &923713772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923713773}
+  m_Layer: 5
+  m_Name: Popup text parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &923713773
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923713772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 257132977}
+  m_Father: {fileID: 2089207522}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &929857746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,7 +3500,6 @@ RectTransform:
   m_Children:
   - {fileID: 186720954}
   - {fileID: 884649974}
-  - {fileID: 461278704}
   m_Father: {fileID: 1710294880}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3480,7 +3594,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7448264
+  m_Name: pb_Mesh-4096
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3736,8 +3850,8 @@ RectTransform:
   - {fileID: 1702311003}
   - {fileID: 1964933046}
   - {fileID: 1124259039}
-  m_Father: {fileID: 644990084}
-  m_RootOrder: 2
+  m_Father: {fileID: 1710294880}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3910,17 +4024,17 @@ RectTransform:
   m_GameObject: {fileID: 1315761334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1775, y: 1.1775, z: 1.1775}
   m_Children:
   - {fileID: 558388834}
   - {fileID: 1905666971}
   - {fileID: 751963746}
-  m_Father: {fileID: 678644569}
-  m_RootOrder: 2
+  m_Father: {fileID: 1710294880}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 30.000004}
+  m_AnchoredPosition: {x: -15.307544, y: 35.325005}
   m_SizeDelta: {x: 220, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!225 &1315761336
@@ -4487,7 +4601,6 @@ RectTransform:
   m_Children:
   - {fileID: 381583512}
   - {fileID: 973909027}
-  - {fileID: 1547528349}
   m_Father: {fileID: 1710294880}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4527,7 +4640,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2089207522}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4619,17 +4732,17 @@ RectTransform:
   m_GameObject: {fileID: 1547528348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1775, y: 1.1775, z: 1.1775}
   m_Children:
   - {fileID: 210389719}
   - {fileID: 458457143}
   - {fileID: 1484895328}
-  m_Father: {fileID: 1504057326}
-  m_RootOrder: 2
+  m_Father: {fileID: 1710294880}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 30.000004}
+  m_AnchoredPosition: {x: -15.307518, y: 35.325005}
   m_SizeDelta: {x: 220, y: 90}
   m_Pivot: {x: 1, y: 1}
 --- !u!225 &1547528350
@@ -5181,6 +5294,12 @@ RectTransform:
   - {fileID: 678644569}
   - {fileID: 2126211360}
   - {fileID: 1504057326}
+  - {fileID: 2133505056}
+  - {fileID: 461278704}
+  - {fileID: 1167397827}
+  - {fileID: 1315761335}
+  - {fileID: 514918381}
+  - {fileID: 1547528349}
   m_Father: {fileID: 2089207522}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5258,7 +5377,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2089207522}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -6082,6 +6201,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1710294880}
+  - {fileID: 923713773}
   - {fileID: 1511473057}
   - {fileID: 1760530951}
   - {fileID: 314228147}
@@ -6135,7 +6255,6 @@ RectTransform:
   m_Children:
   - {fileID: 247523893}
   - {fileID: 1867662951}
-  - {fileID: 514918381}
   m_Father: {fileID: 1710294880}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6177,12 +6296,12 @@ RectTransform:
   - {fileID: 731471243}
   - {fileID: 531875312}
   - {fileID: 1483138374}
-  m_Father: {fileID: 642521175}
-  m_RootOrder: 2
+  m_Father: {fileID: 1710294880}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 30.000004}
+  m_AnchoredPosition: {x: -12.999981, y: 30}
   m_SizeDelta: {x: 220, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!225 &2133505057
