@@ -180,7 +180,7 @@ public class Patroller : MonoBehaviour
         ToadSawPlayer();
         yield return new WaitForSeconds(.75f);
         action = Behaviour.chasing;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4.5f);
         lastKnownPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         action = Behaviour.investigating;
     }
