@@ -8,7 +8,6 @@ public class PlayerRaycasting : MonoBehaviour
     public float distancetoSee = 21;
     public GameObject gameManager;
     RaycastHit touchingObject;
-    public bool seeSwitch;
     
     // Start is called before the first frame update
     void Start()
@@ -41,11 +40,11 @@ public class PlayerRaycasting : MonoBehaviour
             //check if you can see a switch
             if (touchingObject.collider.gameObject.tag == "Switch")
             {
-                seeSwitch = true;
+                gameManager.GetComponent<GameManager>().seeSwitch = true;
             }
             else
             {
-                seeSwitch = false;
+                gameManager.GetComponent<GameManager>().seeSwitch = false;
             }
             //Debug.Log("touching " + touchingObject.collider.gameObject.name);
             if (touchingObject.collider.gameObject.tag == "Switch" && Input.GetKeyDown("e"))
