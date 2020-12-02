@@ -16,8 +16,11 @@ public class PauseMenu : MonoBehaviour
 
     //keep track of active icons
     public GameObject locktip;
+    public GameObject locktext;
     public GameObject keytip1;
+    public GameObject keytext1;
     public GameObject keytip2;
+    public GameObject keytext2;
     public GameObject keytip3;
     public GameObject toadtip;
 
@@ -53,16 +56,19 @@ public class PauseMenu : MonoBehaviour
         else if (gameManager.GetComponent<GameManager>().KeyCount == 1)
         {
             locktip.SetActive(false);
+            locktext.SetActive(false);
             keytip1.SetActive(true);
         }
         else if (gameManager.GetComponent<GameManager>().KeyCount == 2)
         {
             keytip1.SetActive(false);
+            keytext1.SetActive(false);
             keytip2.SetActive(true);
         }
         else if (gameManager.GetComponent<GameManager>().KeyCount == 3)
         {
             keytip2.SetActive(false);
+            keytext2.SetActive(false);
             keytip3.SetActive(true);
         }
         //keep track of if the player has seen the toad
