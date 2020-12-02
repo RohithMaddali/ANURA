@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private bool isPaused;
 
+    public bool menuopened = false;
+
     private GameObject cammie;
     public GameManager gameManager;
 
@@ -23,6 +25,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject keytext2;
     public GameObject keytip3;
     public GameObject toadtip;
+
+    //control popups
+    public GameObject escpop;
 
     void Start()
     {
@@ -41,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         if (isPaused)
         {
             ActivateMenu();
+            menuopened = true;
         }
 
         else
@@ -75,6 +81,12 @@ public class PauseMenu : MonoBehaviour
         if (gameManager.GetComponent<GameManager>().toadSeen == true)
         {
             toadtip.SetActive(true);
+        }
+
+        //make the popup fade away
+        if (menuopened == true)
+        {
+            StartCoroutine(FadeImage(true));
         }
     }
 
@@ -115,5 +127,30 @@ public class PauseMenu : MonoBehaviour
     {
         gameManager.KeyCount = 0;
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator FadeImage(bool fadeAway)
+    {
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = 0; i <= 1; i += 0.05f)
+            {
+                // set color with i as alpha
+                escpop.GetComponent<CanvasGroup>().alpha -= i;
+                yield return new WaitForSecondsRealtime(0.1f);
+            }
+        }
+        /*else
+        {
+            // loop over 1 second
+            for (float i = 0; i <= 1; i += 0.05f)
+            {
+                // set color with i as alpha
+                escpop.GetComponent<CanvasGroup>().alpha += i;
+                yield return new WaitForSecondsRealtime(0.05f);
+            }
+        }*/
     }
 }
