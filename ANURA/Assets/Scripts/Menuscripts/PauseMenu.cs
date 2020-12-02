@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     //control popups
     public GameObject escpop;
+    public GameObject intpop;
 
     void Start()
     {
@@ -87,6 +88,15 @@ public class PauseMenu : MonoBehaviour
         if (menuopened == true)
         {
             StartCoroutine(FadeImage(true));
+        }
+
+        if (gameManager.GetComponent<GameManager>().seeSwitch == true)
+        {
+            StartCoroutine(FadePrompt(false));
+        }
+        else
+        {
+            StartCoroutine(FadePrompt(true));
         }
     }
 
@@ -152,5 +162,30 @@ public class PauseMenu : MonoBehaviour
                 yield return new WaitForSecondsRealtime(0.05f);
             }
         }*/
+    }
+
+    IEnumerator FadePrompt(bool fadeAway)
+    {
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = 0; i <= 1; i += 0.05f)
+            {
+                // set color with i as alpha
+                intpop.GetComponent<CanvasGroup>().alpha -= i;
+                yield return new WaitForSecondsRealtime(0.1f);
+            }
+        }
+        else
+        {
+            // loop over 1 second
+            for (float i = 0; i <= 1; i += 0.05f)
+            {
+                // set color with i as alpha
+                intpop.GetComponent<CanvasGroup>().alpha += i;
+                yield return new WaitForSecondsRealtime(0.05f);
+            }
+        }
     }
 }
