@@ -5,6 +5,7 @@ using UnityEngine;
 public class KeyPickup : MonoBehaviour
 {
     public GameManager gm;
+    public GameObject PRRT;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class KeyPickup : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                PRRT.SetActive(true);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Music/PuzzleRoomSuccess");
                 gm.KeyCount += 1;
                 Destroy(gameObject);
