@@ -26612,7 +26612,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 2.73
+  m_Intensity: 100
   m_Range: 30
   m_SpotAngle: 153.12396
   m_InnerSpotAngle: 105.594765
@@ -27088,7 +27088,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 2.73
+  m_Intensity: 100
   m_Range: 30
   m_SpotAngle: 153.12396
   m_InnerSpotAngle: 105.594765
@@ -30138,7 +30138,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 2.73
+  m_Intensity: 100
   m_Range: 30
   m_SpotAngle: 153.12396
   m_InnerSpotAngle: 105.594765
@@ -33199,7 +33199,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9843137, g: 0.89411765, b: 0.654902, a: 1}
-  m_Intensity: 2.73
+  m_Intensity: 100
   m_Range: 30
   m_SpotAngle: 153.12396
   m_InnerSpotAngle: 105.594765
@@ -35783,7 +35783,15 @@ PrefabInstance:
       value: 145.33301
       objectReference: {fileID: 0}
     - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
+      propertyPath: PRT.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
       propertyPath: PRRT
+      value: 
+      objectReference: {fileID: 1060325192709657100}
+    - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
+      propertyPath: PRT.Array.data[0]
       value: 
       objectReference: {fileID: 1060325192709657100}
     m_RemovedComponents: []

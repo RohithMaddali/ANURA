@@ -7379,10 +7379,10 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
-  - {x: 0.9876884, y: 0, z: 0.1564342, w: -1}
-  - {x: 0.9876884, y: 0, z: 0.15643407, w: -1}
-  - {x: 0.9876884, y: 0, z: 0.1564342, w: -1}
-  - {x: 0.9876884, y: 0, z: 0.15643431, w: -1}
+  - {x: 0, y: 0, z: 1, w: -1}
+  - {x: 0, y: 0, z: 1, w: -1}
+  - {x: 0, y: 0, z: 1, w: -1}
+  - {x: 0, y: 0, z: 1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
@@ -14560,6 +14560,7 @@ GameObject:
   - component: {fileID: 6552946512550278655}
   - component: {fileID: 8321323951509371749}
   - component: {fileID: 8941505271953821303}
+  - component: {fileID: 5837383267161955652}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -14641,8 +14642,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.090513654, y: 0.0007536316, z: 0.088653624}
-  m_Center: {x: -0.00004166104, y: 0.000020796055, z: 0.03385923}
+  m_Size: {x: 0.032831494, y: 0.0007536316, z: 0.088653624}
+  m_Center: {x: -0.028848235, y: 0.000020796066, z: 0.03385923}
+--- !u!65 &5837383267161955652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464023323147813818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.032690953, y: 0.0007536316, z: 0.088653624}
+  m_Center: {x: 0.028869834, y: 0.000020796064, z: 0.033859234}
 --- !u!1 &2473047069730126803
 GameObject:
   m_ObjectHideFlags: 0
@@ -16908,8 +16922,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09051363, y: 0.00075363147, z: 0.088653624}
-  m_Center: {x: -0.000041717663, y: 0.000020673117, z: 0.033859275}
+  m_Size: {x: 0.032989927, y: 0.00075363147, z: 0.088653624}
+  m_Center: {x: 0.02872008, y: 0.000020673126, z: 0.033859275}
 --- !u!1 &6244518219148408445
 GameObject:
   m_ObjectHideFlags: 0
@@ -18164,8 +18178,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09051363, y: 0.00075363147, z: 0.088653624}
-  m_Center: {x: -0.000041717663, y: 0.000020673117, z: 0.033859275}
+  m_Size: {x: 0.03252336, y: 0.00075363147, z: 0.088653624}
+  m_Center: {x: -0.02903681, y: 0.000020673126, z: 0.033859275}
 --- !u!1 &7902801212317123159
 GameObject:
   m_ObjectHideFlags: 0
@@ -23201,14 +23215,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56bff7e70a78f7a4897a0cefbdd63c20, type: 3}
---- !u!1 &3040958252049634143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7959188890514901724, guid: 56bff7e70a78f7a4897a0cefbdd63c20, type: 3}
-  m_PrefabInstance: {fileID: 4919935526810048899}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2789142732406334437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7129789484612680294, guid: 56bff7e70a78f7a4897a0cefbdd63c20, type: 3}
+  m_PrefabInstance: {fileID: 4919935526810048899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3040958252049634143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959188890514901724, guid: 56bff7e70a78f7a4897a0cefbdd63c20, type: 3}
   m_PrefabInstance: {fileID: 4919935526810048899}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5055553128208590767
@@ -24981,6 +24995,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 70.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
+      propertyPath: PRT.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
+      propertyPath: PRT.Array.data[0]
+      value: 
+      objectReference: {fileID: 8327268969230091301}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
 --- !u!4 &2589394461451712971 stripped

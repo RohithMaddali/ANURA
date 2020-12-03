@@ -13532,6 +13532,11 @@ PrefabInstance:
       objectReference: {fileID: 5648191645669256363}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+--- !u!1 &3486772616161707100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+  m_PrefabInstance: {fileID: 5648191644636388229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3486772616161707099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9079794889650167774, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
@@ -13592,6 +13597,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
+      propertyPath: PRT.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713513183012811482, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
+      propertyPath: PRT.Array.data[0]
+      value: 
+      objectReference: {fileID: 3486772616161707100}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ebc2faa2d9446444a675bf70eb59d5a, type: 3}
 --- !u!4 &2962243327635402260 stripped
