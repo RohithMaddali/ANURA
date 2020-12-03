@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
         }
         
         Debug.Log("checked array");*/
-        if (/*levelComplete &&*/ pRoomCount == 3)
+        if (/*levelComplete &&*/ pRoomCount == 3 && roomCount < 20)
         {
             levelWorks = true;
             //Debug.Log("PERFECT");

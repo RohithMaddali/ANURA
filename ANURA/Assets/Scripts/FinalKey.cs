@@ -54,6 +54,6 @@ public class FinalKey : MonoBehaviour
         F_Ambience.amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         wAnim.SetTrigger("Win");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

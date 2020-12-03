@@ -5,11 +5,15 @@ using UnityEngine;
 public class KeyPickup : MonoBehaviour
 {
     public GameManager gm;
-    public GameObject PRRT;
+    public GameObject[] PRT;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        foreach (GameObject toad in PRT)
+        {
+            toad.SetActive(false);
+        }
     }
 
     public void OnTriggerStay(Collider other)
@@ -18,7 +22,10 @@ public class KeyPickup : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                PRRT.SetActive(true);
+                foreach (GameObject toad in PRT)
+                {
+                    toad.SetActive(true);
+                }
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Music/PuzzleRoomSuccess");
                 gm.KeyCount += 1;
                 Destroy(gameObject);
