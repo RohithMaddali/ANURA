@@ -56,12 +56,12 @@ public class F_Occlusion : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Wall"))
             {
                 Debug.Log("wall");
-                frogGrowl.setParameterByName("LowPass", 1, true);
+                RuntimeManager.StudioSystem.setParameterByName("Lowpass", 1, false);
             }
             else
             {
                 Debug.Log("No wall");
-                frogGrowl.setParameterByName("LowPass", 0, true);
+                RuntimeManager.StudioSystem.setParameterByName("Lowpass", 0, false);
             }
         }
     }

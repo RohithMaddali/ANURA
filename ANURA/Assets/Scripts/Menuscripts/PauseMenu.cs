@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static EventInstance paused;
     //serialize field makes private gameobjects viewable in editor
     [SerializeField] private GameObject pauseMenuUI;
 
@@ -33,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        paused = RuntimeManager.CreateInstance("snapshot:/Paused");
     }
 
     // Update is called once per frame
@@ -41,6 +45,7 @@ public class PauseMenu : MonoBehaviour
         //check for the esc key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            paused.start();
             isPaused = !isPaused;
         }
 
@@ -52,6 +57,7 @@ public class PauseMenu : MonoBehaviour
 
         else
         {
+            paused.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             DeactivateMenu();
         }
 
@@ -112,6 +118,7 @@ public class PauseMenu : MonoBehaviour
 
     public void DeactivateMenu()
     {
+
         Time.timeScale = 1;
         cammie = GameObject.FindGameObjectWithTag("MainCamera");
         cammie.GetComponent<HeadBobber>().bobbingSpeed = 0.07f;

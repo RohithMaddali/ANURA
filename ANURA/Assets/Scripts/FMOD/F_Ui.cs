@@ -30,6 +30,7 @@ public class F_Ui : MonoBehaviour
     public void RestartGame()
     {
         F_AmbientMusic.played = false;
+        PauseMenu.paused.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         F_AmbientMusic.ambientMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

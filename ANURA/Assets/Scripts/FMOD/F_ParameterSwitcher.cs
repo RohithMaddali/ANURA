@@ -53,6 +53,9 @@ public class F_ParameterSwitcher : MonoBehaviour
                 reverbValues[0] = reverbSmall;
                 reverbValues[1] = reverbMedium;
                 reverbValues[2] = reverbBig;
+                F_ToadAnimations.toadValues[0] = reverbSmall;
+                F_ToadAnimations.toadValues[1] = reverbMedium;
+                F_ToadAnimations.toadValues[3] = reverbBig;
         }
     }
 }

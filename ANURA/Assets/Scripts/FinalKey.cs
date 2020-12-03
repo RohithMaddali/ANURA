@@ -35,6 +35,13 @@ public class FinalKey : MonoBehaviour
             firstEncounter = true;
             anim.SetTrigger("First");
         }
+        else if (other.tag == "Player1" && gm.KeyCount != 3)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                RuntimeManager.PlayOneShot("event:/Ambience/Lock/Locked", default);
+            }
+        }
     }
 
     IEnumerator finalKeys()
