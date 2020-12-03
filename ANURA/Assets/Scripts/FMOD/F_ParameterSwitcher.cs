@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using FMODUnity;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class F_ParameterSwitcher : MonoBehaviour
 {
@@ -16,23 +12,15 @@ public class F_ParameterSwitcher : MonoBehaviour
     private float waterDrops;
     [SerializeField] 
     private bool onExitSetDefault;
-
     [SerializeField]
     private float reverbSmall;
     [SerializeField]
     private float reverbMedium;
     [SerializeField]
     private float reverbBig;
-    
     private F_Player playerAudio;
-
     private float [] values = new float[5];
     public static float [] reverbValues = new float[3];
-    //[SerializeField]
-    //private bool lerpWind;
-    //[SerializeField]
-    //private float lerpTime
-    
     private void Start()
     {
         values[0] = runningWater;
@@ -40,15 +28,10 @@ public class F_ParameterSwitcher : MonoBehaviour
         values[3] = stingers;
         values[4] = waterDrops;
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player1"))
         {
-            Debug.Log("Switched");
-            //if (lerpWind == true)
-                //wind = Mathf.Lerp(wind, 1, lerpTime * Time.deltaTime);
-                
                 F_Ambience.amb.setParametersByIDs(F_Ambience.parameterIds, values, 4, false);
                 reverbValues[0] = reverbSmall;
                 reverbValues[1] = reverbMedium;

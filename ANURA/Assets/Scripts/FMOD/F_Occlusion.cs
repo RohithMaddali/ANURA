@@ -1,5 +1,4 @@
 ﻿
-using System;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -25,7 +24,6 @@ public class F_Occlusion : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, OcclusionRadius);
     }
-    
     private void FixedUpdate()
     {
         if (!(player is null))
@@ -65,7 +63,6 @@ public class F_Occlusion : MonoBehaviour
             }
         }
     }
-
     private void OnDestroy()
     {
         frogGrowl.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

@@ -1,13 +1,7 @@
-﻿
-using System;
-using System.Collections;
+﻿using System.Collections;
 using FMOD.Studio;
 using FMODUnity;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.ProBuilder.MeshOperations;
-
 
 public class F_Music : MonoBehaviour
 {
@@ -37,9 +31,6 @@ public class F_Music : MonoBehaviour
         pMovement = GetComponent<PlayerMovement>();
         GetParameterIDS();
     }
-    
-
-
     void PlayStationaryMusic()
     {
         if (pMovement.isMoving == false && playedMusic == false && F_Parameters.musicState == 1 && F_PuzzleMusic.puzzleRoom == false)
@@ -80,5 +71,4 @@ public class F_Music : MonoBehaviour
             pIDS[i] = pDS[i].id;
         }
     }
-
 }

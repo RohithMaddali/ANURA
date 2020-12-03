@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
 
@@ -11,7 +8,6 @@ public class F_Ambience : MonoBehaviour
     private EventDescription ambDescription;
     private PARAMETER_DESCRIPTION[] pDs = new PARAMETER_DESCRIPTION[4];
     public static PARAMETER_ID[] parameterIds = new PARAMETER_ID[4];
-
     void Start()
     {
         GetParameterIds();
@@ -32,7 +28,6 @@ public class F_Ambience : MonoBehaviour
             parameterIds[i] = pDs[i].id;
         }
     }
-
     private void OnDestroy()
     {
         amb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

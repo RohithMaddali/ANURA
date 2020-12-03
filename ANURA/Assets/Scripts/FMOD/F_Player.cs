@@ -7,12 +7,9 @@ public class F_Player : MonoBehaviour
     private PlayerMovement playerMovement;
     [SerializeField]
     private float walkingSpeed = 1;
-    [SerializeField]
-    private float walkingBackwardsSpeed = 1;
     private F_Music music;
     private bool played;
     public LayerMask lm;
-    public float[] values = new float[3];
     private float material;
     public EventInstance footsteps;
     private EventDescription ambDescription;

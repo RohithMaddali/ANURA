@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using FMODUnity;
-using FMOD.Studio;
 
 public class F_Ui : MonoBehaviour
 {
@@ -32,5 +29,14 @@ public class F_Ui : MonoBehaviour
         F_AmbientMusic.played = false;
         PauseMenu.paused.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         F_AmbientMusic.ambientMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+    public void Splash()
+    {
+        RuntimeManager.PlayOneShot("event:/Ui/UiSplash");
+    }
+
+    public void Enemy()
+    {
+        RuntimeManager.PlayOneShot("event:/Ui/UiEnemy");
     }
 }

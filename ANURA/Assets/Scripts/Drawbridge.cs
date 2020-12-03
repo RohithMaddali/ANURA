@@ -12,14 +12,6 @@ public class Drawbridge : MonoBehaviour
     private Quaternion target;
     public float speed = 6f;
     //public float openHeight = 5f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (moving)
@@ -33,7 +25,8 @@ public class Drawbridge : MonoBehaviour
             if(isclosed)
             {
                 isclosed = false;
-            }else if (!isclosed)
+            }
+            else if (!isclosed)
             {
                 isclosed = true;
             }
@@ -44,6 +37,7 @@ public class Drawbridge : MonoBehaviour
 
     public void Open()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/PuzzleDoors/Doors", this.gameObject);
         target = openRot;
         startRot = closeRot;
         moving = true;
@@ -52,6 +46,7 @@ public class Drawbridge : MonoBehaviour
 
     public void Close()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/PuzzleDoors/DoorsClose", this.gameObject);
         target = closeRot;
         startRot = openRot;
         moving = true;
