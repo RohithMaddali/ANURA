@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 5426451856171014539}
   - component: {fileID: 1842347895605751069}
   - component: {fileID: 1254232270}
+  - component: {fileID: 4898868120330544026}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Player1
@@ -523,6 +524,20 @@ MonoBehaviour:
   zMin: -10
   zMax: 30
   source01: {fileID: 3511556419598781226, guid: d60fb25419dee074b9ab76e7e7b701fd, type: 3}
+--- !u!114 &4898868120330544026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354557680469092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55219660f17705e418de07bf7530e234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toad: {fileID: 9079794889650167769, guid: 457203fa92128af428ff24809dfc9f1a, type: 3}
+  aiTriggersphere: {fileID: 1277811227391447762}
 --- !u!1 &2354557681189838689
 GameObject:
   m_ObjectHideFlags: 0
