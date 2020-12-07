@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     //control popups
     public GameObject escpop;
     public GameObject intpop;
+    public GameObject keypop;
 
     void Start()
     {
