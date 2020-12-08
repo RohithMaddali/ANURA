@@ -105,6 +105,15 @@ public class PauseMenu : MonoBehaviour
         {
             StartCoroutine(FadePrompt(true,intpop));
         }
+
+        if (gameManager.GetComponent<GameManager>().keyRange == true)
+        {
+            StartCoroutine(FadePrompt(false, keypop));
+        }
+        else
+        {
+            StartCoroutine(FadePrompt(true, keypop));
+        }
     }
 
     void ActivateMenu()
