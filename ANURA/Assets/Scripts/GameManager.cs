@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int KeyCount;
     public bool toadSeen = false;
     public bool seeSwitch = false;
+    public bool keyRange = false;
     
     private void Awake()
     {

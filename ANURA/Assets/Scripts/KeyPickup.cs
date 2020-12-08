@@ -20,6 +20,7 @@ public class KeyPickup : MonoBehaviour
     {
         if (other.tag == "Player1")
         {
+            gm.GetComponent<GameManager>().keyRange = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
                 foreach (GameObject toad in PRT)
@@ -29,7 +30,16 @@ public class KeyPickup : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Music/PuzzleRoomSuccess");
                 gm.KeyCount += 1;
                 Destroy(gameObject);
+                gm.GetComponent<GameManager>().keyRange = false;
             }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player1")
+        {
+            gm.GetComponent<GameManager>().keyRange = false;
         }
     }
 }
