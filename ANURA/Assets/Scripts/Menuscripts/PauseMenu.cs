@@ -99,11 +99,11 @@ public class PauseMenu : MonoBehaviour
 
         if (gameManager.GetComponent<GameManager>().seeSwitch == true)
         {
-            StartCoroutine(FadePrompt(false));
+            StartCoroutine(FadePrompt(false,intpop));
         }
         else
         {
-            StartCoroutine(FadePrompt(true));
+            StartCoroutine(FadePrompt(true,intpop));
         }
     }
 
@@ -172,7 +172,7 @@ public class PauseMenu : MonoBehaviour
         }*/
     }
 
-    IEnumerator FadePrompt(bool fadeAway)
+    IEnumerator FadePrompt(bool fadeAway, GameObject myPrompt)
     {
         // fade from opaque to transparent
         if (fadeAway)
@@ -181,7 +181,7 @@ public class PauseMenu : MonoBehaviour
             for (float i = 0; i <= 1; i += 0.05f)
             {
                 // set color with i as alpha
-                intpop.GetComponent<CanvasGroup>().alpha -= i;
+                myPrompt.GetComponent<CanvasGroup>().alpha -= i;
                 yield return new WaitForSecondsRealtime(0.1f);
             }
         }
@@ -191,7 +191,7 @@ public class PauseMenu : MonoBehaviour
             for (float i = 0; i <= 1; i += 0.05f)
             {
                 // set color with i as alpha
-                intpop.GetComponent<CanvasGroup>().alpha += i;
+                myPrompt.GetComponent<CanvasGroup>().alpha += i;
                 yield return new WaitForSecondsRealtime(0.05f);
             }
         }
