@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class FinalKey : MonoBehaviour
     public static EventInstance winMusic;
     public Animator anim;
     public Animator wAnim;
+    public Animator door;
     public bool firstEncounter;
     public int w;
     void Start()
@@ -19,6 +21,7 @@ public class FinalKey : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         firstEncounter = false;
         wAnim = GameObject.FindGameObjectWithTag("Win").GetComponent<Animator>();
+        door = GameObject.FindGameObjectWithTag("finalDoor").GetComponent<Animator>();
     }
     public void OnTriggerStay(Collider other) 
     {
@@ -47,6 +50,7 @@ public class FinalKey : MonoBehaviour
     IEnumerator finalKeys()
     {
         anim.SetTrigger("Final");
+        door.SetTrigger("door");
         yield return new WaitForSeconds(2f);
         winMusic = RuntimeManager.CreateInstance("event:/Music/WinMusic");
         winMusic.start();
