@@ -49,7 +49,7 @@ public class Hints : MonoBehaviour
             hints.text = hint[number];
             previousnum = number;
             time += Time.deltaTime;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
             time = 0;
         }
     }
