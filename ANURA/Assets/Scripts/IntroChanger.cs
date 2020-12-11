@@ -9,13 +9,13 @@ public class IntroChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
         StartCoroutine(end());
+        Cursor.visible = false;
     }
     
     IEnumerator end()
     {
         yield return new WaitForSeconds(18f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

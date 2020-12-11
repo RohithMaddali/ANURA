@@ -153,12 +153,12 @@ public class PauseMenu : MonoBehaviour
     public void restart()
     {
         gameManager.KeyCount = 0;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void mainMneu()
     {
         gameManager.KeyCount = 0;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     IEnumerator FadeImage(bool fadeAway)

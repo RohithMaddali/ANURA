@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public void Caught(GameObject toad, GameObject room)
     {
         Debug.Log("changing scene");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     
