@@ -6,13 +6,13 @@ public class PlayerRaycasting : MonoBehaviour
 {
     public float distancetoTouch = 3;
     public float distancetoSee = 21;
-    public GameObject gameManager;
+    public GameManager gm;
     RaycastHit touchingObject;
     
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -40,11 +40,11 @@ public class PlayerRaycasting : MonoBehaviour
             //check if you can see a switch
             if (touchingObject.collider.gameObject.tag == "Switch")
             {
-                gameManager.GetComponent<GameManager>().seeSwitch = true;
+                gm.seeSwitch = true;
             }
             else
             {
-                gameManager.GetComponent<GameManager>().seeSwitch = false;
+                gm.seeSwitch = false;
             }
             //Debug.Log("touching " + touchingObject.collider.gameObject.name);
             if (touchingObject.collider.gameObject.tag == "Switch" && Input.GetKeyDown("e"))
@@ -62,7 +62,7 @@ public class PlayerRaycasting : MonoBehaviour
             if (touchingObject.collider.gameObject.tag == "Toad")
             {
                 print("player has spotted a toad");
-                gameManager.GetComponent<GameManager>().toadSeen = true;
+                gm.toadSeen = true;
             }
         }
     }

@@ -18,7 +18,7 @@ public class FinalKey : MonoBehaviour
     public int w;
     void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gm = FindObjectOfType<GameManager>();
         firstEncounter = false;
         wAnim = GameObject.FindGameObjectWithTag("Win").GetComponent<Animator>();
         door = GameObject.FindGameObjectWithTag("finalDoor").GetComponent<Animator>();

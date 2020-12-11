@@ -19,27 +19,46 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
     public void Caught(GameObject toad, GameObject room)
     {
         Debug.Log("changing scene");
         SceneManager.LoadScene(3);
     }
 
-    void Update()
+
+    void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        Scene = SceneManager.GetActiveScene().buildIndex;
-        if (Scene == 5)
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+        if (scene.buildIndex == 5)
         {
-            t += Time.deltaTime;
-            if (t > timer)
-            {
-                t = 0;
-                SceneManager.LoadScene(2);
-            }
+            Debug.Log("Loaded Intro Level. Leaving in T minus 18 seconds");
+            StartCoroutine(End());
+        }
+        if(scene.buildIndex != 2)
+        {
+            toadSeen = false;
+            seeSwitch = false;
+            keyRange = false;
+            KeyCount = 0;
         }
     }
 
+    IEnumerator End()
+    {
 
+        Debug.Log("Coroutine Started");
+        //SceneManager.sceneLoaded -= OnSceneLoad;
+        yield return new WaitForSeconds(18f);
+        Debug.Log("Timer Ended");
+        SceneManager.LoadScene("Room GeneratorTester");
+
+    }
 
 
 
