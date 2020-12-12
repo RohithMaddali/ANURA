@@ -7,11 +7,12 @@ public class MouseSensitivity : MonoBehaviour
 {
     public Slider slider;
     public float fillValue = 0.5f;
+    public GameObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     // Update is called once per frame
@@ -23,5 +24,6 @@ public class MouseSensitivity : MonoBehaviour
     public void SliderUpdate()
     {
         fillValue = slider.value;
+        gm.GetComponent<GameManager>().mouseSensitivityMultiplier = fillValue;
     }
 }
