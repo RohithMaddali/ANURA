@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseSensitivity : MonoBehaviour
 {
+    public Slider slider;
+    public float fillValue = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,10 @@ public class MouseSensitivity : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SliderUpdate()
+    {
+        fillValue = slider.value;
     }
 }
