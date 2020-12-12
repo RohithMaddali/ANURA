@@ -8,7 +8,7 @@ public class ViewControl : MonoBehaviour
     public float mouseSensitivity = 250f;
 
     //find gamemanager
-    public GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
+    public GameObject gm;
 
     //assign playerbody
     public Transform playerBody;
@@ -18,6 +18,7 @@ public class ViewControl : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        gm = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     // Update is called once per frame
