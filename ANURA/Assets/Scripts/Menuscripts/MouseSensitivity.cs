@@ -7,7 +7,7 @@ public class MouseSensitivity : MonoBehaviour
 {
     public Slider slider;
     public float fillValue = 0.5f;
-    public GameObject;
+    public GameObject gm;
 
     // Start is called before the first frame update
     void Start()
