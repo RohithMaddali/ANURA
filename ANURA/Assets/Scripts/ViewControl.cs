@@ -7,6 +7,9 @@ public class ViewControl : MonoBehaviour
     //set mouse sensitivity
     public float mouseSensitivity = 250f;
 
+    //find gamemanager
+    public GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
+
     //assign playerbody
     public Transform playerBody;
     float xRotation = 0f;
@@ -20,6 +23,9 @@ public class ViewControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //control the mouse sensitivity
+        mouseSensitivity = (50 + (gm.GetComponent<GameManager>().mouseSensitivityMultiplier * 400));
+
         //track mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
