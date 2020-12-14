@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public bool toadSeen = false;
     public bool seeSwitch = false;
     public bool keyRange = false;
+    public GameObject skip;
 
     public float mouseSensitivityMultiplier = 0.5f;
     
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoad;
+        skip = GameObject.FindGameObjectWithTag("Skip");
     }
 
     public void Caught(GameObject toad, GameObject room)
@@ -39,8 +41,11 @@ public class GameManager : MonoBehaviour
         Debug.Log(mode);
         if (scene.buildIndex == 5)
         {
-            Debug.Log("Loaded Intro Level. Leaving in T minus 18 seconds");
-            StartCoroutine(End());
+            if(skip.activeSelf == true)
+            {
+                Debug.Log("Loaded Intro Level. Leaving in T minus 18 seconds");
+                StartCoroutine(End());
+            }
         }
         if(scene.buildIndex != 2)
         {
