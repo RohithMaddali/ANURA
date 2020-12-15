@@ -57,7 +57,7 @@ public class PauseMenu : MonoBehaviour
             ActivateMenu();
             menuopened = true;
         }
-        else if(!isPaused && lm.levelBuilt)
+        else
         {
             paused.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             DeactivateMenu();
@@ -120,8 +120,11 @@ public class PauseMenu : MonoBehaviour
     void ActivateMenu()
     {
         Time.timeScale = 0;
-        cammie = GameObject.FindGameObjectWithTag("MainCamera");
-        cammie.GetComponent<HeadBobber>().bobbingSpeed = 0;
+        if (lm.levelBuilt)
+        {
+            cammie = GameObject.FindGameObjectWithTag("MainCamera");
+            cammie.GetComponent<HeadBobber>().bobbingSpeed = 0;
+        }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
@@ -131,8 +134,11 @@ public class PauseMenu : MonoBehaviour
     {
 
         Time.timeScale = 1;
-        cammie = GameObject.FindGameObjectWithTag("MainCamera");
-        cammie.GetComponent<HeadBobber>().bobbingSpeed = 0.07f;
+        if (lm.levelBuilt)
+        {
+            cammie = GameObject.FindGameObjectWithTag("MainCamera");
+            cammie.GetComponent<HeadBobber>().bobbingSpeed = 0.07f;
+        }
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
