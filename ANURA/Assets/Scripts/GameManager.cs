@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Analytics;
 using System.Security.Cryptography;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class GameManager : MonoBehaviour
     public bool toadSeen = false;
     public bool seeSwitch = false;
     public bool keyRange = false;
-    public GameObject skip;
 
     public float mouseSensitivityMultiplier = 0.5f;
     
@@ -24,8 +24,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoad;
-        skip = GameObject.FindGameObjectWithTag("Skip");
+        //SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
+    void Update()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            Time.timeScale = 1;
+            t += Time.deltaTime;
+            if(t>timer)
+            {
+                SceneManager.LoadScene("Room GeneratorTester");
+            }
+        }
     }
 
     public void Caught(GameObject toad, GameObject room)
@@ -35,17 +47,14 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    /*void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
         if (scene.buildIndex == 5)
         {
-            if(skip.activeSelf == true)
-            {
                 Debug.Log("Loaded Intro Level. Leaving in T minus 18 seconds");
                 StartCoroutine(End());
-            }
         }
         if(scene.buildIndex != 2)
         {
@@ -54,14 +63,14 @@ public class GameManager : MonoBehaviour
             keyRange = false;
             KeyCount = 0;
         }
-    }
+    }*/
 
     IEnumerator End()
     {
 
         Debug.Log("Coroutine Started");
         //SceneManager.sceneLoaded -= OnSceneLoad;
-        yield return new WaitForSeconds(18f);
+        yield return new WaitForSeconds(5f);
         Debug.Log("Timer Ended");
         SceneManager.LoadScene("Room GeneratorTester");
 

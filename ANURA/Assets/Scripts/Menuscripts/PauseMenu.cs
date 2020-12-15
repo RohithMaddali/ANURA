@@ -164,6 +164,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void mainMneu()
     {
+        gameManager.t = 0;
+        Time.timeScale = 1;
         gameManager.KeyCount = 0;
         SceneManager.LoadScene(1);
     }
