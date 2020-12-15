@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     private GameObject cammie;
     public GameManager gameManager;
+    public LevelManager lm;
 
     //keep track of active icons
     public GameObject locktip;
@@ -36,6 +37,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        lm = FindObjectOfType<LevelManager>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         paused = RuntimeManager.CreateInstance("snapshot:/Paused");
     }
@@ -55,8 +57,7 @@ public class PauseMenu : MonoBehaviour
             ActivateMenu();
             menuopened = true;
         }
-
-        else
+        else if(!isPaused && lm.levelBuilt)
         {
             paused.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             DeactivateMenu();

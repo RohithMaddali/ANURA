@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public GameObject builtRoom;
     public bool levelComplete = true;
     public bool levelWorks;
+    public bool levelBuilt;
     public Animator loadingScreen;
     public Animator loadingLogo;
     public GameManager gm;
@@ -69,6 +70,7 @@ public class LevelManager : MonoBehaviour
             }
             loadingScreen.SetTrigger("Load1");
             loadingLogo.SetTrigger("Load2");
+            levelBuilt = true;
 
         }
         else if (/*levelComplete &&*/ pRoomCount < 3 || roomCount >= 20)
