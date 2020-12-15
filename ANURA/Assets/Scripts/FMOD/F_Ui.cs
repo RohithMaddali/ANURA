@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using FMODUnity;
 
 public class F_Ui : MonoBehaviour
@@ -39,4 +40,5 @@ public class F_Ui : MonoBehaviour
     {
         RuntimeManager.PlayOneShot("event:/Ui/UiEnemy");
     }
+    
 }

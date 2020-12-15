@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         lm = FindObjectOfType<LevelManager>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         paused = RuntimeManager.CreateInstance("snapshot:/Paused");
+        paused.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     // Update is called once per frame

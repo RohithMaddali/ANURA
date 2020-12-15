@@ -26,6 +26,7 @@ public class F_Player : MonoBehaviour
     private void Update()
     {
         MaterialCheck();
+        Debug.Log(material);
     }
     void GetParameters()
     {

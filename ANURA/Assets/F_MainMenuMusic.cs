@@ -9,8 +9,8 @@ public class F_MainMenuMusic : MonoBehaviour
     {
         menuMusic = RuntimeManager.CreateInstance("event:/Music/MenuMusic");
         menuMusic.start();
+        menuMusic.release(); 
     }
-
     public void StartGame()
     {
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
