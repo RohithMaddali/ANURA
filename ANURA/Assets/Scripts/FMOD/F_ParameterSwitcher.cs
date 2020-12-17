@@ -32,13 +32,13 @@ public class F_ParameterSwitcher : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player1"))
         {
-                F_Ambience.amb.setParametersByIDs(F_Ambience.parameterIds, values, 4, false);
+                F_Ambience.amb.setParametersByIDs(F_Ambience.parameterIds, values,4, false);
                 reverbValues[0] = reverbSmall;
                 reverbValues[1] = reverbMedium;
                 reverbValues[2] = reverbBig;
                 F_ToadAnimations.toadValues[0] = reverbSmall;
                 F_ToadAnimations.toadValues[1] = reverbMedium;
-                F_ToadAnimations.toadValues[3] = reverbBig;
+                //F_ToadAnimations.toadValues[3] = reverbBig;
         }
     }
 }
